@@ -1,6 +1,4 @@
-![KonCEPT för radioamatörcertifikat](koncept.png)
-
-INSTALLERA OCH BYGG
+Installera och bygg
 ===================
 
 Här förklaras vilka verktyg som behövs, hur man använder dom och
@@ -12,16 +10,13 @@ I det här dokumentet finns instruktioner om hur du kan hämta hem
 projektet och köra den på din egen dator. Den går igenom steg för
 steg och beskriver de verktyg som används för att köra koden.
 
-> :bulb: Kom ihåg att om du har
-problem kan du [skapa ett nytt ärende (new
-issue)](https://github.com/SverigesSandareamatorer/SSA-Akademin/issues)
-eller använda kontaktuppgifterna som finns i [README.md](README.md).
+| :bulb: **Tips** |
+|:----------------|
+| Kom ihåg att om du har problem kan du skapa ett nytt [ärende på GitHub](https://github.com/SverigesSandareamatorer/SSA-Akademin/issues) eller använda kontaktuppgifterna som finns i [README.md](README.md). |
 
-> :warning: Dessa instruktioner är inte fullständiga men kan
-ändå hjälpa fram för allt de som kör Linux eller UNIX-liknande
-operativsystem. Just nu är den här guiden mest inriktad på
-[Linux/Debian-derivat](https://www.debian.org/misc/children-distros)
-men paketnamnen bör heta likadant i andra distributioners pakethanterare.
+| :warning: **Observera** |
+|:------------------------|
+| Dessa instruktioner är inte fullständiga men kan ändå hjälpa fram för allt de som kör Linux eller UNIX-liknande operativsystem. Just nu är den här guiden mest inriktad på [Linux/Debian-derivat](https://www.debian.org/misc/children-distros) men paketnamnen bör heta likadant i andra distributioners pakethanterare. |
 
 
 -   [KOM IGÅNG](#kom-igÅng)
@@ -32,8 +27,7 @@ men paketnamnen bör heta likadant i andra distributioners pakethanterare.
     -   [TEX/LATEX](#texlatex)
     -   [LATEXML](#latexml)
 
-KOM IGÅNG
----------
+# Kom igång
 
 Börja med att följa instruktionerna nedan för att installera verktygen
 *Make* och *Git*.
@@ -43,11 +37,10 @@ använda dig av versionshanteringssystemet Git och verktyget Make.
 
 **Linux/Debian**
 ```sh
-sudo apt-get install git make
+$ sudo apt-get install git make
 ```
 
-GIT
----
+# Git
 
 [Git](https://git-scm.com) är ett versionshanteringsverktyg som håller reda på
 historiken av kodutveckling. Den hjälper en kodare med arbetet genom smarta
@@ -57,12 +50,11 @@ Navigera till den mapp du vill ladda ner SSA-Akademin repot i. De som
 kör Git med grafiskt användargränssnitt (GUI) kan välja Clone och
 sedan URL:en i argumentet nedan. För de som kör med kommandotolken:
 ```sh
-git clone https://github.com/SverigesSandareamatorer/SSA-Akademin.git
-cd SSA-Akademin/
+$ git clone https://github.com/SverigesSandareamatorer/SSA-Akademin.git
+$ cd SSA-Akademin/
 ```
 
-MAKE
-----
+# Make
 
 [Make](https://www.gnu.org/software/make/) är ett program som används
 för att förenkla källkodsfiler till körbara filer och i det här
@@ -71,7 +63,7 @@ veta *hur* genereringen går till utan bara vilket kommando som ska
 köras. Make används genom att köra kommandot `make` följt av ett
 mål. Till exempel:
 ```sh
-make <mål>
+$ make <mål>
 ```
 
 Dessa Make ”mål” kräver vissa verktyg för att kunna köras och dessa
@@ -79,7 +71,7 @@ kallas för beroenden. Dessa beroenden måste installeras innan Make
 ”mål:et” kan köras och instruktioner för vilka beroenden ett mål
 har hittar du under [Make mål och Byggberoenden](#make-mÅl-och-byggberoenden).
 
-### MAKE-MÅL OCH BYGGBEROENDEN
+### Make-mål och byggberoenden
 
 För att få en översikt över vilka mål som finns listas dom här i
 tabellen med en beskrivning om vad dom gör och vilka verktyg som de är
@@ -96,10 +88,9 @@ har installerat beroendet som det behöver.
 |`docker-image`       |Bygg en Docker *image*             |Docker                |
 |`docker-build`       |Kör Docker *image* i en *container*|Docker                |
 
-INSTALLERA BEROENDEN
---------------------
+# Installera beroenden
 
-### TEX/LATEX
+## Tex/LaTeX
 
 TeX är ett typsättningssystem där ett dokument, en bok eller en artikel
 kan beskrivas i ren text (filer med filändelsen `.tex`) för att sedan
@@ -109,12 +100,12 @@ installeras.
 
 **Linux/Debian**
 ```sh
-sudo apt-get update
-sudo apt-get install texlive texlive-lang-european \
+$ sudo apt-get update
+$ sudo apt-get install texlive texlive-lang-european \
     texlive-latex-extra texlive-pictures texlive-math-extra texlive-xetex
 ```
 
-### LATEXML
+### LaTeXML
 
 [LaTeXML](http://dlmf.nist.gov/LaTeXML/) är ett verktyg för att konvertera TeX-dokument till
 XML-filer. Den kan sedan konvertera dessa XML-filer till bland annat
@@ -127,14 +118,14 @@ ner och beroenden måste hämtas.
 **Linux/Debian**
 Hämta LaTeXML:
 ```sh
-git clone https://github.com/brucemiller/LaTeXML.git
-cd LaTeXML/
+$ git clone https://github.com/brucemiller/LaTeXML.git
+$ cd LaTeXML/
 ```
 
 Installera [LaTeXML
 beroenden](http://dlmf.nist.gov/LaTeXML/get.html#SS2.SSS0.Px2):
 ```sh
-sudo apt-get install \
+$ sudo apt-get install \
   libarchive-zip-perl libfile-which-perl libimage-size-perl  \
   libio-string-perl libjson-xs-perl libtext-unidecode-perl \
   libparse-recdescent-perl liburi-perl libuuid-tiny-perl libwww-perl \
@@ -146,13 +137,13 @@ Följ sedan
 [bygginstruktionerna](http://dlmf.nist.gov/LaTeXML/get.html#SS6.SSS0.Px2)
 och kör följande:
 ```sh
-perl Makefile.PL
-make
-make test
+$ perl Makefile.PL
+$ make
+$ make test
 ```
 
 [Installera LaTeXML](http://dlmf.nist.gov/LaTeXML/get.html#SS6.SSS0.Px3)
 (detta måste göras med `sudo`):
 ```sh
-sudo make install
+$ sudo make install
 ```
