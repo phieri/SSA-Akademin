@@ -13,11 +13,11 @@ help:
 
 #all:	koncept.pdf
 #all:	emf-handout.pdf
-all:	iso-jordning.pdf
-all:	matterep.pdf
+#all:	iso-jordning.pdf
+#all:	matterep.pdf
 all:	prefix.pdf
-all:	ac1.pdf
-all:	ac2.pdf
+#all:	ac1.pdf
+#all:	ac2.pdf
 
 .PHONY:	*.pdf
 
