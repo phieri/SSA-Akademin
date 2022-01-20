@@ -11,7 +11,7 @@ help:
 	@echo '   make clean                  rensa alla byggfiler                   '
 	@echo '   make help                   visa den här informationen             '
 
-all:	koncept.pdf
+#all:	koncept.pdf
 all:	emf-handout.pdf
 all:	iso-jordning.pdf
 all:	matterep.pdf
@@ -109,24 +109,24 @@ koncept.pdf: koncept.aux koncept.bbl koncept.ind koncept.tex $(KONCEPT_FILES)
 	pdflatex koncept.tex
 
 matterep.pdf: koncept/matte.tex handouts/matterep.tex
-	-xelatex handouts/matterep.tex
-	xelatex handouts/matterep.tex
+	-pdflatex handouts/matterep.tex
+	pdflatex handouts/matterep.tex
 
 emf-handout.idx:
-	xelatex handouts/emf-handout.tex
+	pdflatex handouts/emf-handout.tex
 
 emf-handout.ind: emf-handout.idx
 	makeindex emf-handout
 
 emf-handout.pdf: emf-handout.ind handouts/emf-handout.tex koncept/chapter11-1.tex koncept/common.tex
-	xelatex handouts/emf-handout.tex
+	pdflatex handouts/emf-handout.tex
 
 prefix.pdf: handouts/prefix.tex koncept/appendix-n.tex
-	xelatex handouts/prefix.tex
+	pdflatex handouts/prefix.tex
 
 iso-jordning.pdf: koncept.bbl handouts/iso-jordning.tex $(KONCEPT_FILES)
-	-xelatex handouts/iso-jordning.tex
-	xelatex handouts/iso-jordning.tex
+	-pdflatex handouts/iso-jordning.tex
+	pdflatex handouts/iso-jordning.tex
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES) matterep.tex
 	tar cvzf koncept.tar.gz Makefile $(KONCEPT_FILES) matterep.tex images/*
@@ -162,10 +162,10 @@ kursplan.pdf: lectures/kursplan.tex
 
 # Genererade presentationer
 ac1.pdf: lectures/ac1.tex
-	xelatex lectures/ac1.tex
+	pdflatex lectures/ac1.tex
 
 ac2.pdf: lectures/ac2.tex
-	xelatex lectures/ac2.tex
+	pdflatex lectures/ac2.tex
 
 # Optionally build using docker, currently only tested with MacOS and Docker 1.12.3, but
 # should work anywhere you can run Docker.
