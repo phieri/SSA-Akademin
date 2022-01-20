@@ -27,7 +27,7 @@ jobs:
       - name: 'Bygg'
         run: make all
       - name: 'Beräkna checksumma'
-        run: echo TODO
+        run: touch koncept.pdf
       - name: 'Byt namn'
         run: mv koncept.pdf koncept.$(cat VERSION.txt)+b${{ github.run_id }}.$(cat SHA.txt).pdf
       - name: 'Skapa rapporter'
