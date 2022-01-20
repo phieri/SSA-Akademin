@@ -121,7 +121,7 @@ emf-handout.ind: emf-handout.idx
 emf-handout.pdf: emf-handout.ind handouts/emf-handout.tex koncept/chapter11-1.tex koncept/common.tex
 	pdflatex handouts/emf-handout.tex
 
-prefix.pdf: handouts/prefix.tex koncept/appendix-n.tex
+prefix.pdf: handouts/prefix.tex koncept/appendix-prefixomvandling.tex
 	pdflatex handouts/prefix.tex
 
 iso-jordning.pdf: koncept.bbl handouts/iso-jordning.tex $(KONCEPT_FILES)
