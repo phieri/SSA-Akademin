@@ -21,15 +21,16 @@ jobs:
           sudo apt-get -q install texlive \
             texlive-lang-european texlive-science \
             texlive-fonts-recommended texlive-fonts-extra \
+            texlive-extra-utils \
             language-pack-sv
       - name: 'Kopiera hash'
         run: echo ${{ github.sha }} | cut -c1-7 > SHA.txt
       - name: 'Bygg'
-        run: make koncept.pdf
+        run: make koncept.epub
       - name: 'Beräkna checksumma'
-        run: sha256sum koncept.pdf
+        run: sha256sum koncept.epub
       - name: 'Byt namn'
-        run: mv koncept.pdf koncept.$(cat VERSION.txt)+b${{ github.run_id }}.$(cat SHA.txt).pdf
+        run: mv koncept.epub koncept.$(cat VERSION.txt)+b${{ github.run_id }}.$(cat SHA.txt).epub
       - name: 'Skapa rapporter'
         run: |
           make images_unlinked
@@ -37,13 +38,15 @@ jobs:
       - name: 'Ladda upp artefakt'
         uses: actions/upload-artifact@v2
         with:
-          name: koncept-pdf
-          path: koncept*.pdf
+          name: koncept-bok
+          path: |
+            koncept*.pdf
+            koncept*.epub
           retention-days: 31
       - name: 'Ladda upp rapporter'
         uses: actions/upload-artifact@v2
         with:
-          name: rapporter
+          name: koncept-rapporter
           path: |
             images_unlinked.txt
             TODOs
