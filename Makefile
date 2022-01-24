@@ -108,7 +108,7 @@ koncept.pdf: koncept.aux koncept.bbl koncept.ind koncept.tex $(KONCEPT_FILES)
 	pdflatex koncept.tex
 
 koncept.epub:
-	tex4ebook --format epub3 --xetex koncept.tex
+	tex4ebook --format epub3 koncept.tex
 
 matterep.pdf: koncept/matte.tex handouts/matterep.tex
 	-xelatex handouts/matterep.tex

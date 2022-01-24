@@ -21,7 +21,7 @@ jobs:
           sudo apt-get -q install texlive \
             texlive-lang-european texlive-science \
             texlive-fonts-recommended texlive-fonts-extra \
-            texlive-extra-utils texlive-xetex texlive-luatex \
+            texlive-extra-utils texlive-luatex \
             language-pack-sv
       - name: 'Sätt systemspråk till svenska'
         run: |
