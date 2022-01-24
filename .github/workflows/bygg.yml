@@ -23,7 +23,7 @@ jobs:
             texlive-fonts-recommended texlive-fonts-extra \
             texlive-extra-utils texlive-xetex texlive-luatex \
             language-pack-sv
-	  - name: 'Sätt systemspråk till svenska'
+	  - name: 'S&auml;tt systemspr&aring;k till svenska'
         run: |
           sudo locale-gen sv_SE.UTF-8
           sudo localectl set-locale LANG="sv_SE.UTF-8"
