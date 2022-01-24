@@ -23,6 +23,10 @@ jobs:
             texlive-fonts-recommended texlive-fonts-extra \
             texlive-extra-utils texlive-xetex texlive-luatex \
             language-pack-sv
+	  - name: 'Sätt systemspråk till svenska'
+        run: |
+          sudo locale-gen sv_SE.UTF-8
+          sudo localectl set-locale LANG="sv_SE.UTF-8"
       - name: 'Kopiera hash'
         run: echo ${{ github.sha }} | cut -c1-7 > SHA.txt
       - name: 'Bygg'
