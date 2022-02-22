@@ -29,6 +29,10 @@ jobs:
           sudo localectl set-locale LANG="sv_SE.UTF-8"
       - name: 'Kopiera hash'
         run: echo ${{ github.sha }} | cut -c1-7 > SHA.txt
+      - name: 'Kopiera info om repository'
+        run: |
+          echo $GITHUB_SHA | cut -c1-7 > SHA.tmp
+          echo $GITHUB_REF_NAME > branch.tmp
       - name: 'Bygg'
         run: make koncept.epub
       - name: 'Beräkna checksumma'
@@ -37,6 +41,7 @@ jobs:
         run: mv koncept.epub koncept.$(cat VERSION.txt)+b${{ github.run_id }}.$(cat SHA.txt).epub
       - name: 'Skapa rapporter'
         run: |
+          make images_linked
           make images_unlinked
           make TODOs
       - name: 'Ladda upp artefakt'
@@ -52,5 +57,6 @@ jobs:
         with:
           name: koncept-rapporter
           path: |
+            images_linked.txt
             images_unlinked.txt
-            TODOs
+            TODOs.txt
