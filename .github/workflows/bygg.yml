@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: 'Checka ut'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: 'Installera'
         run: |
           sudo apt-get update
           sudo apt-get -q install texlive \
             texlive-lang-european texlive-science \
-            texlive-fonts-recommended texlive-fonts-extra \
+            texlive-fonts-recommended \
             texlive-extra-utils texlive-luatex \
             language-pack-sv
       - name: 'Sätt systemspråk till svenska'
@@ -34,7 +34,7 @@ jobs:
           echo $GITHUB_SHA | cut -c1-7 > SHA.tmp
           echo $GITHUB_REF_NAME > branch.tmp
       - name: 'Bygg'
-        run: make koncept.epub
+        run: make koncept.pdf
       - name: 'Beräkna checksumma'
         run: sha256sum koncept.epub
       - name: 'Byt namn'
@@ -45,7 +45,7 @@ jobs:
           make images_unlinked
           make TODOs
       - name: 'Ladda upp artefakt'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: koncept-bok
           path: |
@@ -53,7 +53,7 @@ jobs:
             koncept*.epub
           retention-days: 31
       - name: 'Ladda upp rapporter'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: koncept-rapporter
           path: |
