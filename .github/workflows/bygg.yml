@@ -34,7 +34,7 @@ jobs:
           echo $GITHUB_SHA | cut -c1-7 > SHA.tmp
           echo $GITHUB_REF_NAME > branch.tmp
       - name: 'Bygg'
-        run: make koncept.pdf
+        run: make koncept.epub
       - name: 'Beräkna checksumma'
         run: sha256sum koncept.epub
       - name: 'Byt namn'
