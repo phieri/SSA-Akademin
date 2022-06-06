@@ -22,6 +22,7 @@ jobs:
             texlive-lang-european texlive-science \
             texlive-fonts-recommended texlive-fonts-extra \
             texlive-extra-utils texlive-luatex \
+            latexmk \
             language-pack-sv
       - name: 'Sätt systemspråk till svenska'
         run: |
