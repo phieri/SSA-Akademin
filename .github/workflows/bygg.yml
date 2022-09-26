@@ -53,11 +53,3 @@ jobs:
             koncept*.pdf
             koncept*.epub
           retention-days: 31
-      - name: 'Ladda upp rapporter'
-        uses: actions/upload-artifact@v3
-        with:
-          name: koncept-rapporter
-          path: |
-            images_linked.txt
-            images_unlinked.txt
-            TODOs.txt
