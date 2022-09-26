@@ -114,8 +114,8 @@ koncept.pdf: $(REPO_FILES) koncept.aux koncept.bbl koncept.ind koncept.tex $(KON
 
 koncept.epub:
 	latexmk -pdf -bibtex koncept.tex
-#tex4ebook --version
-#tex4ebook --format epub --lua --loglevel info --config konf_ebok koncept.tex
+	tex4ebook --version
+	tex4ebook --format epub --lua --loglevel info --config konf_ebok koncept.tex
 
 matterep.pdf: koncept/matte.tex handouts/matterep.tex
 	-xelatex handouts/matterep.tex
