@@ -28,8 +28,6 @@ jobs:
         run: |
           sudo locale-gen sv_SE.UTF-8
           sudo localectl set-locale LANG="sv_SE.UTF-8"
-      - name: 'Kopiera hash'
-        run: echo ${{ github.sha }} | cut -c1-7 > SHA.txt
       - name: 'Kopiera info om repository'
         run: |
           echo $GITHUB_SHA | cut -c1-7 > SHA.tmp
