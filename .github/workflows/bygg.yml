@@ -21,7 +21,8 @@ jobs:
           sudo apt-get -q -y install texlive \
             texlive-lang-european texlive-science \
             texlive-fonts-recommended texlive-fonts-extra \
-            language-pack-sv
+            language-pack-sv \
+            latexmk
       - name: 'Sätt systemspråk till svenska'
         run: |
           sudo locale-gen sv_SE.UTF-8
