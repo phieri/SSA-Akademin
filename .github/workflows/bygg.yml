@@ -31,7 +31,7 @@ jobs:
           echo $GITHUB_SHA | cut -c1-7 > SHA.tmp
           echo $GITHUB_REF_NAME > branch.tmp
       - name: 'Bygg'
-        run: make koncept.pdf
+        run: make all
       - name: 'Beräkna checksumma'
         run: sha256sum koncept.pdf
       - name: 'Byt namn'
@@ -41,17 +41,12 @@ jobs:
           make images_linked
           make images_unlinked
           make TODOs
-      - name: 'Ladda upp artefakt'
+      - name: 'Spara artefakt'
         uses: actions/upload-artifact@v3
         with:
-          name: koncept-pdf
-          path: koncept*.pdf
-          retention-days: 31
-      - name: 'Ladda upp rapporter'
-        uses: actions/upload-artifact@v3
-        with:
-          name: rapporter
+          name: koncept.$(cat VERSION.txt)+b${{ github.run_id }}.$(cat SHA.tmp)
           path: |
             images_linked.txt
             images_unlinked.txt
             TODOs.txt
+            *.pdf
