@@ -74,7 +74,9 @@ jobs:
       - name: 'Installera Ubuntu-paket'
         run: |
           sudo apt-get --quiet update
-          sudo apt-get --quiet --assume-yes --verbose-versions install texlive \
+          sudo apt-get --quiet --assume-yes --verbose-versions install \
+            texlive \
+            texlive-extra-utils \
             texlive-lang-european texlive-science \
             texlive-fonts-recommended texlive-fonts-extra \
             language-pack-sv
