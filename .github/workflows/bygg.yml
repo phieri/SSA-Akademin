@@ -80,6 +80,7 @@ jobs:
             texlive-extra-utils \
             texlive-lang-european texlive-science \
             texlive-fonts-recommended texlive-fonts-extra \
+            tidy \
             language-pack-sv
       - name: 'Sätt systemspråk till svenska'
         run: |
