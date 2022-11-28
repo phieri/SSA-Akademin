@@ -102,7 +102,7 @@ SHA.tmp:
 
 koncept.log:
 koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
-	latexmk koncept.tex
+	latexmk -pdf koncept.tex
 
 koncept.epub:
 	tex4ebook --format epub3 --config epub-conf koncept.tex
