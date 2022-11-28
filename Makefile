@@ -101,7 +101,7 @@ SHA.tmp:
 	touch SHA.tmp
 
 koncept.log:
-koncept.pdf: $(REPO_FILES) koncept.aux koncept.bbl koncept.ind koncept.tex $(KONCEPT_FILES)
+koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
 	latexmk koncept.tex
 
 koncept.epub:
