@@ -102,13 +102,10 @@ SHA.tmp:
 
 koncept.log:
 koncept.pdf: $(REPO_FILES) koncept.aux koncept.bbl koncept.ind koncept.tex $(KONCEPT_FILES)
-	pdflatex -interaction=batchmode koncept.tex
-	pdflatex -interaction=batchmode koncept.tex
-	makeindex koncept.idx
-	pdflatex -interaction=nonstopmode koncept.tex
+	latexmk koncept.tex
 
 koncept.epub:
-	tex4ebook --format epub3--config epub-conf koncept.tex
+	tex4ebook --format epub3 --config epub-conf koncept.tex
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES)
 	tar cvzf koncept.tar.gz Makefile $(KONCEPT_FILES) images/*

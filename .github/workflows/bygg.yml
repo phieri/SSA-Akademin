@@ -12,7 +12,6 @@ on:
 
 jobs:
   bygg-pdf:
-    if: ${{ false }}  # debug
     name: 'Bygg bok'
     runs-on: ubuntu-22.04
     steps:
