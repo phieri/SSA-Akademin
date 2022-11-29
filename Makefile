@@ -81,31 +81,17 @@ KONCEPT_FILES = $(KONCEPT_CH01_FILES) $(KONCEPT_CH02_FILES) \
 
 REPO_FILES = SHA.tmp branch.tmp
 
-koncept.aux: koncept.tex $(KONCEPT_FILES)
-	- pdflatex -interaction=nonstopmode koncept.tex
-
-koncept.idx: koncept.tex koncept.aux $(KONCEPT_FILES)
-	- xelatex koncept.tex
-
-koncept.bbl: koncept.aux koncept.bib
-	pdflatex -interaction=nonstopmode koncept.tex
-	bibtex koncept.aux
-
-koncept.ind: koncept.idx
-	makeindex koncept.idx
-
 branch.tmp:
 	touch branch.tmp
 
 SHA.tmp:
 	touch SHA.tmp
 
-koncept.log:
 koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
 	latexmk -pdf koncept.tex
 
-koncept.epub:
-	tex4ebook --format epub3 --config epub-conf koncept.tex
+koncept.epub: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
+	tex4ebook --format epub3 --config epub-konf --loglevel warning koncept.tex "mathml"
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES)
 	tar cvzf koncept.tar.gz Makefile $(KONCEPT_FILES) images/*
