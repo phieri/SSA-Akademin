@@ -94,7 +94,9 @@ jobs:
       - name: 'Lägg till versionsinformation i filnamnet'
         run: mv koncept.epub koncept.$(cat VERSION.txt)+b${{ github.run_id }}.$(cat SHA.tmp).epub
       - name: 'Visa programversion'
-        run: echo "<pre>$(tex4ebook --version)</pre>" >> $GITHUB_STEP_SUMMARY
+        run: |
+          echo "<pre>$(sed -n '1p' koncept.log)</pre>" >> $GITHUB_STEP_SUMMARY
+          echo "<pre>$(tex4ebook --version)</pre>" >> $GITHUB_STEP_SUMMARY
       - name: 'Visa checksumma'
         run: echo "<pre>$(sha256sum *.epub)</pre>" >> $GITHUB_STEP_SUMMARY
       - name: 'Spara EPUB-artefakt'
