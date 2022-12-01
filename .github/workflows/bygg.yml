@@ -40,7 +40,7 @@ jobs:
         run: echo "<pre>$(sha256sum *.pdf)</pre>" >> $GITHUB_STEP_SUMMARY
       - name: 'Skapa rapporter'
         run: |
-          echo "<pre>$(sed -n '1p' koncept.log)</pre>" >> $GITHUB_STEP_SUMMARY
+          echo "<pre>&dollar; <kbd>sed -n '1p' koncept.log</kbd><br>$(sed -n '1p' koncept.log)</pre>" >> $GITHUB_STEP_SUMMARY
           echo "| Statistik om koden | Antal |" >> $GITHUB_STEP_SUMMARY
           echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
           make images_linked
@@ -95,8 +95,8 @@ jobs:
         run: mv koncept.epub koncept.$(cat VERSION.txt)+b${{ github.run_id }}.$(cat SHA.tmp).epub
       - name: 'Visa programversion'
         run: |
-          echo "<pre>$(sed -n '1p' koncept.log)</pre>" >> $GITHUB_STEP_SUMMARY
-          echo "<pre>$(tex4ebook --version)</pre>" >> $GITHUB_STEP_SUMMARY
+          echo "<pre>&dollar; <kbd>sed -n '1p' koncept.log</kbd><br>$(sed -n '1p' koncept.log)</pre>" >> $GITHUB_STEP_SUMMARY
+          echo "<pre>&dollar; <kbd>tex4ebook --version</kbd><br>$(tex4ebook --version)</pre>" >> $GITHUB_STEP_SUMMARY
       - name: 'Visa checksumma'
         run: echo "<pre>$(sha256sum *.epub)</pre>" >> $GITHUB_STEP_SUMMARY
       - name: 'Spara EPUB-artefakt'
