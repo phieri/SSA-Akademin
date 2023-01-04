@@ -19,7 +19,7 @@ jobs:
         run: |
           sudo apt-get --quiet update
           sudo apt-get --quiet --assume-yes --verbose-versions install \
-            texlive
+            chktex
       - name: 'Kör test'
         run: |
           chktex --inputfiles koncept.tex
