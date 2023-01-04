@@ -22,7 +22,7 @@ jobs:
             chktex
       - name: 'Kör test'
         run: |
-          chktex -I -nall koncept.tex
+          chktex -nall koncept.tex
   bygg-pdf:
     name: 'Bygg bok'
     needs: testa-latex
