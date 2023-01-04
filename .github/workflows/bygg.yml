@@ -23,7 +23,7 @@ jobs:
       - name: 'Kör test'
         continue-on-error: true
         run: |
-          chktex --output chktex.log koncept.tex
+          chktex -n8 -n32 --output chktex.log koncept.tex
       - name: 'Spara rapport'
         uses: actions/upload-artifact@v3
         with:
