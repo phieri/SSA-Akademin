@@ -11,6 +11,7 @@ on:
 jobs:
   testa-latex:
     name: 'Testa LaTeX'
+    continue-on-error: true
     runs-on: ubuntu-22.04
     steps:
       - name: 'Checka ut koden'
@@ -21,8 +22,7 @@ jobs:
           sudo apt-get --quiet --assume-yes --verbose-versions install \
             chktex
       - name: 'Kör test'
-        continue-on-error: true
-        run: chktex -n8 -n24 -n32 --output chktex.log koncept.tex
+        run: chktex -v1 -n8 -n24 -n32 --output chktex.log koncept.tex
         # n8  eftersom det är fel tankstreckslängd för svenska.
         # n24 eftersom KonCEPT har använder index vid styckets början, inte vid tecken.
         # n32 eftersom det är fel citationstecken för svenska.
