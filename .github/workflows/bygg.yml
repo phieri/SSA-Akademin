@@ -22,7 +22,12 @@ jobs:
             chktex
       - name: 'Kör test'
         run: |
-          chktex -nall koncept.tex
+          chktex -wall --output chktex.log koncept.tex
+      - name: 'Spara rapport'
+        uses: actions/upload-artifact@v3
+        with:
+          name: chktex-log
+          path: chktex.log
   bygg-pdf:
     name: 'Bygg bok'
     needs: testa-latex
