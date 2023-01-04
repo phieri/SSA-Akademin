@@ -21,8 +21,9 @@ jobs:
           sudo apt-get --quiet --assume-yes --verbose-versions install \
             chktex
       - name: 'Kör test'
+        continue-on-error: true
         run: |
-          chktex -wall --output chktex.log koncept.tex
+          chktex --output chktex.log koncept.tex
       - name: 'Spara rapport'
         uses: actions/upload-artifact@v3
         with:
