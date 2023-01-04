@@ -18,7 +18,7 @@ jobs:
       - name: 'Installera Ubuntu-paket'
         run: |
           sudo apt-get --quiet update
-          sudo apt-get --quiet --assume-yes --verbose-versions install
+          sudo apt-get --quiet --assume-yes --verbose-versions install \
             texlive
       - name: 'Kör test'
         run: |
