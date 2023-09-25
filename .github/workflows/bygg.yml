@@ -47,7 +47,9 @@ jobs:
       - name: 'Skriv ut fel'
         run: grep -F 'Error' chktex.log || echo 'chktex hittade inga fel.' >> $GITHUB_STEP_SUMMARY
       - name: 'Felstavningskontroll'
-        run: hunspell -d sv_SE -t koncept/*.tex
+        run: |
+            hunspell -D
+            hunspell -d sv_SE -t koncept/*.tex >> $GITHUB_STEP_SUMMARY
       - name: 'Spara rapporter'
         uses: actions/upload-artifact@v3
         with:
