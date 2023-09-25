@@ -23,8 +23,8 @@ jobs:
         run: |
           sudo apt-get -qq update
           sudo apt-get --quiet --assume-yes --verbose-versions install \
-            chktex
-            hunspell
+            chktex \
+            hunspell \
             hunspell-sv
       - name: 'Skapa rapporter'
         run: |
