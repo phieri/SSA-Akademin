@@ -1,0 +1,7 @@
+matrix:
+- name: KonCEPT
+  hunspell:
+    t: true
+    d: sv_SE
+  sources:
+  - koncept/*.tex
