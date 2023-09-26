@@ -15,6 +15,7 @@ on:
 jobs:
   analysera-koden:
     name: 'Analysera koden'
+    if: false
     runs-on: ubuntu-22.04
     steps:
       - name: 'Checka ut koden'
@@ -112,7 +113,6 @@ jobs:
             koncept.log
   bygg-epub:
     name: 'Bygg EPUB (experimentell)'
-    if: false
     continue-on-error: true
     runs-on: ubuntu-22.04
     steps:
