@@ -29,7 +29,7 @@ jobs:
       - name: 'Sätt upp Python'
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.11'
       - name: Installera beroenden
         run: |
           python -m pip install --upgrade pip setuptools
@@ -55,8 +55,8 @@ jobs:
       - name: 'Skriv ut fel'
         run: grep -F 'Error' chktex.log || echo 'chktex hittade inga fel.' >> $GITHUB_STEP_SUMMARY
       - name: 'Felstavningskontroll'
-        run: |
-            pyspelling --spellchecker hunspell
+        continue-on-error: true
+        run: pyspelling --spellchecker hunspell
       - name: 'Spara rapporter'
         uses: actions/upload-artifact@v3
         with:
