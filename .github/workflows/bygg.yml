@@ -26,6 +26,14 @@ jobs:
             chktex \
             hunspell \
             hunspell-sv
+      - name: 'Sätt upp Python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Installera beroenden
+        run: |
+          python -m pip install --upgrade pip setuptools
+          python -m pip install pyspelling
       - name: 'Skapa rapporter'
         run: |
           echo "| Statistik | Antal |" >> $GITHUB_STEP_SUMMARY
@@ -48,8 +56,7 @@ jobs:
         run: grep -F 'Error' chktex.log || echo 'chktex hittade inga fel.' >> $GITHUB_STEP_SUMMARY
       - name: 'Felstavningskontroll'
         run: |
-            hunspell -D
-            hunspell -d sv_SE -t koncept/*.tex >> $GITHUB_STEP_SUMMARY
+            pyspelling --spellchecker hunspell
       - name: 'Spara rapporter'
         uses: actions/upload-artifact@v3
         with:
