@@ -66,7 +66,8 @@ jobs:
       - name: 'Installera Ubuntu-paket'
         run: |
           sudo apt-get -qq update
-          sudo apt-get --quiet --assume-yes install \
+          sudo ln -s /usr/bin/eatmydata ./apt-get
+          sudo ./apt-get --quiet --assume-yes install \
             texlive \
             texlive-lang-european \
             texlive-science \
@@ -110,7 +111,7 @@ jobs:
       - name: 'Installera Ubuntu-paket'
         run: |
           sudo apt-get -qq update
-          sudo apt-get --quiet --assume-yes install \
+          sudo eatmydata -- apt-get --quiet --assume-yes install \
             texlive \
             texlive-extra-utils \
             texlive-lang-european \
