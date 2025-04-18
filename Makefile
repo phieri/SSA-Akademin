@@ -121,21 +121,24 @@ TODOs:  koncept.tex $(KONCEPT_FILES) koncept.log
 	- grep -F LaTeX koncept.log | grep -F Warning >> TODOs.txt
 
 # Skapar en rapport med länkade bilder.
-images_linked: koncept.tex $(KONCEPT_FILES)
+images_linked.txt: koncept.tex $(KONCEPT_FILES)
 	grep -F images ./**/*.tex | sed -e s/.*images/images/ | sed -e s/\}// | sort -u > images_linked.txt
 
-images_available:
+# Skapar filen images_available.txt som innehåller en sorterad lista över alla
+# PDF-filer i katalogen images och dess undermappar. Använder wildcard för att
+# hitta PDF-filer och sort -u för att ta bort eventuella dubbletter.
+images_available.txt: $(wildcard images/**/*.pdf)
 	ls images/**/*.pdf | sed -e s/\.pdf// | sort -u > images_available.txt
 
-images_unlinked: images_available images_linked
+images_unlinked.txt: images_available.txt images_linked.txt
 	diff images_available.txt images_linked.txt | grep \< | sed -e s/\<\ // > images_unlinked.txt
 
 # Skapar en rapport med kodrader som är längre än 80 tecken.
-long_lines: $(KONCEPT_FILES)
+long_lines.txt: $(KONCEPT_FILES)
 	grep '.\{81\}' koncept/*.tex > long_lines.txt
 
 # Skapar en rapport med kodrader som bara är kommentar.
-comment_lines: $(KONCEPT_FILES)
+comment_lines.txt: $(KONCEPT_FILES)
 	grep '^ *%' koncept/*.tex > comment_lines.txt
 
 # Genererade bilder
