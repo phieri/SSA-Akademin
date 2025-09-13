@@ -3,6 +3,8 @@ KonCEPT för amatörradiocertifikat is a Swedish amateur radio certification boo
 
 Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
 
+When performing a code review, respond in Swedish.
+
 ## Working Effectively
 - Bootstrap, build, and test the repository:
   - `sudo apt update`
