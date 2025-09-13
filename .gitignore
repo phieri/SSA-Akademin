@@ -200,3 +200,17 @@ images_unlinked.txt
 TODOs.txt
 long_lines.txt
 comment_lines.txt
+
+# EPUB build artifacts
+*.4ct
+*.4tc
+*.css
+*.idv
+*.lg
+*.ncx
+*.opf
+*.svg
+*.tmp
+*.xhtml
+*.xref
+koncept-epub3/
