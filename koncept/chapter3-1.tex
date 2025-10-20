@@ -262,7 +262,7 @@ gäller:
 \cdots \frac{1}{L_n}
 \]
 
-För två induktorer gäller:
+För två spolar gäller:
 
 \begin{align*}
   \frac{1}{L} &= \frac{1}{L_1} + \frac{1}{L_2} \quad \text{eller} \\
@@ -282,40 +282,40 @@ För två induktorer gäller:
 \]
 \end{exempelbox}
 
-\subsection{Magnetiskt kopplade induktorer}
-\index{induktor!magnetiskt kopplade}
-\index{magnetisk koppling!induktorer}
+\subsection{Magnetiskt kopplade spolar}
+\index{spole!magnetiskt kopplade}
+\index{magnetisk koppling!spolar}
 \index{ömsesidig induktans}
 
-\smallfig[0.35]{images/cropped_pdfs/bild_2_3-07.pdf}{Magnetiskt kopplade induktorer}{fig:BildII3-07}
+\smallfig[0.35]{images/cropped_pdfs/bild_2_3-07.pdf}{Magnetiskt kopplade spolar}{fig:BildII3-07}
 
-I praktiken anordnas ofta induktorer så, att deras respektive magnetfält kan
+I praktiken anordnas ofta spolar så, att deras respektive magnetfält kan
 återverka på varandra -- så kallad magnetisk koppling.
 
-En \emph{ömsesidig induktans} \(M\) uppstår i induktorerna på grund av denna
+En \emph{ömsesidig induktans} \(M\) uppstår i spolarna på grund av denna
 koppling.
 Den ömsesidiga induktansen ökar eller minskar det resulterande induktansvärdet
-beroende på om induktorernas magnetfält verkar med eller mot varandra.
+beroende på om spolarnas magnetfält verkar med eller mot varandra.
 
 Beräkningen av värdet på \(M\) är emellertid relativt komplicerad och behandlas
 ej här.
 I stället görs en förenklad framställning.
 
-Bild~\ssaref{fig:BildII3-07} visar seriekopplade induktorer, vars magnetfält
+Bild~\ssaref{fig:BildII3-07} visar seriekopplade spolar, vars magnetfält
 kopplar till varandra på olika sätt.
-''Pricken'' vid änden av induktorerna på bilden markerar magnetfältens inbördes
+''Pricken'' vid änden av spolarna på bilden markerar magnetfältens inbördes
 polarisering.
 
-\subsubsection{Magnetiskt kopplade induktorer i serie}
+\subsubsection{Magnetiskt kopplade spolar i serie}
 
 \textbf{Formel:}
 %
 \[L = L_1 +L_2 \pm 2M\]
 %
 \begin{exempelbox}
-Två induktorer har en induktans av 20 respektive \qty{10}{\micro\henry} och en
+Två spolar har en induktans av 20 respektive \qty{10}{\micro\henry} och en
 ömsesidig induktans av \qty{2}{\micro\henry}.
-Induktorerna är kopplade och placerade så att deras magnetfält samverkar.
+Spolarna är kopplade och placerade så att deras magnetfält samverkar.
 
 Vardera induktansen ökas därför med \(M = \qty{2}{\micro\henry}\).
 \[
@@ -328,9 +328,9 @@ Vardera induktansen ökas därför med \(M = \qty{2}{\micro\henry}\).
 \end{exempelbox}
 
 \begin{exempelbox}
-Två induktorer har en induktans av 20 respektive \qty{10}{\micro\henry} och en
+Två spolar har en induktans av 20 respektive \qty{10}{\micro\henry} och en
 ömsesidig induktans av \qty{2}{\micro\henry}.
-Induktorerna är kopplade och placerade så att deras magnetfält motverkar varandra.
+Spolarna är kopplade och placerade så att deras magnetfält motverkar varandra.
 Vardera induktansen minskas därför med \(M = \qty{2}{\micro\henry}\).
 \[
 \begin{array}{rcl}
@@ -341,19 +341,19 @@ Vardera induktansen minskas därför med \(M = \qty{2}{\micro\henry}\).
 \]
 \end{exempelbox}
 
-\subsubsection{Magnetiskt kopplade induktorer i parallell}
-När flera induktorer är parallellkopplade och placerade så att deras magnetiska
+\subsubsection{Magnetiskt kopplade spolar i parallell}
+När flera spolar är parallellkopplade och placerade så att deras magnetiska
 fält interagerar behöver man ta hänsyn till om de samverkar eller motverkar varandra.
-Mer läsning om induktorer och hur de påverkar varandra finns att läsa i
+Mer läsning om spolar och hur de påverkar varandra finns att läsa i
 \cite{letrafo}.
 
 \textbf{Formler:}
 
-Samverkande parallella induktorer
+Samverkande parallella spolar
 %
 \[L = \frac{L_1 \cdot L_2 - M^2}{L_1 + L_2 - 2M}\]
 %
-Motverkande parallella induktorer
+Motverkande parallella spolar
 %
 \[L = \frac{L_1 \cdot L_2 - M^2}{L_1 + L_2 + 2M}\]
 %
@@ -445,17 +445,17 @@ Exempel på beräkning av tidskonstanten:
   \end{align*}
 \end{enumerate}
 
-\subsection{In- och urkoppling av en induktor}
+\subsection{In- och urkoppling av en spole}
 
 \subsubsection{Inkoppling}
 
-\tallfig{images/cropped_pdfs/bild_2_3-10.pdf}{Inkoppling av en induktor}{fig:BildII3-10}
+\tallfig{images/cropped_pdfs/bild_2_3-10.pdf}{Inkoppling av en spole}{fig:BildII3-10}
 
-Bild~\ssaref{fig:BildII3-10} visar inkopplingen av en induktor.
-En induktor L i serie med en resistans R kopplas in över en likspänning U.
-Spänningen över induktorn minskar från \(U_{\it max}\) till 0.
+Bild~\ssaref{fig:BildII3-10} visar inkopplingen av en spole.
+En spole L i serie med en resistans R kopplas in över en likspänning U.
+Spänningen över spolen minskar från \(U_{\it max}\) till 0.
 
-Strömmen genom induktorn ökar efter inkopplingen exponentiellt från 0 till \(I_{\it max}\)
+Strömmen genom spolen ökar efter inkopplingen exponentiellt från 0 till \(I_{\it max}\)
 %
 \[i_L = I_{\it max} \cdot (1-e^{-t/\tau} )\]
 %
@@ -480,16 +480,16 @@ s\ [\text{sek}] \quad
 \]
 
 Efter en tid av \(t = 1\tau\) från inkopplingsögonblicket har strömmen genom
-induktorn ökat från noll till \qty{63}{\percent} av \(I_{\it max}\) och
-spänningen över induktorn minskat till \qty{37}{\percent} av maxvärdet.
+spolen ökat från noll till \qty{63}{\percent} av \(I_{\it max}\) och
+spänningen över spolen minskat till \qty{37}{\percent} av maxvärdet.
 
 
 \subsubsection{Urkoppling}
 \label{induktor_urkoppling}
 
-Spänningskällan kopplas bort från samma induktor som ovan.
-En resistor är inkopplad över induktorn.
-Energin i induktorn avleds genom resistorn som en ström med motsatt riktning än
+Spänningskällan kopplas bort från samma spole som ovan.
+En resistor är inkopplad över spolen.
+Energin i spolen avleds genom resistorn som en ström med motsatt riktning än
 vid inkopplingen.
 Strömmen är vid urkopplingstillfället \(I_{\it max} = i_L\) och minskar därefter
 exponentiellt
@@ -498,7 +498,7 @@ exponentiellt
 \noindent där
 %\begin{tabular}{lp{0.42\textwidth}}
 %  \raggedright
-  \(i_L\) är strömmen genom induktorn efter en given ur\-kop\-p\-li\-ngs\-tid, 
+  \(i_L\) är strömmen genom spolen efter en given ur\-kop\-p\-li\-ngs\-tid, 
   \(I_{\it max}\) är strömmen i urkopplingsögonblicket,
   \(e\) är basen för den naturliga logarithmen, och\
   \(t\) är tiden efter urkopplingsögonblicket.
@@ -508,21 +508,21 @@ exponentiellt
 
 \noindent
 Efter en tid av \(t = 1\tau\) från urkopplingsögonblicket har strömmen genom
-induktorn minskat till \qty{37}{\percent} av maxvärdet.
+spolen minskat till \qty{37}{\percent} av maxvärdet.
 
 Teoretiskt kan spänningarna och strömmarna aldrig nå ett noll- eller maxvärde,
 men för praktiskt bruk anses detta inträffa efter en tid av minst \(5\tau\).
 
-All den energi som lagras i en induktor finns i dess magnetfält.
+All den energi som lagras i en spole finns i dess magnetfält.
 När strömmen bryts eller minskas så återgår energin omedelbart till kretsen.
-I en induktor kan det således inte finnas någon kvarstående energi, vilket
+I en spole kan det således inte finnas någon kvarstående energi, vilket
 det däremot kan göra i en kondensator.
 
-Under den tid som magnetfältet i en induktor avvecklas eller byggs upp, så
+Under den tid som magnetfältet i en spole avvecklas eller byggs upp, så
 induceras en motspänning i den.
-Denna spänning är högre än den som finns över induktorn innan strömmen bryts
+Denna spänning är högre än den som finns över spolen innan strömmen bryts
 eller ändras och är proportionell mot den hastighet som ändringen har.
-När en strömkrets med induktor bryts är det vanligt att det i brytögonblicket
+När en strömkrets med spole bryts är det vanligt att det i brytögonblicket
 bildas en gnista eller ljusbåge över brytarens kontakter.
 
 Om induktansen är stor och kretsströmmen hög ska en stor mängd energi frigöras
@@ -530,7 +530,7 @@ på mycket kort tid.
 Det är därför inte ovanligt att brytarkontakter bränns eller smälter.
 I likströmskretsar kan gnistan eller ljusbågen minskas eller undertryckas genom
 att en kondensator i serie med en resistor kopplas över kontaktstället.
-Kondensatorn fångar upp en del av energin i induktorn och resistorn minskar
+Kondensatorn fångar upp en del av energin i spolen och resistorn minskar
 hastighetsändringen.
 
 \subsection{Växelströmskretsar}
@@ -539,7 +539,7 @@ hastighetsändringen.
 \subsubsection{Komponentegenskaper vid växelström}
 
 Inom radiotekniken används mycket ofta resonanskretsar (benämns även
-svängningskretsar) bestående av kondensatorer och induktorer, som är kopplade i
+svängningskretsar) bestående av kondensatorer och spolar, som är kopplade i
 serie eller parallellt med varandra.
 När resonanskretsens egenfrekvens sätts lika med frekvensen på den signal som
 tillförs kretsen, så får kretsen särskilda egenskaper som används på olika sätt.
@@ -568,18 +568,18 @@ samtidigt, blir produkten alltid positiv.
 Det betyder att den effekt som utvecklas pulserar två gånger per period mellan
 ett noll- och maxvärde.
 
-\textbf{Fall b:} Förloppen med en induktor L.
+\textbf{Fall b:} Förloppen med en spole L.
 
-I en induktor är utvecklingen av ström och spänning inte samtidig.
+I en spole är utvecklingen av ström och spänning inte samtidig.
 Vid inkopplingen stiger spänningen genast till maxvärdet medan strömmen stiger
-långsammare och bygger under tiden upp ett magnetfält i induktorn och omkring
+långsammare och bygger under tiden upp ett magnetfält i spolen och omkring
 övriga ledare i kretsen.
 
 Strömmen fördröjs alltså i förhållande till spänningen.
 Eftersom kurvornas max- och nollvärden inträffar vid olika tidpunkter heter
 det att de är \emph{ur fas} eller \emph{fasförskjutna}.
 
-En växelström genom en ideal induktor är förskjuten \ang{90} \emph{efter}
+En växelström genom en ideal spole är förskjuten \ang{90} \emph{efter}
 spänningen.
 Strömmen når toppvärdet vid tidpunkten \ang{90} av perioden, när spänningen nått
 ner till noll.
@@ -588,17 +588,17 @@ Först vid \ang{180}, när spänningen har nått maxvärdet åt andra hållet, �
 också strömmen riktning och bygger upp ett nytt magnetfält med motsatt
 polaritet.
 
-Effekt överförs från strömkällan till induktorn när ström och spänning har
+Effekt överförs från strömkällan till spolen när ström och spänning har
 samma riktning.
-När ström och spänning har olika riktning försöker induktorn i stället
+När ström och spänning har olika riktning försöker spolen i stället
 ''ladda'' strömkällan med energi från sitt kraftfält.
-Effekt pendlar mellan strömkällan och induktorn, varvid effekten i
+Effekt pendlar mellan strömkällan och spolen, varvid effekten i
 ena riktningen är lika stor som i andra riktningen.
 
 Sett över en hel period upphäver därför dessa effekter varandra.
-Följden blir att en ideal induktor, i motsats till en resistor, inte förbrukar
+Följden blir att en ideal spole, i motsats till en resistor, inte förbrukar
 någon aktiv effekt.
-Man säger att en reaktans, här en induktor, arbetar med reaktiv effekt.
+Man säger att en reaktans, här en spole, arbetar med reaktiv effekt.
 
 I praktiken har kretsen även en viss resistans.
 Därför sätts reaktansens \ang{90} fasförskjutna ström samman med resistansens
@@ -623,7 +623,7 @@ När spänningen minskar sjunker strömmen och tar energi ur det elektriska fäl
 Sedan strömmen passerat noll vid \ang{180} eller \ang{0}/\ang{360} bygger den
 upp ett nytt elektriskt fält med motsatt polaritet.
 
-Liksom med en induktor överförs effekt från strömkällan till kondensatorn när
+Liksom med en spole överförs effekt från strömkällan till kondensatorn när
 ström och spänning har samma riktning.
 När ström och spänning har olika riktning försöker kondensatorn i stället
 ''ladda'' strömkällan med energi.
@@ -642,7 +642,7 @@ resistansens \ang{0} fasförskjutna ström.
 Resultatet blir en spänning som är mindre än \ang{90} ur fas och det förbrukas
 då en viss aktiv effekt i resistansen.
 Som framgår av bilden blir variationerna i tiden de omvända med kondensator
-jämfört med induktor.
+jämfört med spole.
 
 \subsection{Impedans}
 \harecsection{\harec{a}{3.1.3}{3.1.3c}, \harec{a}{3.2.2}{3.2.2}}
@@ -666,7 +666,7 @@ Hittills har storheterna resistans, induktans och kapacitans behandlats var för
 sig, men i praktiken förekommer de alltid tillsammans och kallas impedans.
 
 Resistansen är i princip oförändrad vid ström- eller spänningsändringar.
-Men när strömmen genom en ledare eller induktor, liksom spänningen över en
+Men när strömmen genom en ledare eller spole, liksom spänningen över en
 kondensator ändras, tillkommer en reaktans som motverkar förändringarna.
 
 Reaktansen kan från fall till fall vara kapacitiv eller induktiv och ingår i
@@ -766,7 +766,7 @@ I formler betecknas impedansen med bokstaven \(Z\) och reaktansen med bokstaven
 I båda fallen är enheten ohm [\unit{\ohm}].
 
 Vid beräkning av impedans är Ohms lag inte direkt tillämplig, eftersom
-reaktansen i en induktor eller kondensator uppträder annorlunda i tiden vid
+reaktansen i en spole eller kondensator uppträder annorlunda i tiden vid
 ström- respektive spänningsändring än vad resistansen gör.
 
 Om impedansen \(Z\) sätts in i Ohms lag fås följande samband, som ofta kallas
@@ -828,7 +828,7 @@ Spänningsvektorn \(U\) används därför som så kallad riktfas.
 Riktfasen ritas på bilden åt höger.
 Strömmen \(I_C\) genom kondensatorn är fasförskjuten \ang{90} före \(U\) och
 ritas rakt uppåt (vektorerna roterar moturs).
-Strömmen \(I_L\) genom induktorn är fasförskjuten \ang{90} efter \(U\) och
+Strömmen \(I_L\) genom spolen är fasförskjuten \ang{90} efter \(U\) och
 ritas rakt nedåt.
 Den resulterande reaktiva strömmen genom kretsen är skillnaden mellan
 strömmarna \(I_C\) och \(I_L\), vilka är motriktade varandra.
@@ -899,7 +899,7 @@ Om serieresistansen \(R\) varit med skulle ett spänningsfall \(U_R\) varit
 inritat i samma riktning som \(I\) (i fas med \(I\)).
 Spänningen över reaktansen \(X_C\) ligger \ang{90} efter \(I\) och ritas
 rakt neråt (vektorerna roterar moturs).
-Spänningen över reaktansen \(X_L\) (induktorn) ligger \ang{90} före \(I\) och
+Spänningen över reaktansen \(X_L\) (spolen) ligger \ang{90} före \(I\) och
 ritas rakt uppåt.
 \end{description}
 
@@ -914,7 +914,7 @@ ritas rakt uppåt.
 \smallfig{images/cropped_pdfs/bild_2_3-17.pdf}{Svängningskrets}{fig:BildII3-17}
 
 Bild~\ssaref{fig:BildII3-17} visar en svängningskrets som består av en
-kondensator och en induktor med förskjutbar järnkärna.
+kondensator och en spole med förskjutbar järnkärna.
 En ändring av kärnans tvärsnitt ändrar den magnetiska ledningsförmågan och
 därmed induktansen varför även reaktansen \(X_L\) ändras.
 
@@ -925,7 +925,7 @@ Tre fall undersöks:
 \item \(X_L > X_c\) LA1 och LA2 lyser upp, en kraftig ström flyter genom
   kondensatorn,
 \item \(X_L < X_C\) LA1 och LA3 lyser upp, en kraftig ström flyter genom
-  induktorn,
+  spolen,
 \item \(X_L= X_C\) LA2 och LA3 lyser upp, LA1 lyser inte, en kraftig ström
   flyter i kretsen men inte i tilledningarna.
 
@@ -1081,13 +1081,13 @@ Energiförlusten yttrar sig som värmeutveckling.
 Q = 2\pi \frac{\text{lagrad energi i kretsen}}{\text{energiförlusten per period}}
 \]
 %
-Energiförluster uppstår både i kretsens kondensator och induktor, men moderna
-kondensatorer har så låga förluster att induktorn ensam kan anses bestämma
+Energiförluster uppstår både i kretsens kondensator och spole, men moderna
+kondensatorer har så låga förluster att spolen ensam kan anses bestämma
 Q-värdet, åtminstone i kortvågsområdet.
 
 En växelspänning \(U_1\) ansluts till en parallellkrets.
 I resonansfallet uppträder då en spänning \(U_2\) över kondensatorn och
-induktorn.
+spolen.
 
 \(U_2\) är mycket större än \(U_1\).
 Ju högre \(Q\) är i kretsen desto större är förhållandet mellan \(U_2\) och
