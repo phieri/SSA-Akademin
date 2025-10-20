@@ -1,0 +1,110 @@
+\section{Exempelfiler}
+\label{appendix:exempelfiler}
+\index{exempelfiler}
+\index{GNU Radio}
+\index{SPICE}
+
+I den här boken finns bifogade exempel- och övningsfiler som kan användas för
+att experimentera med radiosystem och elektroniska kretsar.
+Filerna är inbäddade i PDF:en och kan hämtas ut för användning med olika
+simuleringsprogram.
+
+\subsection{Hur man använder bifogade filer}
+
+De bifogade filerna kan öppnas direkt från PDF-läsaren om den stöder bifogade
+filer (t.ex. Adobe Acrobat Reader, Evince eller Okular).
+Leta efter en symbol som ser ut som ett gem \attachfile{} vid filnamnet.
+Du kan också exportera alla bifogade filer från PDF:en med följande kommando:
+
+\texttt{pdftk koncept.pdf unpack\_files output examples/}
+
+\subsection{GNU Radio-exempel}
+\index{GNU Radio}
+
+GNU Radio är en gratis programvara med öppen källkod för att simulera och
+experimentera med radiosystem.
+Den kan användas för att visualisera och förstå olika modulationsformer som
+beskrivs i kapitel~\ref{ch:modulation}.
+
+\subsubsection{Tillgängliga GNU Radio-exempel}
+
+\textbf{Amplitudmodulation (AM):}
+\attachfile[description={GNU Radio exempel för AM-modulation}]{examples/gnuradio/am_modulation.grc}
+\texttt{am\_modulation.grc}
+
+Detta exempel demonstrerar amplitudmodulation där en lågfrekvent signal
+modulerar amplituden på en högfrekvent bärvåg.
+Exemplet visar både tidsdomän och frekvensdomän.
+
+\textbf{Frekvensmodulation (FM):}
+\attachfile[description={GNU Radio exempel för FM-modulation}]{examples/gnuradio/fm_modulation.grc}
+\texttt{fm\_modulation.grc}
+
+Detta exempel demonstrerar frekvensmodulation där den modulerande signalen
+varierar frekvensen på bärvågen.
+Exemplet visar både tidsdomän och frekvensdomän.
+
+\subsubsection{Installation av GNU Radio}
+
+GNU Radio finns tillgängligt för Linux, Windows och macOS.
+Ladda ner från \url{https://www.gnuradio.org} och följ installationsinstruktionerna.
+
+\subsection{SPICE-exempel}
+\index{SPICE}
+\index{LTspice}
+\index{ngspice}
+
+SPICE (Simulation Program with Integrated Circuit Emphasis) är en
+branschstandard för simulering av elektroniska kretsar.
+Det finns flera gratis SPICE-kompatibla program:
+
+\begin{itemize}
+\item \textbf{LTspice} -- Gratis från Analog Devices (Windows/macOS)
+\item \textbf{ngspice} -- Öppen källkod (Linux/Windows/macOS)
+\item \textbf{iCircuit} -- Mobil app för iOS och Android
+\end{itemize}
+
+\subsubsection{Tillgängliga SPICE-exempel}
+
+\textbf{Spänningsdelare:}
+\attachfile[description={SPICE-exempel för spänningsdelare}]{examples/spice/voltage_divider.cir}
+\texttt{voltage\_divider.cir}
+
+En enkel spänningsdelare med två resistorer som demonstrerar Ohms lag och
+spänningsfördelning, beskrivet i kapitel~\ref{ch:ellaera}.
+
+\textbf{RC-lågpassfilter:}
+\attachfile[description={SPICE-exempel för RC-lågpassfilter}]{examples/spice/rc_lowpass_filter.cir}
+\texttt{rc\_lowpass\_filter.cir}
+
+Ett enkelt första ordningens lågpassfilter som visar hur resistorer och
+kondensatorer kan användas för att filtrera signaler.
+Se kapitel~\ref{ch:komponenter} och~\ref{ch:kretsar} för mer information.
+
+\textbf{LC-resonanskrets:}
+\attachfile[description={SPICE-exempel för LC-resonanskrets}]{examples/spice/lc_resonant_circuit.cir}
+\texttt{lc\_resonant\_circuit.cir}
+
+En parallell LC-resonanskrets som demonstrerar resonansfenomenet vid en
+specifik frekvens, beskrivet i kapitel~\ref{ch:kretsar}.
+
+\subsection{Experimentera själv}
+
+Dessa exempel är en utgångspunkt för att lära sig mer om radioteknik och
+elektronik.
+Prova att:
+
+\begin{itemize}
+\item Ändra komponentvärden och observera hur resultatet påverkas
+\item Kombinera olika kretsar för att skapa mer komplexa system
+\item Mäta och jämföra simuleringsresultat med verkliga mätningar
+\item Skapa egna exempel baserade på det du lärt dig i boken
+\end{itemize}
+
+\subsection{Licens}
+
+Alla exempelfiler är licensierade under Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), samma licens som
+huvudboken.
+Du får fritt kopiera, modifiera och dela filerna så länge du anger källan och
+delar dina ändringar under samma licens.
