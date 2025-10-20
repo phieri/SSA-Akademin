@@ -1,9 +1,11 @@
 \mediumfig{images/cropped_pdfs/bild_2_2-03a.pdf}{Försök 1 med induktion}{fig:BildII2-3a}
 \smallfig{images/cropped_pdfs/bild_2_2-03b.pdf}{Försök 2 med induktion}{fig:BildII2-3b}
 
-\section{Induktorn}
+\section{Spolen}
 \harecsection{\harec{a}{2.3}{2.3}}
+\index{spole}
 \index{induktor}
+\index{induktansspole}
 
 \subsection{Allmänt}
 \label{induktor_allmänt}
@@ -13,6 +15,18 @@ Så snart strömmens styrka eller riktning ändras uppstår en motsvarande så k
 elektromotorisk kraft (EMK) som motverkar ändringen.
 Kraften finns i magnetfältet i form av lagrad magnetisk energi.
 
+\subsubsection{Terminologi}
+
+En komponent som uppvisar induktans kallas i dagligt tal för \emph{spole}
+(eng. \emph{coil}), \emph{induktor} (eng. \emph{inductor}) eller
+\emph{induktansspole}.
+Dessa termer används ofta synonymt i praktiken.
+En \emph{drossel} (eng. \emph{choke}) är en speciell typ av spole med uppgift
+att begränsa växelström.
+I denna bok använder vi genomgående termen \emph{spole} för komponenten som
+uppvisar induktans, men läsaren bör känna till att andra termer också
+förekommer i litteraturen.
+
 
 \subsection{Självinduktion -- induktans}
 \harecsection{\harec{a}{2.3.1}{2.3.1}}
@@ -20,7 +34,6 @@ Kraften finns i magnetfältet i form av lagrad magnetisk energi.
 \index{självinduktion}
 \index{elektromotorisk kraft (EMK)}
 \index{EMK}
-\index{induktor}
 
 Magnetfältets förmåga att alstra en motverkande EMK kallas
 \emph{självinduktion} (eng. \emph{self inductance}) eller
@@ -33,12 +46,11 @@ en ström att flyta genom ledaren på grund av den EMK (spänning) som alstras.
 Varje ändring av strömmen motverkas av det magnetfält som strömmen själv
 alstrar.
 
-När det uppstår självinduktion i en ledare kallas ledaren \emph{induktor}
-(eng. \emph{inductor}).
+När det uppstår självinduktion i en ledare kan ledaren uppvisa induktans.
 Självinduktionen är jämnt utbredd över ledarens hela längd. När ett större
 induktansvärde behövs på något särskilt ställe i strömkretsen, kan ledarens
 längd ökas just där och lindas upp till en spole med lämplig form.
-Hela spolen kallas då för induktor.
+Hela komponenten kallas då för spole.
 
 När ett motverkande magnetiskt fält alstras omkring en ledare genom att strömmen
 i den ändras, påverkas kretsens egenskaper och därmed dess utformning på olika
@@ -56,24 +68,24 @@ en strömkrets.
 
 \paragraph{Försök 1:}
 I bild~\ssaref{fig:BildII2-3a} är ett känsligt vridspoleinstrument kopplat
-till en induktor.
+till en spole.
 Instrumentet bör ha noll på skalans mitt, så att strömriktningen syns.
 En permanentmagnet används för att visa att självinduktion uppstår när
-magneten förs fram och tillbaka genom induktorn.
+magneten förs fram och tillbaka genom spolen.
 
 Instrumentet ger utslag när magneten är i rörelse.
 Utslaget blir större vid snabbare hastighetsändring.
-Utslagsriktningen växlar när magneten förs in i respektive dras ut ur induktorn
+Utslagsriktningen växlar när magneten förs in i respektive dras ut ur spolen
 -- det uppstår en växelström.
 
-En växelspänning uppstår över induktorn även när den ingår i en strömkrets som
+En växelspänning uppstår över spolen även när den ingår i en strömkrets som
 sluts och bryts -- alltså utan en magnet som rör sig.
 
 \paragraph{Försök 2:}
 I bild~\ssaref{fig:BildII2-3b} har permanentmagneten bytts mot ännu en
-induktor.
-Utöver den första induktorn, som vi nu kallar sekundärlindning, kallar vi den
-nya induktorn för primärlindning.
+spole.
+Utöver den första spolen, som vi nu kallar sekundärlindning, kallar vi den
+nya spolen för primärlindning.
 
 När vi släpper ström genom primärlindningen alstrar den ett magnetfält.
 Först är strömmen noll för att sedan ändras till ett högt värde och därefter
@@ -99,13 +111,13 @@ växlar 100 gånger per sekund.
 Det uppstår alltså en växelspänning över sekundärlindningen och om denna ingår i
 en sluten strömkrets uppstår det en motsvarande växelström.
 
-\mediumfig{images/cropped_pdfs/bild_2_2-04.pdf}{Schemasymboler för induktorer}{fig:BildII2-4}
+\mediumfig{images/cropped_pdfs/bild_2_2-04.pdf}{Schemasymboler för spolar}{fig:BildII2-4}
 
 \subsection{Olika utföranden}
 \index{drossel}
 
-Bild~\ssaref{fig:BildII2-4} visar schemasymboler för ett antal vanliga induktorer.
-Utöver dessa finns elektromagneter, drosslar, induktorer för resonanskretsar,
+Bild~\ssaref{fig:BildII2-4} visar schemasymboler för ett antal vanliga spolar.
+Utöver dessa finns elektromagneter, drosslar, spolar för resonanskretsar,
 ramantenner och så vidare.
 
 En drossel (eng. \emph{choke}) är en induktans, ofta lindad kring en 
@@ -120,7 +132,7 @@ kärna, med uppgift att begränsa strömmen i en ledare.
 \label{enheten_henry}
 
 Måttenheten för självinduktion är \emph{henry} (\unit{\henry}).
-1~henry (\qty{1}{\henry}) är självinduktionen i en induktor som alstrar en
+1~henry (\qty{1}{\henry}) är självinduktionen i en spole som alstrar en
 motspänning av 1~volt vid en strömändring av 1~ampere under 1~sekund.
 I formler betecknas induktans med symbolen L.
 Sambandet är:
@@ -149,17 +161,17 @@ Se bilaga~\ssaref{app:mattenheter}.
 \index{symbol!\(\mu_0\) permeabilitetskonstanten}
 \index{symbol!\(\mu_r\) relativa permeabiliten}
 
-Induktansen beror på induktorns mekaniska dimensioner, antalet lindningsvarv och
+Induktansen beror på spolens mekaniska dimensioner, antalet lindningsvarv och
 materialet i kärnan.
 
-Induktansen i en cylindrisk induktor är proportionell mot tvärsnittsytan, omvänt
+Induktansen i en cylindrisk spole är proportionell mot tvärsnittsytan, omvänt
 proportionell mot längden och proportionell mot kvadraten på lindningsvarvtalet.
 
-Induktansen ökar om induktorn förses med en kärna av järn och minskar med en
+Induktansen ökar om spolen förses med en kärna av järn och minskar med en
 kärna av omagnetisk, ledande metall, till exempel koppar, mässing eller
 aluminium.
 
-Precis som för kondensatorn har materialet i en induktors kärna betydelse,
+Precis som för kondensatorn har materialet i en spoles kärna betydelse,
 då dess \emph{permeabilitet} kan anta olika värden. Den absoluta permeabiliteten
 \(\mu\) brukar delas upp i permeabiliteten för vakuum \(\mu_0\) och den
 \emph{relativa permeabiliteten} \(\mu_r\) som gives av
@@ -179,14 +191,14 @@ Permeabiliteten för vakuum är definierad som
 \label{induktiv_reaktans} 
 
 Till skillnad från när en resistor ansluts till en spänning, så blir
-strömökningen i en induktor fördröjd. Orsaken är att en induktor inte bara har
+strömökningen i en spole fördröjd. Orsaken är att en spole inte bara har
 en resistans, vilken ju inte påverkas av strömvariationer, utan har även en
 \emph{induktiv reaktans} (eng. \emph{inductive reactance}) \(X_L\).
 Ordet reaktans kommer från latinets re (åter) agere (verka).
 
 \emph{Reaktans} -- växelströmsmotstånd eller skenbart motstånd -- uppträder så
-länge som strömmen genom induktorn ändras.
-En induktor gör således också motstånd mot varje strömändring och detta motstånd
+länge som strömmen genom spolen ändras.
+En spole gör således också motstånd mot varje strömändring och detta motstånd
 ökar med ökande ändringshastighet.
 
 En fullbordad pendling i en växelström kan ses som ett varv i en cirkel --
@@ -197,13 +209,13 @@ En period motsvarar omkretsen i en cirkel med radien r, där omkretsen är
 pendlingen en frekvens [f] av 1~hertz [Hz].
 Vid 50 växlingar per sekund har pendlingen en frekvens av \qty{50}{\hertz}.
 
-Den \emph{Induktiva reaktansen \(X_L\)} -- växelströmsmotståndet i en induktor
+Den \emph{Induktiva reaktansen \(X_L\)} -- växelströmsmotståndet i en spole
 -- är en funktion av strömmens så kallade vinkelhastighet
 \(\omega = 2 \cdot \pi  \cdot f\) och av induktansen L.
 
 Den induktiva reaktansen är proportionell mot strömmens frekvens och mot
-induktorns induktansvärde.
-Inga förluster uppstår i en ideal induktor, det vill säga en induktor som
+spolens induktansvärde.
+Inga förluster uppstår i en ideal spole, det vill säga en spole som
 teoretiskt saknar resistans.
 Sambandet är:
 %%
@@ -226,29 +238,29 @@ Sambandet är:
 \[X_L = 2\pi fL = 2\pi  \cdot 5 \cdot 10^3 \cdot 1 = \qty{31400}{\ohm}\]
 \end{exempelbox}
 
-\subsection{Fasförskjutning mellan spänning och ström i en induktor}
+\subsection{Fasförskjutning mellan spänning och ström i en spole}
 \harecsection{\harec{a}{2.3.5}{2.3.5}}
-\index{induktor!fasförskjutning}
+\index{spole!fasförskjutning}
 
 Med fasförskjutning menas den tidsmässiga förskjutningen mellan ström- och
 spänningsförlopp.
-Strömmen genom en induktor når inte sitt toppvärde samtidigt
+Strömmen genom en spole når inte sitt toppvärde samtidigt
 som spänningen över den.
-Orsaken är växlingarna mellan elektrisk och magnetisk energi i induktorn.
+Orsaken är växlingarna mellan elektrisk och magnetisk energi i spolen.
 Detta illustreras i bild~\ssaref{fig:BildII3-11}.
 
-I en ideal induktor är spänningen fasförskjuten \ang{90} före strömmen.
+I en ideal spole är spänningen fasförskjuten \ang{90} före strömmen.
 I praktiken är dock förskjutningen något mindre än \ang{90} på grund av
-resistansen i induktorn.
+resistansen i spolen.
 
 \subsection{Q-faktor -- godhetstal}
 \harecsection{\harec{a}{2.3.6}{2.3.6}}
-\index{Q-faktor!induktor}
+\index{Q-faktor!spole}
 
 \emph{Q-faktorn} kan avse två olika saker, som inte ska förväxlas.
 Dessa är Q-faktorn för en komponent respektive Q-faktorn för en hel strömkrets.
 
-Q-faktorn för en induktor är kvoten av dess reaktans och dess serieresistans.
+Q-faktorn för en spole är kvoten av dess reaktans och dess serieresistans.
 
 \[Q_{\text{komponent}} = \dfrac{X_{\text{komponent}}}{R_{\text{komponent}}}\]
 
@@ -285,17 +297,17 @@ Utöver frekvensen påverkas yteffekten av ledarmaterialets elektriska och
 magnetiska ledningsförmåga.
 För att få låg resistans i ledare för högfrekvent ström är det viktigt att
 omkretsen är stor och att materialskiktet vid ytan har hög ledningsförmåga.
-Därför är induktorerna i sändarslutsteg ofta försilvrade och består av rör med
+Därför är spolarna i sändarslutsteg ofta försilvrade och består av rör med
 stor diameter eller av breda band.
 
 \subsection{Temperaturkoefficient}
 
 Liksom med resistorer påverkas även induktansen av temperaturen.
 Att sambandet mellan induktans och temperatur är viktigt förstås av att
-temperaturkoefficienten i den frekvensbestämmande induktorn i en oscillatorkrets
+temperaturkoefficienten i den frekvensbestämmande spolen i en oscillatorkrets
 påverkar frekvensstabiliteten.
 
-Eftersom metallen koppar utvidgar sig vid temperaturökning och induktorns
+Eftersom metallen koppar utvidgar sig vid temperaturökning och spolens
 tvärsnittsyta då blir större, är temperaturkoefficienten vanligen positiv.
 Temperaturkoefficienten \(\alpha_L\) anger induktansändringen per grad
 temperaturändring.
@@ -308,12 +320,12 @@ kelvin.
 Kelvin [K] är den normerade måttenheten för absolut temperatur.
 En ändring med \qty{1}{\kelvin} motsvarar en ändring med \qty{1}{\degreeCelsius}.
 
-Induktorer kan innehålla kärnor av någon metallegering vars egenskaper också är
+Spolar kan innehålla kärnor av någon metallegering vars egenskaper också är
 temperaturberoende.
 
-I praktiken kan man knappast påverka temperaturkoefficienten i en induktor.
+I praktiken kan man knappast påverka temperaturkoefficienten i en spole.
 Eftersom en resonanskrets för det mesta även innehåller kondensatorer kan
-man kompensera en positiv temperaturkoefficient i induktorn med en negativ
+man kompensera en positiv temperaturkoefficient i spolen med en negativ
 temperaturkoefficient i en kondensator.
 
 \subsection{Förluster i kärnmaterial}
@@ -323,4 +335,4 @@ När ett magnetiskt växelfält passerar ett kärnmaterial kommer atomerna (som
 fältets frekvens.
 Då uppstår virvelströmmar, så kallade järnförluster, som dels påverkar
 materialets ledningsförmåga och som dels höjer temperaturen i kärnan och därmed
-i hela induktorn.
+i hela spolen.
