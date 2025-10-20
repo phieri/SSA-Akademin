@@ -23,6 +23,89 @@ Exempel är så kallade raka sändare med samma frekvens genom hela sändaren,
 superheterodynsändare där frekvensblandning används,
 frekvensmultiplicerande sändare etc.
 
+\subsubsection{Vanliga blockschemasymboler}
+\index{blockschemasymboler}
+\label{blockschemasymboler}
+
+För att illustrera funktionen hos olika block i ett blockschema används
+standardiserade symboler.
+Det finns ingen absolut standard för alla symboler, men vissa symboler är
+vanligt förekommande i radioteknisk litteratur och används i både
+internationella och svenska amatörradioprov.
+Symbolvalet kan variera något mellan olika källor, men huvudprincipen är
+att varje symbol ska tydligt visa funktionen hos det aktuella blocket.
+
+Nedan presenteras de vanligaste blockschemasymbolerna för de funktioner som
+förekommer i sändare och mottagare enligt CEPT T/R 61-02:
+
+\paragraph{Oscillator}
+En \emph{oscillator} (eng. \emph{oscillator}) representeras vanligen som en
+box med en vågsymbol eller sinuskurva inuti, ofta med frekvensangivelse.
+En variabel frekvensoscillator (VFO) kan ha en pil eller variabelmarkering.
+
+\paragraph{Blandare}
+En \emph{blandare} (eng. \emph{mixer}) representeras ofta som en cirkel eller
+box med ett multiplikationstecken (×) eller två pilar som pekar mot varandra.
+Blandaren tar två insignaler och producerar summa- och skillnadsfrekvenser.
+
+\paragraph{Förstärkare}
+En \emph{förstärkare} (eng. \emph{amplifier}) representeras vanligen som en
+triangel med spetsen åt höger, där signalen går in på bred sida och ut genom
+spetsen.
+Detta gäller för HF-förstärkare, mellanfrekvensförstärkare,
+LF-förstärkare och effektförstärkare.
+
+\paragraph{Filter}
+Ett \emph{filter} (eng. \emph{filter}) representeras som en box med
+filtrets typ angiven, till exempel BP (bandpass), LP (lågpass), HP (högpass).
+Kristallfilter anges ofta explicit.
+
+\paragraph{Modulator och demodulator}
+En \emph{modulator} (eng. \emph{modulator}) representeras ofta som en box
+eller cirkel med modulationstypen angiven (AM, FM, PM, SSB).
+En \emph{demodulator} eller \emph{detektor} (eng. \emph{demodulator},
+\emph{detector}) har liknande representation men indikerar att signalen
+avmoduleras.
+
+\paragraph{Frekvensmultiplicerare}
+En \emph{frekvensmultiplicerare} (eng. \emph{frequency multiplier})
+representeras som en box med multiplikationsfaktorn angiven (×2, ×3 etc.).
+
+\paragraph{Buffertsteg}
+Ett \emph{buffertsteg} (eng. \emph{buffer}) representeras ofta som en
+förstärkare men kan även markeras explicit som "Buffer" för att visa att
+dess huvudsyfte är isolering snarare än förstärkning.
+
+\paragraph{Drivsteg}
+Ett \emph{drivsteg} (eng. \emph{driver}) är en mellanförstärkare som driver
+ett slutsteg och representeras som en förstärkare med märkning "Driver" eller
+"DRV".
+
+\paragraph{Utgångsfilter och matchning}
+\emph{Utgångsfilter} (eng. \emph{output filter}) och
+\emph{utgångsmatchning} (eng. \emph{output matching}) representeras som
+filterboxar eller matchningsnätverk nära utgången.
+
+\paragraph{AGC}
+\emph{Automatisk förstärkningsreglering} (eng.
+\emph{Automatic Gain Control, AGC}) representeras ofta som en box med
+återkoppling till förstärkarsteg.
+
+\paragraph{S-meter och squelch}
+\emph{S-metern} (eng. \emph{S meter}) och \emph{squelch} representeras som
+egna block som tar insignal från detektorn eller mellanfrekvenssteg.
+
+\paragraph{Limiter}
+En \emph{begränsare} (eng. \emph{limiter}) representeras som en box som
+begränsar signalamplituden, ofta före FM-detektorn.
+
+Blockschemasymbolerna som används i detta kapitel följer den praxis som
+används i SSA:s kursmaterial och övningsprov.
+Det är viktigt att känna igen olika varianter av symboler då olika
+läroböcker och scheman kan använda något olika representation, men där
+funktionen alltid ska framgå tydligt av sammanhanget och eventuell
+märkning av blocket.
+
 \smallfig{images/cropped_pdfs/bild_2_5-01.pdf}{Enstegs sändare}{fig:bildII5-1}
 
 \mediumbotfig{images/cropped_pdfs/bild_2_5-02.pdf}{Flerstegs rak sändare}{fig:bildII5-2}
