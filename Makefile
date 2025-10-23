@@ -127,8 +127,8 @@ koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
 	latexmk -pdf koncept.tex
 
 koncept.epub: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
-	ebb -x images/**.png
-	ebb -x images/**.pdf
+	find images -name "*.png" -exec ebb -x {} +
+	find images -name "*.pdf" -exec ebb -x {} +
 	tex4ebook --format epub3 --tidy koncept.tex
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES)
