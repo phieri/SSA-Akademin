@@ -180,3 +180,6 @@ docker-build:
 clean: SHELL=/bin/bash -O extglob -c
 clean:
 	-rm -f *.aux *.bbl *.idx *.ind *.lof *.log *.lot *.pdf *.toc *~ *.out !(koncept|ssa-akademin|versionsnummer).png *.ilg *.upa koncept/*.aux koncept/*~ TODOs.txt *.xml
+	-rm -f koncept*.svg koncept*.xhtml koncept.css koncept.ncx koncept.4ct koncept.4tc koncept.idv koncept.lg koncept.tmp koncept.xref content.opf content-part2.opf
+	-rm -rf koncept-epub3/
+	-find images -name "*.xbb" -delete
