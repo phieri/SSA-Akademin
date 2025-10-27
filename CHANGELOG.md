@@ -11,6 +11,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Ny figur för ICNIRPcalc.
 - Nya QR-koder för att lämna återkoppling på boken.
 - Nytt appendix om åskskydd.
+- Riktlinjer för självbärande figurtexter i texifiering.md.
 
 ### Ändrat
 - Nya avsnittsnivåer i kapitel Ellära.
@@ -32,6 +33,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Modernisering av radioamatörens hederskod.
 - Många illustrationer har omarbetats till vektorformat.
 - Moderniserat text om QAM.
+- Förbättrade figurtexter för koaxialkabel, bandkabel, kabeldämpningstabell, atomernas uppbyggnad, elektromagnetiskt spektrum och GP-antenn för att göra dem mer självbärande.
 
 ### Fixat
 - Ordet _mod_ har lagts till i sakregistret.

@@ -92,6 +92,30 @@ någorlunda vettig LaTeX. Med tiden har detta utvecklats även till formatregler
     Det hjälper även LaTeX att rendrera så att bilder och tabeller hamnar nära
     där de används.
 
+    **Figurtexter ska vara självbärande** så långt det är möjligt, särskilt om
+    figuren kan hamna långt från den beskrivande texten. En självbärande
+    figurtext ska:
+    
+    - Förklara vad som visas i figuren (t.ex. axlar i diagram)
+    - Beskriva huvudbudskapet eller vad läsaren ska förstå från figuren
+    - Vara tillräckligt beskrivande för att läsaren ska kunna tolka figuren
+      utan att behöva läsa den omgivande texten
+    
+    Exempel på bra figurtexter:
+    ```latex
+    \caption{Frekvens- och amplitudrespons för ett lågpassfilter med
+    gränsfrekvens \qty{3,4}{\kilo\hertz}}
+    
+    \caption{Kopplingsschema för en emitterkopplad NPN-transistorförstärkare
+    med spänningsdelarbias}
+    
+    \caption{Antenndiagram för en halvvågsdipol i horisontalplanet,
+    visande den karaktäristiska åttaformen}
+    ```
+    
+    Undantag: Om en figur står direkt bredvid den beskrivande texten kan
+    en kortare figurtext vara tillräcklig.
+
 15. Understrukna ord väljer vi att använda fetstil på, dvs. markera med
     `\textbf{}`
 
