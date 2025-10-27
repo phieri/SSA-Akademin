@@ -122,13 +122,23 @@ branch.tmp:
 SHA.tmp:
 	touch SHA.tmp
 
+# Pattern rules for generating .xbb files from images
+%.xbb: %.png
+	ebb -x $<
+
+%.xbb: %.pdf
+	ebb -x $<
+
+# Find all image files and generate corresponding .xbb file names
+IMAGE_PNGS := $(shell find images -name "*.png")
+IMAGE_PDFS := $(shell find images -name "*.pdf")
+IMAGE_XBBS := $(IMAGE_PNGS:.png=.xbb) $(IMAGE_PDFS:.pdf=.xbb)
+
 koncept.log:
 koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
 	latexmk -pdf koncept.tex
 
-koncept.epub: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
-	find images -name "*.png" -exec ebb -x {} +
-	find images -name "*.pdf" -exec ebb -x {} +
+koncept.epub: $(REPO_FILES) koncept.tex $(KONCEPT_FILES) $(IMAGE_XBBS)
 	tex4ebook --format epub3 --tidy koncept.tex
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES)
