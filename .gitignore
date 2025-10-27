@@ -190,6 +190,12 @@ TSWLatexianTemp*
 koncept.pdf
 koncept.epub
 
+# KonCEPT Build artifacts
+koncept-epub3/
+*.svg
+content.opf
+*.xhtml
+
 # KonCEPT Temp
 *.xbb
 SHA.tmp
