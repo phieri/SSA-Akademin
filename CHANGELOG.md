@@ -56,6 +56,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 ### Borttaget
 - Text om integrationsgrad borttagen.
 - Avsnittssammanfattning om PLL-styrd kortvågstransceiver borttagen.
+- 604 oanvända bildfiler borttagna (~22 MB), inklusive alla originalskannningar i images/org_scans/.
 
 ## [2.6.1] – 2023-11-14
 ### Tillagt
