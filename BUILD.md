@@ -1,22 +1,22 @@
 Installera och bygg
 ===================
 
-Här förklaras vilka verktyg som behövs, hur man använder dom och
+Här förklaras vilka verktyg som behövs, hur man använder dem och
 vilka filer som kan byggas. Det här repot innehåller mestadels
 *TeX*-relaterade filer som kan användas för att bygga/generera
 PDF-filer.
 
 I det här dokumentet finns instruktioner om hur du kan hämta hem
-projektet och köra den på din egen dator. Den går igenom steg för
+projektet och köra det på din egen dator. Det går igenom steg för
 steg och beskriver de verktyg som används för att köra koden.
 
 | :bulb: **Tips** |
 |:----------------|
-| Kom ihåg att om du har problem kan du skapa ett nytt [ärende på GitHub](https://github.com/SverigesSandareamatorer/SSA-Akademin/issues) eller använda kontaktuppgifterna som finns i [README.md](README.md). |
+| Kom ihåg att om du har problem kan du skapa ett nytt [ärende på GitHub](https://github.com/phieri/SSA-Akademin/issues) eller använda kontaktuppgifterna som finns i [README.md](README.md). |
 
 | :warning: **Observera** |
 |:------------------------|
-| Dessa instruktioner är inte fullständiga men kan ändå hjälpa fram för allt de som kör Linux eller UNIX-liknande operativsystem. Just nu är den här guiden mest inriktad på [Linux/Debian-derivat](https://www.debian.org/misc/children-distros) men paketnamnen bör heta likadant i andra distributioners pakethanterare. |
+| Dessa instruktioner är inte fullständiga men kan ändå hjälpa framför allt de som kör Linux eller UNIX-liknande operativsystem. Just nu är den här guiden mest inriktad på [Linux/Debian-derivat](https://www.debian.org/misc/children-distros) men paketnamnen bör heta likadant i andra distributioners pakethanterare. |
 
 # Kom igång
 
@@ -33,22 +33,22 @@ använda dig av versionshanteringssystemet Git och verktyget Make.
 # Git
 
 [Git](https://git-scm.com) är ett versionshanteringsverktyg som håller reda på
-historiken av kodutveckling. Den hjälper en kodare med arbetet genom smarta
+historiken av kodutveckling. Det hjälper en kodare med arbetet genom smarta
 verktyg och möjligheten att utveckla kollaborativt.
 
-Navigera till den mapp du vill ladda ner SSA-Akademin repot i. De som
+Navigera till den mapp du vill ladda ner SSA-Akademin-repositoryt i. De som
 kör Git med grafiskt användargränssnitt (GUI) kan välja Clone och
 sedan URL:en i argumentet nedan. För de som kör med kommandotolken:
 
-<kbd>git clone https://github.com/SverigesSandareamatorer/SSA-Akademin.git</kbd>
+<kbd>git clone https://github.com/phieri/SSA-Akademin.git</kbd>
 
 <kbd>cd SSA-Akademin/</kbd>
 
 # Make
 
 [Make](https://www.gnu.org/software/make/) är ett program som används
-för att förenkla källkodsfiler till körbara filer och i det här
-fallet, till bl.a. PDF:er. Det gör att användaren av Make inte behöver
+för att omvandla källkodsfiler till körbara filer och i det här
+fallet, till bland annat PDF:er. Det gör att användaren av Make inte behöver
 veta *hur* genereringen går till utan bara vilket kommando som ska
 köras. Make används genom att köra kommandot ”make” följt av ett
 mål. Till exempel:
@@ -62,9 +62,9 @@ har hittar du under [Make mål och Byggberoenden](#make-mÅl-och-byggberoenden).
 
 ## Make-mål och byggberoenden
 
-För att få en översikt över vilka mål som finns listas dom här i
-tabellen med en beskrivning om vad dom gör och vilka verktyg som de är
-beroende utav. För att köra ett Make mål, se till att du
+För att få en översikt över vilka mål som finns listas de här i
+tabellen med en beskrivning om vad de gör och vilka verktyg som de är
+beroende av. För att köra ett Make-mål, se till att du
 har installerat beroendet som det behöver.
 
 | Mål | Bygger/Genererar | Beroende |
@@ -98,7 +98,7 @@ installeras.
 För att komma igång med utveckling med hjälp av GitHub Codespaces, följ dessa steg:
 
 1. **Öppna projektet i GitHub**:
-   Gå till projektets GitHub-sida: [SSA-Akademin](https://github.com/SverigesSandareamatorer/SSA-Akademin).
+   Gå till projektets GitHub-sida: [SSA-Akademin](https://github.com/phieri/SSA-Akademin).
 
 2. **Starta en Codespace**:
    Klicka på den gröna knappen `Code` och välj `Open with Codespaces`. Om du inte ser alternativet, se till att du har tillgång till GitHub Codespaces.

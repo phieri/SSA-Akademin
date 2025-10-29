@@ -166,13 +166,13 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 ### Borttaget
 - Bilagan med uträkning av dB borttagen.
 
-[Osläppt]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.6.1...HEAD
-[2.6.1]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.6.0...v2.6.1
-[2.6.0]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.5.0...v2.6.0
-[2.5.0]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.4.0...v2.5.0
-[2.4.0]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.3.0...v2.4.0
-[2.3.0]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.2.0...v2.3.0
-[2.2.0]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.1.0...v2.2.0
-[2.1.0]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.0.0...v2.1.0
-[2.0.0]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/v2.0.0-RC.1...v2.0.0
-[2.0.0-RC.1]: https://github.com/SverigesSandareamatorer/SSA-Akademin/compare/8141940...v2.0.0-RC.1
+[Osläppt]: https://github.com/phieri/SSA-Akademin/compare/v2.6.1...HEAD
+[2.6.1]: https://github.com/phieri/SSA-Akademin/compare/v2.6.0...v2.6.1
+[2.6.0]: https://github.com/phieri/SSA-Akademin/compare/v2.5.0...v2.6.0
+[2.5.0]: https://github.com/phieri/SSA-Akademin/compare/v2.4.0...v2.5.0
+[2.4.0]: https://github.com/phieri/SSA-Akademin/compare/v2.3.0...v2.4.0
+[2.3.0]: https://github.com/phieri/SSA-Akademin/compare/v2.2.0...v2.3.0
+[2.2.0]: https://github.com/phieri/SSA-Akademin/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/phieri/SSA-Akademin/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/phieri/SSA-Akademin/compare/v2.0.0-RC.1...v2.0.0
+[2.0.0-RC.1]: https://github.com/phieri/SSA-Akademin/compare/8141940...v2.0.0-RC.1

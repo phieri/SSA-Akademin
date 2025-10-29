@@ -1,15 +1,15 @@
 📘 KonCEPT för amatör&shy;radio&shy;certifikat
 ============
 
-[![Status för bygget av KonCEPT](https://github.com/SverigesSandareamatorer/SSA-Akademin/actions/workflows/bygg.yml/badge.svg)](https://github.com/SverigesSandareamatorer/SSA-Akademin/actions/workflows/bygg.yml)
-[![Senaste releaseversionen](https://img.shields.io/github/v/release/SverigesSandareamatorer/SSA-Akademin?display_name=tag&sort=semver)](https://github.com/SverigesSandareamatorer/SSA-Akademin/releases)
+[![Status för bygget av KonCEPT](https://github.com/phieri/SSA-Akademin/actions/workflows/bygg.yml/badge.svg)](https://github.com/phieri/SSA-Akademin/actions/workflows/bygg.yml)
+[![Senaste releaseversionen](https://img.shields.io/github/v/release/phieri/SSA-Akademin?display_name=tag&sort=semver)](https://github.com/phieri/SSA-Akademin/releases)
 
 Boken _KonCEPT för amatörradiocertifikat_ ges ut av
 [Föreningen Sveriges Sändareamatörer](https://www.ssa.se) (SSA) i syfte att
 utbilda nya radioamatörer.
 Den första upplagan publicerades år&nbsp;1997 (med titeln KonCEPT för
 radioamatörcertifikat) och var huvudsakligen skriven av Lennart Wiberg.
-Efter 20&nbsp;år behövdes en uppdatering och att tryckas i en ny upplaga.
+Efter 20&nbsp;år behövdes en uppdatering och boken trycktes i en ny upplaga.
 Detta projekt, SSA Akademin, är bland annat till för digitalisering och
 uppdatering av KonCEPT som lett fram till en andra upplaga av boken.
 Den tryckta boken kan köpas
@@ -23,7 +23,7 @@ Den tryckta boken kan köpas
 
 ## Version
 
-Eftersom nytt material läggs till och fel rättas allt eftersom används en
+Eftersom nytt material läggs till och fel rättas allteftersom används en
 versionsnumrering som ger värdefull information åt läsaren.
 Här är ett exempel på hur det kan se ut och en förklaring till vad delarna
 betyder.
@@ -45,7 +45,7 @@ själv. Instruktioner finns i filen [BUILD.md](BUILD.md).
 ## Serverbyggd PDF
 
 Lista med de senaste byggena finns i
-[GitHub Actions](https://github.com/SverigesSandareamatorer/SSA-Akademin/actions/workflows/bygg.yml).
+[GitHub Actions](https://github.com/phieri/SSA-Akademin/actions/workflows/bygg.yml).
 
 
 # Bidra till projektet
@@ -75,7 +75,7 @@ Grunden är att när alla saker är avcheckade på listan ska pull-requesten
 kunna genomföras.
 
 ## Release
-För att göra release följer man instruktionerna i [wikin](https://github.com/SverigesSandareamatorer/SSA-Akademin/wiki/Releaseinstruktion).
+För att göra release följer man instruktionerna i [wikin](https://github.com/phieri/SSA-Akademin/wiki/Releaseinstruktion).
 
 
 # Om SSA Akademin
