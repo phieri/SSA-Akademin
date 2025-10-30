@@ -274,71 +274,56 @@
 % Ge delavsnitt \subsubsection numreringssiffra.
 \setcounter{secnumdepth}{3}
 
-% Figure macros
-\newcommand{\bottomwidefigure}[4][0.6]{
-    \begin{figure*}[b]
-        \centering
-        \includegraphics[width=#1\textwidth]{#2}
-        \caption{#3}
-        \label{#4}
-        \vspace{-10pt}
-    \end{figure*}
-}
-
-\newcommand{\smallfig}[4][0.4]{
-  \begin{figure}[t]
-    \centering
-    \includegraphics[width=#1\textwidth]{#2}
-    \caption{#3}
-    \label{#4}
-    \vspace{-10pt}
-  \end{figure}
-}
-
-\newcommand{\smallbotfig}[4][0.4]{
-  \begin{figure}[t]
-    \centering
-    \includegraphics[width=#1\textwidth]{#2}
-    \caption{#3}
-    \label{#4}
-    \vspace{-10pt}
-  \end{figure}
-}
-
-% test om det går att få en figur längst ner i spalt
-\newcommand{\smallbotfigtwo}[4][0.4]{
-	\begin{figure}[bht]
-		\centering
-		\includegraphics[width=#1\textwidth]{#2}
-		\caption{#3}
-		\label{#4}
-		\vspace{-10pt}
-	\end{figure}
-}
-
-\newcommand{\smallfigpad}[4][0.4]{
-  \begin{figure}[t]
+% Figure macros - helper commands for consistent figure handling
+% Internal helper for single-column figures with optional padding
+\newcommand{\ssafighelper}[6][]{%
+  \begin{figure}[#2]
     \begin{center}
-    \bigskip
-    \includegraphics[width=#1\textwidth]{#2}
-    \caption{#3}
-    \label{#4}
+    #1% optional \bigskip for padding
+    \includegraphics[width=#3\textwidth]{#4}
+    \caption{#5}
+    \label{#6}
     \vspace{-10pt}
     \end{center}
   \end{figure}
 }
 
-% Figure macros
-\newcommand{\smallpagefig}[4][0.4]{
-  \begin{figure*}[p]
-    \centering
-    \includegraphics[width=#1\textwidth]{#2}
-    \caption{#3}
-    \label{#4}
-    \vspace{-10pt}
+% Internal helper for two-column figures with optional padding
+\newcommand{\ssawidefighelper}[6][]{%
+  \begin{figure*}[#2]
+    \begin{center}
+    #1% optional \bigskip for padding
+    \includegraphics[width=#3\textwidth]{#4}
+    \caption{#5}
+    \label{#6}
+    \end{center}
   \end{figure*}
 }
 
+% Single-column figures
+\newcommand{\smallfig}[4][0.4]{\ssafighelper{t}{#1}{#2}{#3}{#4}}
+\newcommand{\smallfigpad}[4][0.4]{\ssafighelper[\bigskip]{t}{#1}{#2}{#3}{#4}}
+\newcommand{\smallbotfigtwo}[4][0.4]{\ssafighelper{bht}{#1}{#2}{#3}{#4}}
+\newcommand{\tallfig}[4][0.4]{\ssafighelper{}{#1}{#2}{#3}{#4}}
+
+% Two-column figures - top placement
+\newcommand{\mediumtopfig}[4][0.7]{\ssawidefighelper{t}{#1}{#2}{#3}{#4}}
+\newcommand{\mediumminustopfig}[4][0.6]{\ssawidefighelper{t}{#1}{#2}{#3}{#4}}
+\newcommand{\mediumplustopfig}[4][0.8]{\ssawidefighelper{t}{#1}{#2}{#3}{#4}}
+
+% Two-column figures - bottom placement
+\newcommand{\mediumbotfig}[4][0.7]{\ssawidefighelper{b}{#1}{#2}{#3}{#4}}
+\newcommand{\mediumminusbotfig}[4][0.6]{\ssawidefighelper{b}{#1}{#2}{#3}{#4}}
+\newcommand{\mediumplusbotfig}[4][0.8]{\ssawidefighelper{b}{#1}{#2}{#3}{#4}}
+
+% Two-column figures - flexible placement
+\newcommand{\mediumfig}[4][0.7]{\ssawidefighelper{bt}{#1}{#2}{#3}{#4}}
+\newcommand{\mediumfigpad}[4][0.7]{\ssawidefighelper[\bigskip]{bt}{#1}{#2}{#3}{#4}}
+\newcommand{\mediumherefig}[4][0.7]{\ssawidefighelper{h!}{#1}{#2}{#3}{#4}}
+\newcommand{\pagefig}[4][0.7]{\ssawidefighelper{pbt}{#1}{#2}{#3}{#4}}
+\newcommand{\largefig}[4][0.9]{\ssawidefighelper{}{#1}{#2}{#3}{#4}}
+
+% Special case: multiple images in one figure
 \newcommand{\multifig}[4][0.4]{
   \begin{figure}[ht]
     \centering
@@ -351,170 +336,7 @@
   \end{figure}
 }
 
-\newcommand{\pagemultifig}[4][0.4]{
-  \begin{figure}[pbt]
-    \centering
-    \foreach \i in {#2} {
-      \includegraphics[width=#1\textwidth]{\i}
-    }
-    \caption{#3}
-    \label{#4}
-    \vspace{-10pt}
-  \end{figure}
-}
-
-\newcommand{\talltopfig}[4][0.4]{
-  \begin{figure*}[t]
-    \centering
-    \includegraphics[width=#1\textwidth]{#2}
-    \caption{#3}
-    \label{#4}
-    \vspace{-10pt}
-  \end{figure*}
-}
-
-\newcommand{\tallfig}[4][0.4]{
-  \begin{figure}
-    \centering
-    \includegraphics[width=#1\textwidth]{#2}
-    \caption{#3}
-    \label{#4}
-    \vspace{-10pt}
-  \end{figure}
-}
-
-\newcommand{\mediumfig}[4][0.7]{
-  \begin{figure*}[bt]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\mediumfigpad}[4][0.7]{
-  \begin{figure*}[bt]
-    \begin{center}
-      \bigskip
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\mediumbotfig}[4][0.7]{
-  \begin{figure*}[b]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-\newcommand{\mediumminusbotfig}[4][0.6]{
-  \begin{figure*}[b]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\mediumtopfig}[4][0.7]{
-  \begin{figure*}[t]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\mediumherefig}[4][0.7]{
-  \begin{figure*}[h!]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\mediumminustopfig}[4][0.6]{
-  \begin{figure*}[t]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\mediumplustopfig}[4][0.8]{
-  \begin{figure*}[t]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\mediumplusbotfig}[4][0.8]{
-  \begin{figure*}[b]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\medfig}[4]{
-  \begin{figure*}[t]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\pagefig}[4][0.7]{
-  \begin{figure*}[pbt]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
-\newcommand{\hpfig}[4][0.6]{
-  \onecolumn
-  \begin{figure}[h]
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure}
-  \twocolumn
-}
-
-\newcommand{\largefig}[4][0.9]{
-  \begin{figure*}
-    \begin{center}
-      \includegraphics[width=#1\textwidth]{#2}
-      \caption{#3}
-      \label{#4}
-    \end{center}
-  \end{figure*}
-}
-
+% TikZ figures
 \newcommand{\smalltikz}[3]{
   \begin{figure}[t]
     \begin{center}
@@ -524,16 +346,6 @@
     \end{center}
     \vspace{-20pt}
   \end{figure}
-}
-\newcommand{\smalltikzfloat}[3]{
-  \begin{figure*}[t]
-    \begin{center}
-      #1
-      \caption{#2}
-      \label{#3}
-    \end{center}
-    \vspace{-20pt}
-  \end{figure*}
 }
 
 \newcommand{\mediumtikz}[3]{
