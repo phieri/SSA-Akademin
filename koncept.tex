@@ -275,14 +275,25 @@
 \setcounter{secnumdepth}{3}
 
 % Figure macros - helper commands for consistent figure handling
-% Internal helper for single-column figures with optional padding
-\newcommand{\ssafighelper}[6][]{%
-  \begin{figure}[#2]
+% Internal helper for single-column figures (uses \centering like originals)
+\newcommand{\ssafighelper}[5]{%
+  \begin{figure}[#1]
+    \centering
+    \includegraphics[width=#2\textwidth]{#3}
+    \caption{#4}
+    \label{#5}
+    \vspace{-10pt}
+  \end{figure}
+}
+
+% Internal helper for single-column figures with padding
+\newcommand{\ssafighelperpad}[5]{%
+  \begin{figure}[#1]
     \begin{center}
-    #1% optional \bigskip for padding
-    \includegraphics[width=#3\textwidth]{#4}
-    \caption{#5}
-    \label{#6}
+    \bigskip
+    \includegraphics[width=#2\textwidth]{#3}
+    \caption{#4}
+    \label{#5}
     \vspace{-10pt}
     \end{center}
   \end{figure}
@@ -302,7 +313,7 @@
 
 % Single-column figures
 \newcommand{\smallfig}[4][0.4]{\ssafighelper{t}{#1}{#2}{#3}{#4}}
-\newcommand{\smallfigpad}[4][0.4]{\ssafighelper[\bigskip]{t}{#1}{#2}{#3}{#4}}
+\newcommand{\smallfigpad}[4][0.4]{\ssafighelperpad{t}{#1}{#2}{#3}{#4}}
 \newcommand{\smallbotfigtwo}[4][0.4]{\ssafighelper{bht}{#1}{#2}{#3}{#4}}
 \newcommand{\tallfig}[4][0.4]{\ssafighelper{}{#1}{#2}{#3}{#4}}
 
