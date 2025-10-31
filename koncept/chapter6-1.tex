@@ -36,7 +36,69 @@ Symbolvalet kan variera något mellan olika källor, men huvudprincipen är
 att varje symbol ska tydligt visa funktionen hos det aktuella blocket.
 
 Nedan presenteras de vanligaste blockschemasymbolerna för de funktioner som
-förekommer i sändare och mottagare enligt CEPT T/R 61-02:
+förekommer i sändare och mottagare enligt CEPT T/R 61-02.
+Bild~\ssaref{fig:blockschemasymboler} visar en översikt över dessa symboler:
+
+\mediumtikz{
+\begin{circuitikz}[scale=0.8, every node/.style={scale=0.8}]
+  % Row 1: Oscillator and Mixer
+  \draw (0,0) rectangle (2,1.5);
+  \draw (1,0.75) node {OSC};
+  \draw[thick] (0.6,0.5) sin (0.9,0.7) cos (1.2,0.5) sin (1.5,0.3) cos (1.8,0.5);
+  \draw (1,1.8) node[above] {\small Oscillator};
+  
+  \draw (3.5,0) circle (0.75);
+  \draw (2.75,0) -- (4.25,0);
+  \draw (3.5,-0.75) -- (3.5,0.75);
+  \draw (3.5,0) node {$\times$};
+  \draw (3.5,1.8) node[above] {\small Blandare};
+  
+  % Row 1 continued: Amplifier
+  \draw[fill=white] (6,0) -- (8,0.75) -- (6,1.5) -- cycle;
+  \draw (7,1.8) node[above] {\small Förstärkare};
+  
+  % Row 1 continued: Filter
+  \draw (9.5,0) rectangle (11.5,1.5);
+  \draw (10.5,0.75) node {BP};
+  \draw (10.5,1.8) node[above] {\small Filter};
+  
+  % Row 2: Modulator and Frequency multiplier
+  \draw (0,-2.5) rectangle (2,-1);
+  \draw (1,-1.75) node {MOD};
+  \draw (1,-0.7) node[above] {\small Modulator};
+  
+  \draw (3.5,-2.5) rectangle (5.5,-1);
+  \draw (4.5,-1.75) node {$\times$3};
+  \draw (4.5,-0.7) node[above] {\small Frekvensmult.};
+  
+  % Row 2 continued: Buffer and Driver
+  \draw[fill=white] (7,-2.5) -- (9,-1.75) -- (7,-1) -- cycle;
+  \draw (8,-2) node {\small BUF};
+  \draw (8,-0.7) node[above] {\small Buffertsteg};
+  
+  \draw[fill=white] (10,-2.5) -- (12,-1.75) -- (10,-1) -- cycle;
+  \draw (11,-2) node {\small DRV};
+  \draw (11,-0.7) node[above] {\small Drivsteg};
+  
+  % Row 3: AGC, Detector and Limiter
+  \draw (0,-5) rectangle (2,-3.5);
+  \draw (1,-4.25) node {AGC};
+  \draw (0,-3.3) node[above] {\small AGC};
+  
+  \draw (3.5,-5) rectangle (5.5,-3.5);
+  \draw (4.5,-4.25) node {DET};
+  \draw (3.5,-3.3) node[above] {\small Detektor};
+  
+  \draw (7,-5) rectangle (9,-3.5);
+  \draw (8,-4.25) node {LIM};
+  \draw (7,-3.3) node[above] {\small Begränsare};
+  
+  % Row 3 continued: S-meter
+  \draw (10,-5) rectangle (12,-3.5);
+  \draw (11,-4.25) node {S};
+  \draw (10,-3.3) node[above] {\small S-meter};
+\end{circuitikz}
+}{Vanliga blockschemasymboler för sändare och mottagare}{fig:blockschemasymboler}
 
 \paragraph{Oscillator}
 En \emph{oscillator} (eng. \emph{oscillator}) representeras vanligen som en
