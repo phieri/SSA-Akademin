@@ -23,6 +23,151 @@ Exempel är så kallade raka sändare med samma frekvens genom hela sändaren,
 superheterodynsändare där frekvensblandning används,
 frekvensmultiplicerande sändare etc.
 
+\subsubsection{Vanliga blockschemasymboler}
+\index{blockschemasymboler}
+\label{blockschemasymboler}
+
+För att illustrera funktionen hos olika block i ett blockschema används
+standardiserade symboler.
+Det finns ingen absolut standard för alla symboler, men vissa symboler är
+vanligt förekommande i radioteknisk litteratur och används i både
+internationella och svenska amatörradioprov.
+Symbolvalet kan variera något mellan olika källor, men huvudprincipen är
+att varje symbol ska tydligt visa funktionen hos det aktuella blocket.
+
+Nedan presenteras de vanligaste blockschemasymbolerna för de funktioner som
+förekommer i sändare och mottagare enligt CEPT T/R 61-02.
+Bild~\ssaref{fig:blockschemasymboler} visar en översikt över dessa symboler:
+
+\mediumtikz{
+\begin{circuitikz}[scale=0.8, every node/.style={scale=0.8}]
+  % Row 1: Oscillator and Mixer
+  \draw (0,0) rectangle (2,1.5);
+  \draw (1,0.75) node {OSC};
+  \draw[thick] (0.6,0.5) sin (0.9,0.7) cos (1.2,0.5) sin (1.5,0.3) cos (1.8,0.5);
+  \draw (1,1.8) node[above] {\small Oscillator};
+  
+  \draw (3.5,0) circle (0.75);
+  \draw (2.75,0) -- (4.25,0);
+  \draw (3.5,-0.75) -- (3.5,0.75);
+  \draw (3.5,0) node {$\times$};
+  \draw (3.5,1.8) node[above] {\small Blandare};
+  
+  % Row 1 continued: Amplifier
+  \draw[fill=white] (6,0) -- (8,0.75) -- (6,1.5) -- cycle;
+  \draw (7,1.8) node[above] {\small Förstärkare};
+  
+  % Row 1 continued: Filter
+  \draw (9.5,0) rectangle (11.5,1.5);
+  \draw (10.5,0.75) node {BP};
+  \draw (10.5,1.8) node[above] {\small Filter};
+  
+  % Row 2: Modulator and Frequency multiplier
+  \draw (0,-2.5) rectangle (2,-1);
+  \draw (1,-1.75) node {MOD};
+  \draw (1,-0.7) node[above] {\small Modulator};
+  
+  \draw (3.5,-2.5) rectangle (5.5,-1);
+  \draw (4.5,-1.75) node {$\times$3};
+  \draw (4.5,-0.7) node[above] {\small Frekvensmult.};
+  
+  % Row 2 continued: Buffer and Driver
+  \draw[fill=white] (7,-2.5) -- (9,-1.75) -- (7,-1) -- cycle;
+  \draw (8,-2) node {\small BUF};
+  \draw (8,-0.7) node[above] {\small Buffertsteg};
+  
+  \draw[fill=white] (10,-2.5) -- (12,-1.75) -- (10,-1) -- cycle;
+  \draw (11,-2) node {\small DRV};
+  \draw (11,-0.7) node[above] {\small Drivsteg};
+  
+  % Row 3: AGC, Detector and Limiter
+  \draw (0,-5) rectangle (2,-3.5);
+  \draw (1,-4.25) node {AGC};
+  \draw (0,-3.3) node[above] {\small AGC};
+  
+  \draw (3.5,-5) rectangle (5.5,-3.5);
+  \draw (4.5,-4.25) node {DET};
+  \draw (3.5,-3.3) node[above] {\small Detektor};
+  
+  \draw (7,-5) rectangle (9,-3.5);
+  \draw (8,-4.25) node {LIM};
+  \draw (7,-3.3) node[above] {\small Begränsare};
+  
+  % Row 3 continued: S-meter
+  \draw (10,-5) rectangle (12,-3.5);
+  \draw (11,-4.25) node {S};
+  \draw (10,-3.3) node[above] {\small S-meter};
+\end{circuitikz}
+}{Vanliga blockschemasymboler för sändare och mottagare}{fig:blockschemasymboler}
+
+\paragraph{Oscillator}
+En \emph{oscillator} (eng. \emph{oscillator}) representeras vanligen som en
+box med en vågsymbol eller sinuskurva inuti, ofta med frekvensangivelse.
+En variabel frekvensoscillator (VFO) kan ha en pil eller variabelmarkering.
+
+\paragraph{Blandare}
+En \emph{blandare} (eng. \emph{mixer}) representeras ofta som en cirkel eller
+box med ett multiplikationstecken (×) eller två pilar som pekar mot varandra.
+Blandaren tar två insignaler och producerar summa- och skillnadsfrekvenser.
+
+\paragraph{Förstärkare}
+En \emph{förstärkare} (eng. \emph{amplifier}) representeras vanligen som en
+triangel med spetsen åt höger, där signalen går in på bred sida och ut genom
+spetsen.
+Detta gäller för HF-förstärkare, mellanfrekvensförstärkare,
+LF-förstärkare och effektförstärkare.
+
+\paragraph{Filter}
+Ett \emph{filter} (eng. \emph{filter}) representeras som en box med
+filtrets typ angiven, till exempel BP (bandpass), LP (lågpass), HP (högpass).
+Kristallfilter anges ofta explicit.
+
+\paragraph{Modulator och demodulator}
+En \emph{modulator} (eng. \emph{modulator}) representeras ofta som en box
+eller cirkel med modulationstypen angiven (AM, FM, PM, SSB).
+En \emph{demodulator} eller \emph{detektor} (eng. \emph{demodulator},
+\emph{detector}) har liknande representation men indikerar att signalen
+avmoduleras.
+
+\paragraph{Frekvensmultiplicerare}
+En \emph{frekvensmultiplicerare} (eng. \emph{frequency multiplier})
+representeras som en box med multiplikationsfaktorn angiven (×2, ×3 etc.).
+
+\paragraph{Buffertsteg}
+Ett \emph{buffertsteg} (eng. \emph{buffer}) representeras ofta som en
+förstärkare men kan även markeras explicit som "Buffer" för att visa att
+dess huvudsyfte är isolering snarare än förstärkning.
+
+\paragraph{Drivsteg}
+Ett \emph{drivsteg} (eng. \emph{driver}) är en mellanförstärkare som driver
+ett slutsteg och representeras som en förstärkare med märkning "Driver" eller
+"DRV".
+
+\paragraph{Utgångsfilter och matchning}
+\emph{Utgångsfilter} (eng. \emph{output filter}) och
+\emph{utgångsmatchning} (eng. \emph{output matching}) representeras som
+filterboxar eller matchningsnätverk nära utgången.
+
+\paragraph{AGC}
+\emph{Automatisk förstärkningsreglering} (eng.
+\emph{Automatic Gain Control, AGC}) representeras ofta som en box med
+återkoppling till förstärkarsteg.
+
+\paragraph{S-meter och squelch}
+\emph{S-metern} (eng. \emph{S meter}) och \emph{squelch} representeras som
+egna block som tar insignal från detektorn eller mellanfrekvenssteg.
+
+\paragraph{Limiter}
+En \emph{begränsare} (eng. \emph{limiter}) representeras som en box som
+begränsar signalamplituden, ofta före FM-detektorn.
+
+Blockschemasymbolerna som används i detta kapitel följer den praxis som
+används i SSA:s kursmaterial och övningsprov.
+Det är viktigt att känna igen olika varianter av symboler då olika
+läroböcker och scheman kan använda något olika representation, men där
+funktionen alltid ska framgå tydligt av sammanhanget och eventuell
+märkning av blocket.
+
 \smallfig{images/cropped_pdfs/bild_2_5-01.pdf}{Enstegs sändare}{fig:bildII5-1}
 
 \mediumbotfig{images/cropped_pdfs/bild_2_5-02.pdf}{Flerstegs rak sändare}{fig:bildII5-2}
