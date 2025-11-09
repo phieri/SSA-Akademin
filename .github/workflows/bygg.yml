@@ -27,21 +27,9 @@ jobs:
             chktex
       - name: 'Kör LaTeX-kontroll'
         continue-on-error: true
-        # n1  eftersom kommandon med efterföljande mellanslag är vanligt och acceptabelt i LaTeX.
-        # n3  eftersom parenteser i matematiska uttryck ofta ger falska positiva.
-        # n6  eftersom kursivkorrektion är en mycket pedantisk typografisk detalj.
-        # n8  eftersom det är fel tankstreckslängd för svenska.
-        # n12 eftersom "t.ex." är korrekt svensk förkortning med punkter.
-        # n13 eftersom det inte används långa blanksteg i svenska.
-        # n24 eftersom KonCEPT har använder index vid styckets början, inte vid tecken.
-        # n26 eftersom TikZ och circuitikz har olika syntaxregler för ritkommandon.
-        # n32 eftersom det är fel citationstecken för svenska.
-        # n35 eftersom varningar om \max ofta är falska positiva för variabler som u_max.
-        # n36 eftersom mellanslag före parenteser i makrodefinitioner ofta är avsiktliga.
-        # n37 eftersom mellanslag runt parenteser är stilistiska preferenser.
-        # n38 eftersom skiljetecken före citattecken är stilistiska preferenser.
-        # n44 eftersom User Regex varningar om tabellstil är preferenser, inte fel.
-        run: chktex -v1 -n1 -n3 -n6 -n8 -n12 -n13 -n24 -n26 -n32 -n35 -n36 -n37 -n38 -n44 --output chktex.log koncept.tex
+        # Konfigurationen för chktex finns i .chktexrc i projektets rot.
+        # Filen innehåller alla suppressions med detaljerade kommentarer.
+        run: chktex -l .chktexrc --output chktex.log koncept.tex
       - name: 'Skapa rapporter'
         run: |
           echo "| Statistik | Antal |" >> $GITHUB_STEP_SUMMARY
