@@ -173,9 +173,9 @@ long_lines.txt: $(KONCEPT_FILES)
 comment_lines.txt: $(KONCEPT_FILES)
 	grep '^ *%' koncept/*.tex > comment_lines.txt
 
-# Genererade bilder
-macros/bild_tx_heat.eps: macros/bild_tx_heat.m
-	octave macros/bild_tx_heat.m
+# Genererade bilder (hanteras av macros/Makefile)
+macros/bild_tx_heat.pdf: macros/bild_tx_heat.m
+	cd macros && $(MAKE) bild_tx_heat.pdf
 
 # Optionally build using docker, currently only tested with MacOS and Docker 1.12.3, but
 # should work anywhere you can run Docker.
