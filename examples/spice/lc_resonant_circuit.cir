@@ -1,0 +1,39 @@
+* LC Resonant Circuit Example
+* SSA-Akademin KonCEPT
+* Exempel på en LC-resonanskrets
+*
+* Detta är en parallell LC-resonanskrets som kan användas
+* för att demonstrera resonans vid en specifik frekvens
+*
+* Licens: CC BY-SA 4.0
+
+.title LC Resonant Circuit
+
+* Strömkälla: 1 mA AC
+Iin input 0 AC 1m
+
+* Induktor: 100 µH
+L1 input 0 100u
+
+* Kondensator: 100 pF
+C1 input 0 100p
+
+* Resistor för förluster: 1 kOhm
+R1 input 0 1k
+
+* AC-analys från 100 kHz till 10 MHz med 100 punkter per dekad
+.ac dec 100 100k 10meg
+
+* Skriv ut resultaten
+.print ac v(input) vdb(input) vp(input)
+
+* Beräkna resonansfrekvensen: f0 = 1/(2*pi*sqrt(L*C))
+* f0 = 1/(2*3.14159*sqrt(100e-6*100e-12)) ≈ 1,59 MHz
+
+.control
+run
+plot db(v(input))
+plot phase(v(input))
+.endc
+
+.end
