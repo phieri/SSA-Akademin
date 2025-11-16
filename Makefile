@@ -1,4 +1,4 @@
-DOCKER_IMAGE_NAME=	ssa-koncept
+DOCKER_IMAGE_NAME=ssa-koncept
 
 help:
 	@echo 'Makefile för SSA-Akademin                                             '
@@ -124,7 +124,7 @@ branch.tmp:
 SHA.tmp:
 	touch SHA.tmp
 
-koncept.log:
+koncept.log: koncept.pdf
 koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
 	latexmk -pdf koncept.tex
 
@@ -154,16 +154,16 @@ TODOs:  koncept.tex $(KONCEPT_FILES) koncept.log
 
 # Skapar en rapport med länkade bilder.
 images_linked.txt: koncept.tex $(KONCEPT_FILES)
-	grep -F images ./**/*.tex | sed -e s/.*images/images/ | sed -e s/\}// | sort -u > images_linked.txt
+	grep -F images ./**/*.tex | sed -e 's/.*images/images/' -e 's/}//' | sort -u > images_linked.txt
 
 # Skapar filen images_available.txt som innehåller en sorterad lista över alla
 # PDF-filer i katalogen images och dess undermappar. Använder wildcard för att
 # hitta PDF-filer och sort -u för att ta bort eventuella dubbletter.
 images_available.txt: $(wildcard images/**/*.pdf)
-	ls images/**/*.pdf | sed -e s/\.pdf// | sort -u > images_available.txt
+	find images -name "*.pdf" | sed -e 's/\.pdf$//' | sort -u > images_available.txt
 
 images_unlinked.txt: images_available.txt images_linked.txt
-	diff images_available.txt images_linked.txt | grep \< | sed -e s/\<\ // > images_unlinked.txt
+	diff images_available.txt images_linked.txt | sed -n 's/^< //p' > images_unlinked.txt
 
 # Skapar en rapport med kodrader som är längre än 80 tecken.
 long_lines.txt: $(KONCEPT_FILES)
