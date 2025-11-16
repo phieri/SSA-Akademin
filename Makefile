@@ -12,7 +12,7 @@ help:
 
 all:	koncept.pdf koncept.epub
 
-.PHONY: all koncept.pdf koncept.epub clean help
+.PHONY: all clean help docker-image docker-build TODOs
 
 KONCEPT_CH01_FILES = koncept/ellaera.tex \
 	koncept/ellaera--elektriska-grundbegrepp.tex koncept/ellaera--elektriska-kraftkallor.tex \
