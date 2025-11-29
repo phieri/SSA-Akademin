@@ -64,33 +64,47 @@ effekten absorberas lättast av kroppen.
 		grid=major, grid style=dashed,
 	]
 
-	\addplot [forget plot, domain=0.003:1, samples=10, color=black,
+	\addplot [forget plot, domain=0.003:1, samples=2, color=black,
 	]{87};
 
-	\addplot [forget plot, domain=1:10, samples=100, color=black,
+	\addplot [forget plot, domain=1:10, samples=20, color=black,
 	]{8.7*10^4/(x*10^6)^(1/2)};
 
-	\addplot [forget plot, domain=10:399.9, samples=10, color=black,
+	\addplot [forget plot, domain=10:399.9, samples=2, color=black,
 	]{28};
 
-	\addplot [forget plot, domain=400:1999.9, samples=100, color=black,
+	\addplot [forget plot, domain=400:1999.9, samples=20, color=black,
 	]{1.375*(x*10^6)^(1/2)/1000};
 
-	\addplot [forget plot, domain=2000:10000, samples=10, color=black,
+	\addplot [forget plot, domain=2000:10000, samples=2, color=black,
 	]{61};
 
-	% Definiera punktlista som frekvens/värde-par (slash-separerade) och återanvänd
-	\def\emfEpoints{0.1378/87,0.479/87,1.85/64,3.8/45,7.2/32,10.15/28,14.175/28,21.225/28,28.85/28,50/28,145/28,435/29,1296/50,2450/61,5750/61}
+	% Amatörradioband med fältstyrkenivåer
+	\addplot[only marks, color=gray, mark=*]
+		coordinates {
+			(0.1378,87) (0.479,87) (1.85,64) (3.8,45) (7.2,32)
+			(10.15,28) (14.175,28) (21.225,28) (28.85,28) (50,28)
+			(145,28) (435,29) (1296,50) (2450,61) (5750,61)
+		};
 
-	% Rita markörer genom att bygga (x,y)-par från listan
-	\addplot[only marks, color=gray, mark=*, nodes near coords, point meta=explicit symbolic]
-		coordinates {\foreach \x/\y in \emfEpoints { (\x,\y) } };
+	% Etiketter för varje amatörband
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:0.1378,87) {0,1378~MHz, 87~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:0.479,87) {0,479~MHz, 87~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:1.85,64) {1,85~MHz, 64~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:3.8,45) {3,8~MHz, 45~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:7.2,32) {7,2~MHz, 32~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:10.15,28) {10,15~MHz, 28~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:14.175,28) {14,175~MHz, 28~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:21.225,28) {21,225~MHz, 28~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:28.85,28) {28,85~MHz, 28~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:50,28) {50~MHz, 28~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:145,28) {145~MHz, 28~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:435,29) {435~MHz, 29~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:1296,50) {1296~MHz, 50~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:2450,61) {2450~MHz, 61~V/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:5750,61) {5750~MHz, 61~V/m};
 
-	% Lägg till etiketter för varje punkt från samma lista: "<frekvens> MHz, <värde> V/m"
-	\foreach \x/\y in \emfEpoints {
-		\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:\x,\y) {\x~MHz,~\y~V/m};
-	}
-		\legend{Amatörradioband}
+	\legend{Amatörradioband}
 	\end{loglogaxis}
 	\end{tikzpicture}
 }{Referensvärden för begränsning av elektriska fält på platser där allmänheten kan vistas. Amatörradioband och fältstyrkenivå angivna.}{fig:emf1}
@@ -106,33 +120,47 @@ effekten absorberas lättast av kroppen.
 		grid=major, grid style=dashed,
 	]
 
-	\addplot [forget plot, domain=0.1:0.15, samples=10, color=black,
+	\addplot [forget plot, domain=0.1:0.15, samples=2, color=black,
 	]{5};
 
-	\addplot [forget plot, domain=0.15:10, samples=100, color=black,
+	\addplot [forget plot, domain=0.15:10, samples=20, color=black,
 	]{(7.3*10^5)/(x*10^6)};
 
-	\addplot [forget plot, domain=10:399.9, samples=10, color=black,
+	\addplot [forget plot, domain=10:399.9, samples=2, color=black,
 	]{0.073};
 
-	\addplot [forget plot, domain=400.0:1999.9, samples=100, color=black,
+	\addplot [forget plot, domain=400.0:1999.9, samples=20, color=black,
 	]{0.0037*(x*10^6)^(1/2)/1000};
 
-	\addplot [forget plot, domain=2000.0:10000, samples=10, color=black,
+	\addplot [forget plot, domain=2000.0:10000, samples=2, color=black,
 	]{0.16};
 
-	% Definiera punktlista som frekvens/värde-par (slash-separerade) och återanvänd
-	\def\emfHpoints{0.1378/5.0,0.479/1.524,1.85/0.395,3.8/0.192,7.2/0.101,10.15/0.073,14.175/0.073,21.225/0.073,28.85/0.073,50/0.073,145/0.073,435/0.077,1296/0.1332,2450/0.16,5750/0.16}
+	% Amatörradioband med fältstyrkenivåer
+	\addplot[only marks, color=gray, mark=*]
+		coordinates {
+			(0.1378,5.0) (0.479,1.524) (1.85,0.395) (3.8,0.192) (7.2,0.101)
+			(10.15,0.073) (14.175,0.073) (21.225,0.073) (28.85,0.073) (50,0.073)
+			(145,0.073) (435,0.077) (1296,0.1332) (2450,0.16) (5750,0.16)
+		};
 
-	% Rita markörer genom att bygga (x,y)-par från listan
-	\addplot[only marks, color=gray, mark=*, nodes near coords, point meta=explicit symbolic]
-		coordinates {\foreach \x/\y in \emfHpoints { (\x,\y) } };
+	% Etiketter för varje amatörband
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:0.1378,5.0) {0,1378~MHz, 5,0~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:0.479,1.524) {0,479~MHz, 1,524~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:1.85,0.395) {1,85~MHz, 0,395~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:3.8,0.192) {3,8~MHz, 0,192~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:7.2,0.101) {7,2~MHz, 0,101~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:10.15,0.073) {10,15~MHz, 0,073~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:14.175,0.073) {14,175~MHz, 0,073~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:21.225,0.073) {21,225~MHz, 0,073~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:28.85,0.073) {28,85~MHz, 0,073~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:50,0.073) {50~MHz, 0,073~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:145,0.073) {145~MHz, 0,073~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:435,0.077) {435~MHz, 0,077~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:1296,0.1332) {1296~MHz, 0,1332~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:2450,0.16) {2450~MHz, 0,16~A/m};
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:5750,0.16) {5750~MHz, 0,16~A/m};
 
-	% Lägg till etiketter för varje punkt från samma lista: "<frekvens> MHz, <värde> A/m"
-	\foreach \x/\y in \emfHpoints {
-		\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:\x,\y) {\x~MHz,~\y~A/m};
-	}
-		\legend{Amatörradioband}
+	\legend{Amatörradioband}
 	\end{loglogaxis}
 	\end{tikzpicture}
 }{Referensvärden för begränsning av magnetiska fält på platser där allmänheten kan vistas. Amatörradioband och fältstyrkenivå angivna.}{fig:emf2}
