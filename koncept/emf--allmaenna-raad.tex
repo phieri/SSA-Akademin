@@ -53,6 +53,13 @@ Referensvärdena tar hänsyn till detta faktum och det mest restriktiva
 frekvensområdet ligger inom 10 till \qty{400}{\mega\hertz} vilket är där
 effekten absorberas lättast av kroppen.
 
+% Makro för band-etiketter i EMF-diagram
+% #1 = frekvens (för positionering), #2 = värde (för positionering), #3 = frekvens, #4 = värde och enhet
+\newcommand{\bandetikett}[4]{%
+	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt]
+		at (axis cs:#1,#2) {#3~MHz, #4}%
+}
+
 \largetikz{
 	\begin{tikzpicture}
 	\begin{loglogaxis}[
@@ -88,21 +95,21 @@ effekten absorberas lättast av kroppen.
 		};
 
 	% Etiketter för varje amatörband
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:0.1378,87) {0,1378~MHz, 87~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:0.479,87) {0,479~MHz, 87~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:1.85,64) {1,85~MHz, 64~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:3.8,45) {3,8~MHz, 45~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:7.2,32) {7,2~MHz, 32~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:10.15,28) {10,15~MHz, 28~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:14.175,28) {14,175~MHz, 28~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:21.225,28) {21,225~MHz, 28~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:28.85,28) {28,85~MHz, 28~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:50,28) {50~MHz, 28~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:145,28) {145~MHz, 28~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:435,29) {435~MHz, 29~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:1296,50) {1296~MHz, 50~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:2450,61) {2450~MHz, 61~V/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:5750,61) {5750~MHz, 61~V/m};
+	\bandetikett{0.1378}{87}{0,1378}{87~V/m}
+	\bandetikett{0.479}{87}{0,479}{87~V/m}
+	\bandetikett{1.85}{64}{1,85}{64~V/m}
+	\bandetikett{3.8}{45}{3,8}{45~V/m}
+	\bandetikett{7.2}{32}{7,2}{32~V/m}
+	\bandetikett{10.15}{28}{10,15}{28~V/m}
+	\bandetikett{14.175}{28}{14,175}{28~V/m}
+	\bandetikett{21.225}{28}{21,225}{28~V/m}
+	\bandetikett{28.85}{28}{28,85}{28~V/m}
+	\bandetikett{50}{28}{50}{28~V/m}
+	\bandetikett{145}{28}{145}{28~V/m}
+	\bandetikett{435}{29}{435}{29~V/m}
+	\bandetikett{1296}{50}{1296}{50~V/m}
+	\bandetikett{2450}{61}{2450}{61~V/m}
+	\bandetikett{5750}{61}{5750}{61~V/m}
 
 	\legend{Amatörradioband}
 	\end{loglogaxis}
@@ -144,21 +151,21 @@ effekten absorberas lättast av kroppen.
 		};
 
 	% Etiketter för varje amatörband
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:0.1378,5.0) {0,1378~MHz, 5,0~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:0.479,1.524) {0,479~MHz, 1,524~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:1.85,0.395) {1,85~MHz, 0,395~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:3.8,0.192) {3,8~MHz, 0,192~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:7.2,0.101) {7,2~MHz, 0,101~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:10.15,0.073) {10,15~MHz, 0,073~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:14.175,0.073) {14,175~MHz, 0,073~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:21.225,0.073) {21,225~MHz, 0,073~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:28.85,0.073) {28,85~MHz, 0,073~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:50,0.073) {50~MHz, 0,073~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:145,0.073) {145~MHz, 0,073~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:435,0.077) {435~MHz, 0,077~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:1296,0.1332) {1296~MHz, 0,1332~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:2450,0.16) {2450~MHz, 0,16~A/m};
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt] at (axis cs:5750,0.16) {5750~MHz, 0,16~A/m};
+	\bandetikett{0.1378}{5.0}{0,1378}{5,0~A/m}
+	\bandetikett{0.479}{1.524}{0,479}{1,524~A/m}
+	\bandetikett{1.85}{0.395}{1,85}{0,395~A/m}
+	\bandetikett{3.8}{0.192}{3,8}{0,192~A/m}
+	\bandetikett{7.2}{0.101}{7,2}{0,101~A/m}
+	\bandetikett{10.15}{0.073}{10,15}{0,073~A/m}
+	\bandetikett{14.175}{0.073}{14,175}{0,073~A/m}
+	\bandetikett{21.225}{0.073}{21,225}{0,073~A/m}
+	\bandetikett{28.85}{0.073}{28,85}{0,073~A/m}
+	\bandetikett{50}{0.073}{50}{0,073~A/m}
+	\bandetikett{145}{0.073}{145}{0,073~A/m}
+	\bandetikett{435}{0.077}{435}{0,077~A/m}
+	\bandetikett{1296}{0.1332}{1296}{0,1332~A/m}
+	\bandetikett{2450}{0.16}{2450}{0,16~A/m}
+	\bandetikett{5750}{0.16}{5750}{0,16~A/m}
 
 	\legend{Amatörradioband}
 	\end{loglogaxis}
