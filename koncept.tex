@@ -397,14 +397,6 @@
   \end{figure*}
 }
 
-% Makro för band-etiketter i EMF-diagram
-% #1 = frekvens (för positionering), #2 = värde (för positionering),
-% #3 = frekvens, #4 = värde och enhet
-\newcommand{\bandetikett}[4]{%
-	\node[anchor=south west, font=\scriptsize, fill=white, inner sep=1pt]
-		at (axis cs:#1,#2) {#3~MHz, #4}%
-}
-
 % (Beskrivning saknas.)
 \newsavebox\TBox
 \def\textoverline#1{\savebox\TBox{#1}
