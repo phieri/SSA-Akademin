@@ -53,9 +53,12 @@ Referensvärdena tar hänsyn till detta faktum och det mest restriktiva
 frekvensområdet ligger inom 10 till \qty{400}{\mega\hertz} vilket är där
 effekten absorberas lättast av kroppen.
 
-% Stil för band-etiketter i EMF-diagram (vertikal text som i originalen)
+% Stilar för band-etiketter i EMF-diagram (vertikal text som i originalen)
+% Använd 'bandetikett above' för etiketter ovanför punkten
+% Använd 'bandetikett below' för etiketter nedanför punkten (vid lägsta värden)
 \tikzset{
-	bandetikett/.style={anchor=south west, font=\scriptsize, rotate=90, inner sep=1pt}
+	bandetikett above/.style={anchor=south west, font=\scriptsize, rotate=90, inner sep=1pt},
+	bandetikett below/.style={anchor=north west, font=\scriptsize, rotate=90, inner sep=1pt}
 }
 
 \largetikz{
@@ -93,21 +96,24 @@ effekten absorberas lättast av kroppen.
 		};
 
 	% Etiketter för varje amatörband (vertikal text)
-	\node[bandetikett] at (axis cs:0.1378,87) {0,1378~~87};
-	\node[bandetikett] at (axis cs:0.479,87) {0,479~~87};
-	\node[bandetikett] at (axis cs:1.85,64) {1,85~~64};
-	\node[bandetikett] at (axis cs:3.8,45) {3,8~~45};
-	\node[bandetikett] at (axis cs:7.2,32) {7,2~~32};
-	\node[bandetikett] at (axis cs:10.15,28) {10,15~~28};
-	\node[bandetikett] at (axis cs:14.175,28) {14,175~~28};
-	\node[bandetikett] at (axis cs:21.225,28) {21,225~~28};
-	\node[bandetikett] at (axis cs:28.85,28) {28,85~~28};
-	\node[bandetikett] at (axis cs:50,28) {50~~28};
-	\node[bandetikett] at (axis cs:145,28) {145~~28};
-	\node[bandetikett] at (axis cs:435,29) {435~~29};
-	\node[bandetikett] at (axis cs:1296,50) {1296~~50};
-	\node[bandetikett] at (axis cs:2450,61) {2450~~61};
-	\node[bandetikett] at (axis cs:5750,61) {5750~~61};
+	% Etiketter ovanför punkten för höga värden
+	\node[bandetikett above] at (axis cs:0.1378,87) {0,1378~~87};
+	\node[bandetikett above] at (axis cs:0.479,87) {0,479~~87};
+	\node[bandetikett above] at (axis cs:1.85,64) {1,85~~64};
+	\node[bandetikett above] at (axis cs:3.8,45) {3,8~~45};
+	\node[bandetikett above] at (axis cs:7.2,32) {7,2~~32};
+	% Etiketter nedanför punkten för lägsta värden (y=28-29)
+	\node[bandetikett below] at (axis cs:10.15,28) {10,15~~28};
+	\node[bandetikett below] at (axis cs:14.175,28) {14,175~~28};
+	\node[bandetikett below] at (axis cs:21.225,28) {21,225~~28};
+	\node[bandetikett below] at (axis cs:28.85,28) {28,85~~28};
+	\node[bandetikett below] at (axis cs:50,28) {50~~28};
+	\node[bandetikett below] at (axis cs:145,28) {145~~28};
+	\node[bandetikett below] at (axis cs:435,29) {435~~29};
+	% Etiketter ovanför punkten för högre värden
+	\node[bandetikett above] at (axis cs:1296,50) {1296~~50};
+	\node[bandetikett above] at (axis cs:2450,61) {2450~~61};
+	\node[bandetikett above] at (axis cs:5750,61) {5750~~61};
 
 	\legend{Amatörradioband}
 	\end{loglogaxis}
@@ -149,21 +155,24 @@ effekten absorberas lättast av kroppen.
 		};
 
 	% Etiketter för varje amatörband (vertikal text)
-	\node[bandetikett] at (axis cs:0.1378,5.0) {0,1378~~5,0};
-	\node[bandetikett] at (axis cs:0.479,1.524) {0,479~~1,524};
-	\node[bandetikett] at (axis cs:1.85,0.395) {1,85~~0,395};
-	\node[bandetikett] at (axis cs:3.8,0.192) {3,8~~0,192};
-	\node[bandetikett] at (axis cs:7.2,0.101) {7,2~~0,101};
-	\node[bandetikett] at (axis cs:10.15,0.073) {10,15~~0,073};
-	\node[bandetikett] at (axis cs:14.175,0.073) {14,175~~0,073};
-	\node[bandetikett] at (axis cs:21.225,0.073) {21,225~~0,073};
-	\node[bandetikett] at (axis cs:28.85,0.073) {28,85~~0,073};
-	\node[bandetikett] at (axis cs:50,0.073) {50~~0,073};
-	\node[bandetikett] at (axis cs:145,0.073) {145~~0,073};
-	\node[bandetikett] at (axis cs:435,0.077) {435~~0,077};
-	\node[bandetikett] at (axis cs:1296,0.1332) {1296~~0,1332};
-	\node[bandetikett] at (axis cs:2450,0.16) {2450~~0,16};
-	\node[bandetikett] at (axis cs:5750,0.16) {5750~~0,16};
+	% Etiketter ovanför punkten för höga värden
+	\node[bandetikett above] at (axis cs:0.1378,5.0) {0,1378~~5,0};
+	\node[bandetikett above] at (axis cs:0.479,1.524) {0,479~~1,524};
+	\node[bandetikett above] at (axis cs:1.85,0.395) {1,85~~0,395};
+	\node[bandetikett above] at (axis cs:3.8,0.192) {3,8~~0,192};
+	\node[bandetikett above] at (axis cs:7.2,0.101) {7,2~~0,101};
+	% Etiketter nedanför punkten för lägsta värden (y=0.073-0.077)
+	\node[bandetikett below] at (axis cs:10.15,0.073) {10,15~~0,073};
+	\node[bandetikett below] at (axis cs:14.175,0.073) {14,175~~0,073};
+	\node[bandetikett below] at (axis cs:21.225,0.073) {21,225~~0,073};
+	\node[bandetikett below] at (axis cs:28.85,0.073) {28,85~~0,073};
+	\node[bandetikett below] at (axis cs:50,0.073) {50~~0,073};
+	\node[bandetikett below] at (axis cs:145,0.073) {145~~0,073};
+	\node[bandetikett below] at (axis cs:435,0.077) {435~~0,077};
+	% Etiketter ovanför punkten för högre värden
+	\node[bandetikett above] at (axis cs:1296,0.1332) {1296~~0,1332};
+	\node[bandetikett above] at (axis cs:2450,0.16) {2450~~0,16};
+	\node[bandetikett above] at (axis cs:5750,0.16) {5750~~0,16};
 
 	\legend{Amatörradioband}
 	\end{loglogaxis}
