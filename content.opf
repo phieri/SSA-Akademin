@@ -1,0 +1,51 @@
+ <?xml version="1.0" encoding="utf-8"?> 
+ <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="dcidid" version="3.0"> 
+ <metadata 
+xmlns:dc="http://purl.org/dc/elements/1.1/" 
+xmlns:opf="http://www.idpf.org/2007/opf"> 
+ <dc:title>KonCEPT för amatörradiocertifikat</dc:title> 
+ <dc:language>sv</dc:language> 
+ <dc:identifier id="dcidid" >http://example.com/koncept</dc:identifier> 
+
+<dc:creator>Anonymous</dc:creator> 
+ <dc:date>2025-12-16T13:33:00Z</dc:date>  
+<meta property="dcterms:modified">2025-12-16T13:33:00Z</meta></metadata>   
+<manifest> 
+
+<item id="ncx" href="koncept.ncx" media-type="application/x-dtbncx+xml" /> 
+ <item id="stylesheet" href="koncept.css" media-type="text/css"/> 
+  <item id="file1"  href="koncept.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file2"  properties="nav" href="konceptli1.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file3"  href="konceptli2.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file4"  href="konceptli3.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file5"  href="konceptch1.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file6"  href="konceptch2.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file7"  href="konceptch3.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file8"  href="konceptch4.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file9"  href="konceptch5.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file10"  href="konceptch6.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file11"  href="konceptch7.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file12"  href="konceptch8.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file13"  href="konceptch9.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file14"  href="konceptch10.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file15"  href="konceptch11.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file16"  href="konceptch12.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file17"  href="konceptch13.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file18"  href="konceptch14.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file19"  href="konceptch15.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file20"  href="konceptli4.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file21"  href="konceptap1.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file22"  href="konceptap2.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file23"  href="konceptap3.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file24"  href="konceptap4.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file25"  href="konceptap5.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file26"  href="konceptap6.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file27"  href="konceptap7.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file28"  href="konceptap8.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file29"  href="konceptap9.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file30"  href="konceptap10.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file31"  href="konceptap11.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file32"  href="konceptap12.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file33"  href="konceptap13.xhtml" media-type="application/xhtml+xml" /> 
+<item id="file34"  href="konceptli5.xhtml" media-type="application/xhtml+xml" /> 
+ 
