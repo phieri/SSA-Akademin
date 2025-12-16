@@ -123,9 +123,9 @@
 \doTocEntry\tocsubsection{1.7.2}{\csname a:TocLink\endcsname{5}{x5-980001.7.2}{QQ2-5-122}{Överlagrade spänningar (likspänningskomposant)}}{90}\relax 
 \doTocEntry\tocsubsection{1.7.3}{\csname a:TocLink\endcsname{5}{x5-990001.7.3}{QQ2-5-123}{Brus}}{90}\relax 
 \doTocEntry\tocsubsubsection{1.7.3.1}{\csname a:TocLink\endcsname{5}{x5-1000001.7.3.1}{QQ2-5-124}{Termiskt brus}}{90}\relax 
-\doTocEntry\toclof{1.23}{\csname a:TocLink\endcsname{5}{x5-100004r23}{}{\ignorespaces En resistor kan ses ha brusekvivalenter som spänning eller ström}}{figure}\relax 
-\doTocEntry\toclof{1.24}{\csname a:TocLink\endcsname{5}{x5-100005r24}{}{\ignorespaces Brus innebär en ostabilitet över tid}}{figure}\relax 
-\doTocEntry\toclof{1.25}{\csname a:TocLink\endcsname{5}{x5-100006r25}{}{\ignorespaces Brus innehåller alla frekvenser, vitt brus har samma amplitud}}{figure}\relax 
+\doTocEntry\toclof{1.23}{\csname a:TocLink\endcsname{5}{x5-100003r23}{}{\ignorespaces En resistor kan ses ha brusekvivalenter som spänning eller ström}}{figure}\relax 
+\doTocEntry\toclof{1.24}{\csname a:TocLink\endcsname{5}{x5-100004r24}{}{\ignorespaces Brus innebär en ostabilitet över tid}}{figure}\relax 
+\doTocEntry\toclof{1.25}{\csname a:TocLink\endcsname{5}{x5-100005r25}{}{\ignorespaces Brus innehåller alla frekvenser, vitt brus har samma amplitud}}{figure}\relax 
 \doTocEntry\tocsubsubsection{1.7.3.2}{\csname a:TocLink\endcsname{5}{x5-1010001.7.3.2}{QQ2-5-128}{Brusbandbredd}}{99}\relax 
 \doTocEntry\toclof{1.26}{\csname a:TocLink\endcsname{5}{x5-101002r26}{}{\ignorespaces Nomogram för omvandling mellan effekt och decibel}}{figure}\relax 
 \doTocEntry\tocsection{1.8}{\csname a:TocLink\endcsname{5}{x5-1020001.8}{QQ2-5-130}{Effekt och energi}}{102}\relax 
@@ -384,7 +384,7 @@
 \doTocEntry\tocsubsection{3.1.15}{\csname a:TocLink\endcsname{7}{x7-2860003.1.15}{QQ2-7-383}{Seriekopplade LC-kretsar}}{335}\relax 
 \doTocEntry\toclof{3.16}{\csname a:TocLink\endcsname{7}{x7-286004r16}{}{\ignorespaces Seriekopplad LC-krets}}{figure}\relax 
 \doTocEntry\tocsubsection{3.1.16}{\csname a:TocLink\endcsname{7}{x7-2870003.1.16}{QQ2-7-385}{Thomsons formel}}{338}\relax 
-\doTocEntry\toclof{3.17}{\csname a:TocLink\endcsname{7}{x7-287006r17}{}{\ignorespaces Svängningskrets}}{figure}\relax 
+\doTocEntry\toclof{3.17}{\csname a:TocLink\endcsname{7}{x7-287005r17}{}{\ignorespaces Svängningskrets}}{figure}\relax 
 \doTocEntry\tocsubsection{3.1.17}{\csname a:TocLink\endcsname{7}{x7-2880003.1.17}{QQ2-7-387}{Impedansen i en resonant krets}}{341}\relax 
 \doTocEntry\tocsubsubsection{3.1.17.1}{\csname a:TocLink\endcsname{7}{x7-2890003.1.17.1}{QQ2-7-388}{Resonansfallet i en parallellkrets}}{341}\relax 
 \doTocEntry\toclof{3.18}{\csname a:TocLink\endcsname{7}{x7-289003r18}{}{\ignorespaces Resonansfallet i parallellkrets}}{figure}\relax 
@@ -626,7 +626,7 @@
 \doTocEntry\tocsection{5.1}{\csname a:TocLink\endcsname{9}{x9-4420005.1}{QQ2-9-625}{Modulationssystem}}{607}\relax 
 \doTocEntry\tocsection{5.2}{\csname a:TocLink\endcsname{9}{x9-4430005.2}{QQ2-9-626}{Sändningsslag}}{607}\relax 
 \doTocEntry\tocsection{5.3}{\csname a:TocLink\endcsname{9}{x9-4440005.3}{QQ2-9-627}{Kännetecken för modulerade signaler}}{607}\relax 
-\doTocEntry\toclof{5.1}{\csname a:TocLink\endcsname{9}{x9-444005r1}{}{\ignorespaces Modulerade signaler}}{figure}\relax 
+\doTocEntry\toclof{5.1}{\csname a:TocLink\endcsname{9}{x9-444001r1}{}{\ignorespaces Modulerade signaler}}{figure}\relax 
 \doTocEntry\tocsection{5.4}{\csname a:TocLink\endcsname{9}{x9-4450005.4}{QQ2-9-629}{Bandbredd vid olika sändningsslag}}{610}\relax 
 \doTocEntry\tocsection{5.5}{\csname a:TocLink\endcsname{9}{x9-4460005.5}{QQ2-9-630}{Beskrivningskod för sändningsslagen}}{610}\relax 
 \doTocEntry\toclof{5.2}{\csname a:TocLink\endcsname{9}{x9-446002r2}{}{\ignorespaces Modulerande signaler}}{figure}\relax 
@@ -753,8 +753,8 @@
 \doTocEntry\toclof{6.28}{\csname a:TocLink\endcsname{10}{x10-527005r28}{}{\ignorespaces Olika MF-bandbredder vid CW (A1A)}}{figure}\relax 
 \doTocEntry\tocsubsubsection{6.8.4.4}{\csname a:TocLink\endcsname{10}{x10-5280006.8.4.4}{QQ2-10-753}{Bandbredd vid FM (F3E)}}{744}\relax 
 \doTocEntry\tocsubsection{6.8.5}{\csname a:TocLink\endcsname{10}{x10-5290006.8.5}{QQ2-10-754}{Signalkänslighet och brus}}{744}\relax 
-\doTocEntry\toclof{6.29}{\csname a:TocLink\endcsname{10}{x10-529007r29}{}{\ignorespaces S/N-värde}}{figure}\relax 
-\doTocEntry\toclof{6.30}{\csname a:TocLink\endcsname{10}{x10-529008r30}{}{\ignorespaces SINAD-värde}}{figure}\relax 
+\doTocEntry\toclof{6.29}{\csname a:TocLink\endcsname{10}{x10-529006r29}{}{\ignorespaces S/N-värde}}{figure}\relax 
+\doTocEntry\toclof{6.30}{\csname a:TocLink\endcsname{10}{x10-529007r30}{}{\ignorespaces SINAD-värde}}{figure}\relax 
 \doTocEntry\tocsubsection{6.8.6}{\csname a:TocLink\endcsname{10}{x10-5300006.8.6}{QQ2-10-757}{Intermodulation, korsmodulation}}{751}\relax 
 \doTocEntry\tocsubsubsection{6.8.6.1}{\csname a:TocLink\endcsname{10}{x10-5310006.8.6.1}{QQ2-10-758}{Korsmodulation}}{751}\relax 
 \doTocEntry\tocsubsection{6.8.7}{\csname a:TocLink\endcsname{10}{x10-5320006.8.7}{QQ2-10-759}{Intermodulation}}{751}\relax 
@@ -804,10 +804,10 @@
 \doTocEntry\tocsubsection{7.3.4}{\csname a:TocLink\endcsname{11}{x11-5650007.3.4}{QQ2-11-803}{Duplex}}{791}\relax 
 \doTocEntry\tocsubsection{7.3.5}{\csname a:TocLink\endcsname{11}{x11-5660007.3.5}{QQ2-11-804}{CW-transceiver med direktblandare}}{791}\relax 
 \doTocEntry\tocsubsection{7.3.6}{\csname a:TocLink\endcsname{11}{x11-5670007.3.6}{QQ2-11-805}{Kristallstyrd FM-transceiver för VHF}}{791}\relax 
-\doTocEntry\toclof{7.12}{\csname a:TocLink\endcsname{11}{x11-567004r12}{}{\ignorespaces Kristallstyrd 6-kanals FM-transceiver för VHF}}{figure}\relax 
+\doTocEntry\toclof{7.12}{\csname a:TocLink\endcsname{11}{x11-567003r12}{}{\ignorespaces Kristallstyrd 6-kanals FM-transceiver för VHF}}{figure}\relax 
 \doTocEntry\tocsubsection{7.3.7}{\csname a:TocLink\endcsname{11}{x11-5680007.3.7}{QQ2-11-807}{PLL-styrd FM-transceiver för VHF}}{794}\relax 
-\doTocEntry\toclof{7.13}{\csname a:TocLink\endcsname{11}{x11-568007r13}{}{\ignorespaces PLL-styrd FM-transceiver för VHF}}{figure}\relax 
-\doTocEntry\toclot{7.1}{\csname a:TocLink\endcsname{11}{x11-568008r1}{}{\ignorespaces Exmpel på användning av olika delningstal vid simplex- och repeaterkanaler.}}{table}\relax 
+\doTocEntry\toclof{7.13}{\csname a:TocLink\endcsname{11}{x11-568006r13}{}{\ignorespaces PLL-styrd FM-transceiver för VHF}}{figure}\relax 
+\doTocEntry\toclot{7.1}{\csname a:TocLink\endcsname{11}{x11-568007r1}{}{\ignorespaces Exmpel på användning av olika delningstal vid simplex- och repeaterkanaler.}}{table}\relax 
 \doTocEntry\tocsubsection{7.3.8}{\csname a:TocLink\endcsname{11}{x11-5690007.3.8}{QQ2-11-810}{Kortvågstransceiver för SSB och CW}}{800}\relax 
 \doTocEntry\toclof{7.14}{\csname a:TocLink\endcsname{11}{x11-569008r14}{}{\ignorespaces SSB-transceiver för kortvåg}}{figure}\relax 
 \doTocEntry\toclof{7.15}{\csname a:TocLink\endcsname{11}{x11-569009r15}{}{\ignorespaces PLL-styrd SSB-transceiver för kortvåg}}{figure}\relax 
@@ -1059,7 +1059,7 @@
 \doTocEntry\tocsection{11.1}{\csname a:TocLink\endcsname{15}{x15-75400011.1}{QQ2-15-1058}{Störningar och störkänslighet}}{1023}\relax 
 \doTocEntry\tocsubsection{11.1.1}{\csname a:TocLink\endcsname{15}{x15-75500011.1.1}{QQ2-15-1059}{Om EMC-lagen}}{1023}\relax 
 \doTocEntry\tocsubsection{11.1.2}{\csname a:TocLink\endcsname{15}{x15-75600011.1.2}{QQ2-15-1060}{Utdrag ur LEK}}{1024}\relax 
-\doTocEntry\toclof{11.1}{\csname a:TocLink\endcsname{15}{x15-756006r1}{}{\ignorespaces CE-märke}}{figure}\relax 
+\doTocEntry\toclof{11.1}{\csname a:TocLink\endcsname{15}{x15-756005r1}{}{\ignorespaces CE-märke}}{figure}\relax 
 \doTocEntry\tocsubsection{11.1.3}{\csname a:TocLink\endcsname{15}{x15-75700011.1.3}{QQ2-15-1062}{Hembyggd radiosändare}}{1027}\relax 
 \doTocEntry\tocsubsection{11.1.4}{\csname a:TocLink\endcsname{15}{x15-75800011.1.4}{QQ2-15-1063}{Utstrålning från amatörradiosändare}}{1027}\relax 
 \doTocEntry\tocsubsection{11.1.5}{\csname a:TocLink\endcsname{15}{x15-75900011.1.5}{QQ2-15-1064}{PM vid störningsproblem}}{1027}\relax 
@@ -1075,8 +1075,8 @@
 \doTocEntry\tocsubsection{11.3.3}{\csname a:TocLink\endcsname{15}{x15-76900011.3.3}{QQ2-15-1074}{Störningar på TV-mottagning}}{1030}\relax 
 \doTocEntry\tocsubsection{11.3.4}{\csname a:TocLink\endcsname{15}{x15-77000011.3.4}{QQ2-15-1075}{Störningar på LF-apparater}}{1030}\relax 
 \doTocEntry\tocsection{11.4}{\csname a:TocLink\endcsname{15}{x15-77100011.4}{QQ2-15-1076}{Avstörningsmetoder}}{1031}\relax 
-\doTocEntry\toclof{11.2}{\csname a:TocLink\endcsname{15}{x15-771003r2}{}{\ignorespaces Nätfilter}}{figure}\relax 
-\doTocEntry\toclof{11.3}{\csname a:TocLink\endcsname{15}{x15-771004r3}{}{\ignorespaces Lågpassfilter för sändare}}{figure}\relax 
+\doTocEntry\toclof{11.2}{\csname a:TocLink\endcsname{15}{x15-771002r2}{}{\ignorespaces Nätfilter}}{figure}\relax 
+\doTocEntry\toclof{11.3}{\csname a:TocLink\endcsname{15}{x15-771003r3}{}{\ignorespaces Lågpassfilter för sändare}}{figure}\relax 
 \doTocEntry\tocsubsection{11.4.1}{\csname a:TocLink\endcsname{15}{x15-77200011.4.1}{QQ2-15-1079}{Allmänt}}{1037}\relax 
 \doTocEntry\tocsubsection{11.4.2}{\csname a:TocLink\endcsname{15}{x15-77300011.4.2}{QQ2-15-1080}{Nätfilter}}{1037}\relax 
 \doTocEntry\tocsubsection{11.4.3}{\csname a:TocLink\endcsname{15}{x15-77400011.4.3}{QQ2-15-1081}{Lågpassfilter}}{1037}\relax 
