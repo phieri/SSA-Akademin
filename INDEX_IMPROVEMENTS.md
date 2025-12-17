@@ -4,24 +4,25 @@ Detta dokument innehåller analys och förslag för att förbättra och korta ne
 
 ## Aktuell status (2025-12-17)
 
-### ✅ HUVUDARBETE SLUTFÖRT + FORTSATTA FÖRBÄTTRINGAR
+### ✅ HUVUDARBETE SLUTFÖRT + PÅGÅENDE SYSTEMATISKT ARBETE
 
 **Totala förbättringar genomförda:**
-- ✅ ~99 indexkommandon borttagna (5,9% reduktion från 1688 till ~1589)
-- ✅ 43+ korshänvisningar för viktiga förkortningar tillagda
+- ✅ ~102 indexkommandon borttagna (6,0% reduktion från 1688 till ~1586)
+- ✅ 53+ korshänvisningar för viktiga förkortningar tillagda
 - ✅ Indexriktlinjer tillagda i texifiering.md
 - ✅ Konsekvent hierarkisk struktur implementerad
 - ✅ Priority 1 komplett genomförd
-- ✅ Priority 2 huvudarbete genomfört + fortsatt (viktiga förkortningar)
+- ✅ Priority 2 pågående systematiskt (förkortningar)
 - ✅ **Kirchhoffs lagar**: reducerat från 3 till 1 förekomst (hierarkisk struktur)
+- ✅ **Felaktig HF-korshänvisning**: åtgärdad (redundans borttagen)
 
-**Commits:** d696bf3, 73b6465, 85a9d68, 86026fb, db81dd5, 2ef5763, 1f11940, 259b516, 3744dff, 98cf12c
+**Commits:** d696bf3, 73b6465, 85a9d68, 86026fb, db81dd5, 2ef5763, 1f11940, 259b516, 3744dff, 98cf12c, 10375de, 062dc86, ff3af7b, 1c8f933
 
-**Korshänvisningar tillagda (43+):**
-AC, DC, AGC, BFO, AFC, CW, SSB, A1A, A3E, F3E, FSK, GFSK, BPSK, PLL, VFO, DDS, ADC, DAC, AFSK, DFT, FFT, IDFT, IFFT, DTMF, ERP, EIRP, PEP, HF, VHF, UHF, SHF, EHF, EMC, USB, EME, BP, NTC, PTC, LEK, LED, FET, MOSFET, GMT, IARU, ITU, VOX, CTCSS
+**Korshänvisningar tillagda (53+):**
+AC, DC, AGC, BFO, AFC, CW, SSB, A1A, A3E, F3E, FSK, GFSK, BPSK, PM, PLL, VFO, VCO, DDS, ADC, DAC, AFSK, DFT, FFT, IDFT, IFFT, DTMF, RTTY, APRS, FT8, SSTV, JT65, ERP, EIRP, PEP, VHF, UHF, SHF, EHF, EMC, USB, EME, BP, NTC, PTC, LEK, LED, FET, MOSFET, GMT, IARU, ITU, UTC, VOX, CTCSS, QSO, QTH, EMK
 
-### Återstående låg-prioriterade förbättringar (valfritt)
-- ~81 mindre vanliga förkortningar (kan läggas till vid behov)
+### Pågående arbete
+- ~71 återstående förkortningar (fortsätter systematiskt)
 - 31 engelska termer (kan konsolideras vid framtida revision)
 - Djupare hierarkisk strukturgranskning (kan göras vid framtida revision)
 
@@ -53,21 +54,30 @@ AC, DC, AGC, BFO, AFC, CW, SSB, A1A, A3E, F3E, FSK, GFSK, BPSK, PLL, VFO, DDS, A
 
 ## Återstående förbättringsområden
 
-### 3. Förkortningar utan korshänvisningar (DELVIS ÅTGÄRDAT ⚠️)
+### 3. Förkortningar utan korshänvisningar (PÅGÅENDE ⚠️)
 
 **Problem**: 124 förkortningar används som fristående poster utan korshänvisning till fullständig term.
 
-**Status**: 30+ viktiga förkortningar har fått korshänvisningar. Återstår: ~94 mindre vanliga förkortningar.
+**Status**: 53+ viktiga förkortningar har fått korshänvisningar. Återstår: ~71 mindre vanliga förkortningar.
 
-**Genomförda korshänvisningar:**
+**Genomförda korshänvisningar (53+):**
 - **Spänning/ström:** AC → växelspänning, DC → likspänning
 - **Mottagning:** AGC → automatisk förstärkningreglering, BFO → Beat Frequency Oscillator, AFC → Automatic Frequency Control
-- **Modulationstyper:** CW → telegrafi, SSB → Single Side Band, A1A → telegrafi, A3E → amplitudmodulation, F3E → frekvensmodulation, FSK → Frequency Shift Keying, GFSK → Gaussian Frequency Shift Keying, BPSK → binär fasskift modulation
-- **Oscillatorer:** PLL → Phase Locked Loop, VFO → variabel frekvensoscillator
+- **Modulationstyper:** CW → telegrafi, SSB → Single Side Band, A1A → telegrafi, A3E → amplitudmodulation, F3E → frekvensmodulation, FSK → Frequency Shift Keying, GFSK → Gaussian Frequency Shift Keying, BPSK → binär fasskift modulation, PM → fasmodulation, RTTY → radioteletype
+- **Oscillatorer:** PLL → Phase Locked Loop, VFO → variabel frekvensoscillator, VCO → spänningsstyrd oscillator
 - **Digital signalbehandling:** DDS → Direct Digital Synthesis, ADC → analog-digital-omvandlare, DAC → digital-analog-omvandlare, AFSK → Audio Frequency Shift Keying, DFT → diskret fouriertransform, FFT → Fast Fourier Transform, IDFT/IFFT → inverse transforms
+- **Digital sändningsslag:** APRS → Automatic Packet Reporting System, FT8 → digital sändningsslag, SSTV → slow scan television, JT65 → digital sändningsslag
 - **Effekt:** ERP → effektivt utstrålad effekt, EIRP → ekvivalent isotropiskt utstrålad effekt, PEP → toppvärdeseffekt
-- **Frekvensband:** HF, VHF, UHF, SHF, EHF → vågutbredning/bandplan
+- **Frekvensband:** VHF, UHF, SHF, EHF → vågutbredning/bandplan
 - **Kompatibilitet:** EMC → elektromagnetisk kompatibilitet
+- **Sidband:** USB → Upper Side Band
+- **Vågutbredning:** EME → månstuds
+- **Filter:** BP → bandpassfilter
+- **Komponenter:** NTC, PTC → temperaturberoende resistor; LED → lysdiod; FET → fälteffekttransistor; MOSFET → Metal Oxide Semiconductor Field Effect Transistor; EMK → elektromotorisk kraft
+- **Juridik:** LEK → Lag om elektronisk kommunikation
+- **Organisationer:** IARU → Internationella Amatörradiounionen; ITU → Internationella Teleunionen
+- **Tid:** GMT → UTC; UTC → koordinerad universell tid
+- **Trafikreglemente:** VOX → talstyrd sändning; CTCSS → subton; DTMF (med reverse cross-ref); QSO, QTH → Q-kod
 
 **Rekommendation**: Lägg till `|see{}` korshänvisningar för återstående förkortningar.
 
@@ -210,9 +220,9 @@ Observera att detta redan gjorts för många termer (t.ex. `likriktning!halvvåg
 3. ⚠️ **DELVIS**: Ta bort redundanta underposter (antennvinst, etc.)
 
 ### Prioritet 2 (Förbättrad användbarhet):
-4. ✅ **GENOMFÖRT**: Lägg till korshänvisningar för förkortningar (30+ viktiga förkortningar)
-   - **Status**: Alla högprioriterade och vanligt förekommande förkortningar har korshänvisningar
-   - **Återstår**: ~94 mindre vanliga förkortningar (låg prioritet, kan göras vid behov)
+4. ⚠️ **PÅGÅENDE**: Lägg till korshänvisningar för förkortningar (53+ viktiga förkortningar)
+   - **Status**: Alla högprioriterade och vanligt förekommande förkortningar har korshänvisningar, fortsätter systematiskt med återstående
+   - **Återstår**: ~71 mindre vanliga förkortningar (fortsätter systematiskt)
 5. ⚠️ **LÅGT PRIORITERAD**: Konsolidera engelska termer med svenska
    - **Status**: Ej genomfört - låg prioritet då de flesta engelska termer redan har svenska paralleller indexerade
    - **Återstår**: 31 engelska termer (kan göras vid framtida revision)
@@ -226,10 +236,10 @@ Observera att detta redan gjorts för många termer (t.ex. `likriktning!halvvåg
 ## Uppskattad effekt
 
 Baserat på analysen:
-- **Genomförda förbättringar**: ~98 indexkommandon borttagna (5,8% reduktion)
-- **Korshänvisningar tillagda**: 30+ förkortningar med `|see{}` referenser
-- **Aktuellt antal**: Från 1688 till ca 1590 indexkommandon
-- **Potential för ytterligare reduktion**: ~100-150 indexkommandon
+- **Genomförda förbättringar**: ~102 indexkommandon borttagna (6,0% reduktion)
+- **Korshänvisningar tillagda**: 53+ förkortningar med `|see{}` referenser
+- **Aktuellt antal**: Från 1688 till ca 1586 indexkommandon
+- **Potential för ytterligare reduktion**: ~80-120 indexkommandon (fortsätter pågående arbete)
 - **Totalt möjligt**: Från 1688 till ca 1450-1500 indexkommandon (11-14% reduktion)
 - **Indexlängd i boken**: Från ~10 sidor till ~8-9 sidor (uppskattning)
 
@@ -252,19 +262,25 @@ Baserat på analysen:
 ## Slutsats
 
 Huvudarbetet med att förbättra och korta ner sakförteckningen är **SLUTFÖRT**. 
+Pågående systematiskt arbete fortsätter med återstående förkortningar enligt rekommendationerna.
 
 **Uppnådda resultat:**
-- ✅ 5,8% reduktion av indexkommandon (98 borttagna)
-- ✅ 30+ korshänvisningar för förbättrad användbarhet
+- ✅ 6,0% reduktion av indexkommandon (102 borttagna)
+- ✅ 53+ korshänvisningar för förbättrad användbarhet
 - ✅ Konsekvent hierarkisk struktur
 - ✅ Tydliga riktlinjer för framtida indexering
+- ✅ Kirchhoffs lagar reducerat från 3 till 1 förekomst
+- ✅ Felaktig HF-korshänvisning åtgärdad
 
 **Effekt på boken:**
 - Kortare och mer lättnavigerat sakförteckning
 - Bättre användarupplevelse genom korshänvisningar från förkortningar
 - Mer professionell struktur enligt svenska indexeringsprinciper
+- Korrekta korshänvisningar utan redundans eller cirkulära referenser
 
-Återstående låg-prioriterade förbättringar (mindre vanliga förkortningar, engelska termer, djupare strukturgranskning) kan göras vid framtida revisioner om behov uppstår.
+**Pågående arbete:**
+- Systematisk genomgång av återstående förkortningar (~71 kvar)
+- Engelska termer och djupare strukturgranskning kan göras vid framtida revisioner om behov uppstår
 
 ## Referenser
 
