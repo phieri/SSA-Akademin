@@ -2,6 +2,16 @@
 
 Detta dokument innehåller analys och förslag för att förbättra och korta ner bokens sakförteckning enligt goda principer för svenska böcker.
 
+## Aktuell status (2025-12-17)
+
+**Totala förbättringar genomförda:**
+- ✅ ~98 indexkommandon borttagna (5,8% reduktion från 1688 till ~1590)
+- ✅ 30+ korshänvisningar för förkortningar tillagda
+- ✅ Indexriktlinjer tillagda i texifiering.md
+- ✅ Konsekvent hierarkisk struktur implementerad
+
+**Commits:** d696bf3, 73b6465, 85a9d68, 86026fb, db81dd5, 2ef5763
+
 ## Sammanfattning av genomförda förbättringar
 
 ### 1. Duplicerade poster (ÅTGÄRDAT ✓)
@@ -30,11 +40,23 @@ Detta dokument innehåller analys och förslag för att förbättra och korta ne
 
 ## Återstående förbättringsområden
 
-### 3. Förkortningar utan korshänvisningar (EJ ÅTGÄRDAT)
+### 3. Förkortningar utan korshänvisningar (DELVIS ÅTGÄRDAT ⚠️)
 
 **Problem**: 124 förkortningar används som fristående poster utan korshänvisning till fullständig term.
 
-**Rekommendation**: Lägg till `|see{}` korshänvisningar för förkortningar.
+**Status**: 30+ viktiga förkortningar har fått korshänvisningar. Återstår: ~94 mindre vanliga förkortningar.
+
+**Genomförda korshänvisningar:**
+- **Spänning/ström:** AC → växelspänning, DC → likspänning
+- **Mottagning:** AGC → automatisk förstärkningreglering, BFO → Beat Frequency Oscillator, AFC → Automatic Frequency Control
+- **Modulationstyper:** CW → telegrafi, SSB → Single Side Band, A1A → telegrafi, A3E → amplitudmodulation, F3E → frekvensmodulation, FSK → Frequency Shift Keying, GFSK → Gaussian Frequency Shift Keying, BPSK → binär fasskift modulation
+- **Oscillatorer:** PLL → Phase Locked Loop, VFO → variabel frekvensoscillator
+- **Digital signalbehandling:** DDS → Direct Digital Synthesis, ADC → analog-digital-omvandlare, DAC → digital-analog-omvandlare, AFSK → Audio Frequency Shift Keying, DFT → diskret fouriertransform, FFT → Fast Fourier Transform, IDFT/IFFT → inverse transforms
+- **Effekt:** ERP → effektivt utstrålad effekt, EIRP → ekvivalent isotropiskt utstrålad effekt, PEP → toppvärdeseffekt
+- **Frekvensband:** HF, VHF, UHF, SHF, EHF → vågutbredning/bandplan
+- **Kompatibilitet:** EMC → elektromagnetisk kompatibilitet
+
+**Rekommendation**: Lägg till `|see{}` korshänvisningar för återstående förkortningar.
 
 **Prioriterade exempel**:
 
@@ -175,7 +197,7 @@ Observera att detta redan gjorts för många termer (t.ex. `likriktning!halvvåg
 3. ⚠️ **DELVIS**: Ta bort redundanta underposter (antennvinst, etc.)
 
 ### Prioritet 2 (Förbättrad användbarhet):
-4. ❌ **EJ GENOMFÖRT**: Lägg till korshänvisningar för förkortningar (124 st)
+4. ⚠️ **DELVIS**: Lägg till korshänvisningar för förkortningar (30+ av 124 klara)
 5. ❌ **EJ GENOMFÖRT**: Konsolidera engelska termer med svenska
 
 ### Prioritet 3 (Finslipning):
@@ -185,9 +207,11 @@ Observera att detta redan gjorts för många termer (t.ex. `likriktning!halvvåg
 ## Uppskattad effekt
 
 Baserat på analysen:
-- **Genomförda förbättringar**: ~30-40 indexkommandon borttagna
-- **Potential för ytterligare reduktion**: ~150-200 indexkommandon
-- **Totalt**: Från 1688 till ca 1500-1550 indexkommandon (10-12% reduktion)
+- **Genomförda förbättringar**: ~98 indexkommandon borttagna (5,8% reduktion)
+- **Korshänvisningar tillagda**: 30+ förkortningar med `|see{}` referenser
+- **Aktuellt antal**: Från 1688 till ca 1590 indexkommandon
+- **Potential för ytterligare reduktion**: ~100-150 indexkommandon
+- **Totalt möjligt**: Från 1688 till ca 1450-1500 indexkommandon (11-14% reduktion)
 - **Indexlängd i boken**: Från ~10 sidor till ~8-9 sidor (uppskattning)
 
 ## Principer för framtida indexering
