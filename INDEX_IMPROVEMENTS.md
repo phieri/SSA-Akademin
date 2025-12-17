@@ -4,20 +4,24 @@ Detta dokument innehåller analys och förslag för att förbättra och korta ne
 
 ## Aktuell status (2025-12-17)
 
-### ✅ HUVUDARBETE SLUTFÖRT
+### ✅ HUVUDARBETE SLUTFÖRT + FORTSATTA FÖRBÄTTRINGAR
 
 **Totala förbättringar genomförda:**
-- ✅ ~98 indexkommandon borttagna (5,8% reduktion från 1688 till ~1590)
-- ✅ 30+ korshänvisningar för viktiga förkortningar tillagda
+- ✅ ~99 indexkommandon borttagna (5,9% reduktion från 1688 till ~1589)
+- ✅ 43+ korshänvisningar för viktiga förkortningar tillagda
 - ✅ Indexriktlinjer tillagda i texifiering.md
 - ✅ Konsekvent hierarkisk struktur implementerad
 - ✅ Priority 1 komplett genomförd
-- ✅ Priority 2 huvudarbete genomfört (viktiga förkortningar)
+- ✅ Priority 2 huvudarbete genomfört + fortsatt (viktiga förkortningar)
+- ✅ **Kirchhoffs lagar**: reducerat från 3 till 1 förekomst (hierarkisk struktur)
 
-**Commits:** d696bf3, 73b6465, 85a9d68, 86026fb, db81dd5, 2ef5763, 1f11940
+**Commits:** d696bf3, 73b6465, 85a9d68, 86026fb, db81dd5, 2ef5763, 1f11940, 259b516, 3744dff, 98cf12c
+
+**Korshänvisningar tillagda (43+):**
+AC, DC, AGC, BFO, AFC, CW, SSB, A1A, A3E, F3E, FSK, GFSK, BPSK, PLL, VFO, DDS, ADC, DAC, AFSK, DFT, FFT, IDFT, IFFT, DTMF, ERP, EIRP, PEP, HF, VHF, UHF, SHF, EHF, EMC, USB, EME, BP, NTC, PTC, LEK, LED, FET, MOSFET, GMT, IARU, ITU, VOX, CTCSS
 
 ### Återstående låg-prioriterade förbättringar (valfritt)
-- ~94 mindre vanliga förkortningar (kan läggas till vid behov)
+- ~81 mindre vanliga förkortningar (kan läggas till vid behov)
 - 31 engelska termer (kan konsolideras vid framtida revision)
 - Djupare hierarkisk strukturgranskning (kan göras vid framtida revision)
 
