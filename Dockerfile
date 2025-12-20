@@ -16,4 +16,6 @@ RUN apt-get --quiet update && \
 	language-pack-sv \
 	latexmk \
 	octave \
-	tidy
+	tidy && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
