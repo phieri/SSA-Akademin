@@ -167,11 +167,11 @@ images_unlinked.txt: images_available.txt images_linked.txt
 
 # Skapar en rapport med kodrader som är längre än 80 tecken.
 long_lines.txt: $(KONCEPT_FILES)
-	grep '.\{81\}' koncept/*.tex > long_lines.txt
+	-grep '.\{81\}' koncept/*.tex > long_lines.txt || true
 
 # Skapar en rapport med kodrader som bara är kommentar.
 comment_lines.txt: $(KONCEPT_FILES)
-	grep '^ *%' koncept/*.tex > comment_lines.txt
+	-grep '^ *%' koncept/*.tex > comment_lines.txt || true
 
 # Genererade bilder (hanteras av macros/Makefile)
 macros/bild_tx_heat.pdf: macros/bild_tx_heat.m

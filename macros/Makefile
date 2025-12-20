@@ -1,3 +1,5 @@
+.PHONY: all clean
+
 all:	bild_tx_heat.pdf
 
 bild_tx_heat.pdf:	bild_tx_heat.tex
