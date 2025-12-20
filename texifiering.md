@@ -186,7 +186,6 @@ någorlunda vettig LaTeX. Med tiden har detta utvecklats även till formatregler
     stället för ”Hertz” och ”Volt” om man inte refererar till namnen på de personer
     som gett namn till enheterna.
 
-<<<<<<< HEAD
     **Riktlinjer för sakförteckning (index):**
 
     * **Undvik duplicering**: Om en term har underposter (`term!underterm`), 
