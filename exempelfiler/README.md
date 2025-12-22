@@ -2,8 +2,6 @@
 
 Detta är en samling exempel- och övningsfiler som kan användas tillsammans med boken KonCEPT för amatörradiocertifikat.
 
-**OBS!** Dessa filer är också inbäddade i PDF-versionen av boken. Om du har PDF:en kan du extrahera filerna direkt därifrån.
-
 ## GNU Radio-exempel
 
 GNU Radio är en gratis programvara för att simulera och experimentera med radiosystem.
