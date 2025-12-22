@@ -24,28 +24,11 @@ repositoryt för att få tillgång till alla exempel.
 \section{GNU Radio-exempel}
 \index{GNU Radio}
 
-GNU Radio är en gratis programvara med öppen källkod för att simulera och
-experimentera med radiosystem.
-Den kan användas för att visualisera och förstå olika modulationsformer som
-beskrivs i kapitel~\ref{ch:modulation}.
-GNU Radio finns tillgängligt för Linux, Windows och macOS.
-Ladda ner från \url{https://www.gnuradio.org} och följ installationsinstruktionerna.
-
-\subsection{Tillgängliga GNU Radio-exempel}
-
-\textbf{Amplitudmodulation (AM):}
-\texttt{am\_modulation.grc}
-
-Detta exempel demonstrerar amplitudmodulation där en lågfrekvent signal
-modulerar amplituden på en högfrekvent bärvåg.
-Exemplet visar både tidsdomän och frekvensdomän.
-
-\textbf{Frekvensmodulation (FM):}
-\texttt{fm\_modulation.grc}
-
-Detta exempel demonstrerar frekvensmodulation där den modulerande signalen
-varierar frekvensen på bärvågen.
-Exemplet visar både tidsdomän och frekvensdomän.
+GNU Radio är en gratis programvara med öppen källkod för simulering av
+radiosystem.
+Läs mer på \url{https://www.gnuradio.org}.
+Exemplen \texttt{am\_modulation.grc} och \texttt{fm\_modulation.grc} demonstrerar
+amplitud- och frekvensmodulation.
 
 \section{SPICE-exempel}
 \index{SPICE}
@@ -74,6 +57,35 @@ En enkel spänningsdelare med två resistorer som demonstrerar Ohms lag och
 spänningsfördelning, beskrivet i kapitel~\ref{ch:ellaera}.
 Diagrammet visar DC-analysen med inspänning (\qty{12}{\volt}) och utspänning (\qty{6}{\volt}).
 
+\begin{lstlisting}[caption={Källkod för spänningsdelare},label=lst:voltage-divider]
+.title Voltage Divider Circuit
+
+* Spänningskälla: 12V DC
+Vin input 0 DC 12
+
+* Resistor 1: 10 kOhm
+R1 input output 10k
+
+* Resistor 2: 10 kOhm
+R2 output 0 10k
+
+* DC operating point analysis
+.op
+
+* Skriv ut resultaten
+.print dc v(input) v(output) i(Vin)
+
+* Förväntat resultat:
+* v(output) = Vin * R2/(R1+R2) = 12V * 10k/(10k+10k) = 6V
+
+.control
+run
+print v(input) v(output) i(Vin)
+.endc
+
+.end
+\end{lstlisting}
+
 \textbf{RC-lågpassfilter:}
 \texttt{rc\_lowpass\_filter.cir}
 
@@ -86,6 +98,36 @@ Diagrammet visar magnitud och fas som funktion av frekvens, med brytfrekvensen
 markerad vid cirka \qty{1,59}{\kilo\hertz}.
 Se kapitel~\ref{ch:komponenter} och~\ref{ch:kretsar} för mer information.
 
+\begin{lstlisting}[caption={Källkod för RC-lågpassfilter},label=lst:rc-lowpass]
+.title RC Low-Pass Filter
+
+* Spänningskälla: 1V AC vid frekvensen 1kHz
+Vin input 0 AC 1
+
+* Resistor: 10 kOhm
+R1 input output 10k
+
+* Kondensator: 10 nF
+C1 output 0 10n
+
+* AC-analys från 10 Hz till 100 kHz med 100 punkter per dekad
+.ac dec 100 10 100k
+
+* Skriv ut resultaten
+.print ac v(output) vdb(output) vp(output)
+
+* Beräkna brytfrekvensen: fc = 1/(2*pi*R*C)
+* fc = 1/(2*3.14159*10000*10e-9) ≈ 1591 Hz
+
+.control
+run
+plot db(v(output))
+plot phase(v(output))
+.endc
+
+.end
+\end{lstlisting}
+
 \textbf{LC-resonanskrets:}
 \texttt{lc\_resonant\_circuit.cir}
 
@@ -96,6 +138,39 @@ En parallell LC-resonanskrets som demonstrerar resonansfenomenet vid en
 specifik frekvens, beskrivet i kapitel~\ref{ch:kretsar}.
 Diagrammet visar magnitud och fas som funktion av frekvens, med
 resonansfrekvensen markerad vid cirka \qty{1,59}{\mega\hertz}.
+
+\begin{lstlisting}[caption={Källkod för LC-resonanskrets},label=lst:lc-resonant]
+.title LC Resonant Circuit
+
+* Strömkälla: 1 mA AC
+Iin input 0 AC 1m
+
+* Induktor: 100 µH
+L1 input 0 100u
+
+* Kondensator: 100 pF
+C1 input 0 100p
+
+* Resistor för förluster: 1 kOhm
+R1 input 0 1k
+
+* AC-analys från 100 kHz till 10 MHz med 100 punkter per dekad
+.ac dec 100 100k 10meg
+
+* Skriv ut resultaten
+.print ac v(input) vdb(input) vp(input)
+
+* Beräkna resonansfrekvensen: f0 = 1/(2*pi*sqrt(L*C))
+* f0 = 1/(2*3.14159*sqrt(100e-6*100e-12)) ≈ 1,59 MHz
+
+.control
+run
+plot db(v(input))
+plot phase(v(input))
+.endc
+
+.end
+\end{lstlisting}
 
 \section{Experimentera själv}
 
