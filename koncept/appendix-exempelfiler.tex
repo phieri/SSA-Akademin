@@ -4,16 +4,11 @@
 \index{GNU Radio}
 \index{SPICE}
 
-I den här boken finns bifogade exempel- och övningsfiler som kan användas för
+I den här boken finns exempel- och övningsfiler som kan användas för
 att experimentera med radiosystem och elektroniska kretsar.
-Filerna är inbäddade i PDF:en och kan hämtas ut för användning med olika
-simuleringsprogram.
+Filerna finns tillgängliga för nedladdning från projektets GitHub-repository.
 
 \section{Hur man hämtar exempelfilerna}
-
-Exempelfilerna finns tillgängliga på två sätt:
-
-\subsection{Ladda ner från GitHub}
 
 Den senaste versionen av alla exempelfiler finns i projektets GitHub-repository:
 
@@ -22,14 +17,9 @@ Den senaste versionen av alla exempelfiler finns i projektets GitHub-repository:
 Du kan ladda ner enskilda filer direkt från GitHub eller klona hela
 repositoryt för att få tillgång till alla exempel.
 
-\subsection{Extrahera från PDF-utgåvan}
-
-De bifogade filerna kan öppnas direkt från PDF-läsaren om den stöder bifogade
-filer (t.ex. Adobe Acrobat Reader, Evince eller Okular).
-Leta efter symbolen för bifogade filer vid filnamnet.
-Du kan också exportera alla bifogade filer från PDF:en med följande kommando:
-
-\texttt{pdftk koncept.pdf unpack\_files output examples/}
+\begin{center}
+\qrcode[height=3cm]{https://github.com/SverigesSandareamatorer/SSA-Akademin/tree/master/examples}
+\end{center}
 
 \section{GNU Radio-exempel}
 \index{GNU Radio}
@@ -42,7 +32,6 @@ beskrivs i kapitel~\ref{ch:modulation}.
 \subsection{Tillgängliga GNU Radio-exempel}
 
 \textbf{Amplitudmodulation (AM):}
-\attachfile[description={GNU Radio exempel för AM-modulation}]{examples/gnuradio/am_modulation.grc}
 \texttt{am\_modulation.grc}
 
 Detta exempel demonstrerar amplitudmodulation där en lågfrekvent signal
@@ -50,7 +39,6 @@ modulerar amplituden på en högfrekvent bärvåg.
 Exemplet visar både tidsdomän och frekvensdomän.
 
 \textbf{Frekvensmodulation (FM):}
-\attachfile[description={GNU Radio exempel för FM-modulation}]{examples/gnuradio/fm_modulation.grc}
 \texttt{fm\_modulation.grc}
 
 Detta exempel demonstrerar frekvensmodulation där den modulerande signalen
@@ -80,7 +68,6 @@ Det finns flera gratis SPICE-kompatibla program:
 \subsection{Tillgängliga SPICE-exempel}
 
 \textbf{Spänningsdelare:}
-\attachfile[description={SPICE-exempel för spänningsdelare}]{examples/spice/voltage_divider.cir}
 \texttt{voltage\_divider.cir}
 
 \mediumfig{images/voltage_divider_circuit.pdf}{Simuleringsresultat för
@@ -91,7 +78,6 @@ spänningsfördelning, beskrivet i kapitel~\ref{ch:ellaera}.
 Diagrammet visar DC-analysen med inspänning (12V) och utspänning (6V).
 
 \textbf{RC-lågpassfilter:}
-\attachfile[description={SPICE-exempel för RC-lågpassfilter}]{examples/spice/rc_lowpass_filter.cir}
 \texttt{rc\_lowpass\_filter.cir}
 
 \mediumfig{images/rc_lowpass_circuit.pdf}{Simuleringsresultat för
@@ -104,7 +90,6 @@ markerad vid cirka 1,59 kHz.
 Se kapitel~\ref{ch:komponenter} och~\ref{ch:kretsar} för mer information.
 
 \textbf{LC-resonanskrets:}
-\attachfile[description={SPICE-exempel för LC-resonanskrets}]{examples/spice/lc_resonant_circuit.cir}
 \texttt{lc\_resonant\_circuit.cir}
 
 \mediumfig{images/lc_resonant_circuit.pdf}{Simuleringsresultat för
@@ -127,11 +112,3 @@ Prova att:
 \item Mäta och jämföra simuleringsresultat med verkliga mätningar
 \item Skapa egna exempel baserade på det du lärt dig i boken.
 \end{itemize}
-
-\section{Licens}
-
-Alla exempelfiler är licensierade under Creative Commons
-Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), samma licens som
-huvudboken.
-Du får fritt kopiera, modifiera och dela filerna så länge du anger källan och
-delar dina ändringar under samma licens.
