@@ -60,7 +60,7 @@ Diagrammet visar DC-analysen med inspänning (\qty{12}{\volt}) och utspänning (
 \begin{lstlisting}[caption={Källkod för spänningsdelare},label=lst:voltage-divider]
 .title Voltage Divider Circuit
 
-* Spänningskälla: 12V DC
+* Voltage source: 12V DC
 Vin input 0 DC 12
 
 * Resistor 1: 10 kOhm
@@ -72,10 +72,10 @@ R2 output 0 10k
 * DC operating point analysis
 .op
 
-* Skriv ut resultaten
+* Print results
 .print dc v(input) v(output) i(Vin)
 
-* Förväntat resultat:
+* Expected result:
 * v(output) = Vin * R2/(R1+R2) = 12V * 10k/(10k+10k) = 6V
 
 .control
@@ -101,23 +101,23 @@ Se kapitel~\ref{ch:komponenter} och~\ref{ch:kretsar} för mer information.
 \begin{lstlisting}[caption={Källkod för RC-lågpassfilter},label=lst:rc-lowpass]
 .title RC Low-Pass Filter
 
-* Spänningskälla: 1V AC vid frekvensen 1kHz
+* Voltage source: 1V AC at frequency 1kHz
 Vin input 0 AC 1
 
 * Resistor: 10 kOhm
 R1 input output 10k
 
-* Kondensator: 10 nF
+* Capacitor: 10 nF
 C1 output 0 10n
 
-* AC-analys från 10 Hz till 100 kHz med 100 punkter per dekad
+* AC analysis from 10 Hz to 100 kHz with 100 points per decade
 .ac dec 100 10 100k
 
-* Skriv ut resultaten
+* Print results
 .print ac v(output) vdb(output) vp(output)
 
-* Beräkna brytfrekvensen: fc = 1/(2*pi*R*C)
-* fc = 1/(2*3.14159*10000*10e-9) ≈ 1591 Hz
+* Calculate cutoff frequency: fc = 1/(2*pi*R*C)
+* fc = 1/(2*3.14159*10000*10e-9) ~= 1591 Hz
 
 .control
 run
@@ -142,26 +142,26 @@ resonansfrekvensen markerad vid cirka \qty{1,59}{\mega\hertz}.
 \begin{lstlisting}[caption={Källkod för LC-resonanskrets},label=lst:lc-resonant]
 .title LC Resonant Circuit
 
-* Strömkälla: 1 mA AC
+* Current source: 1 mA AC
 Iin input 0 AC 1m
 
-* Induktor: 100 µH
+* Inductor: 100 uH
 L1 input 0 100u
 
-* Kondensator: 100 pF
+* Capacitor: 100 pF
 C1 input 0 100p
 
-* Resistor för förluster: 1 kOhm
+* Resistor for losses: 1 kOhm
 R1 input 0 1k
 
-* AC-analys från 100 kHz till 10 MHz med 100 punkter per dekad
+* AC analysis from 100 kHz to 10 MHz with 100 points per decade
 .ac dec 100 100k 10meg
 
-* Skriv ut resultaten
+* Print results
 .print ac v(input) vdb(input) vp(input)
 
-* Beräkna resonansfrekvensen: f0 = 1/(2*pi*sqrt(L*C))
-* f0 = 1/(2*3.14159*sqrt(100e-6*100e-12)) ≈ 1,59 MHz
+* Calculate resonant frequency: f0 = 1/(2*pi*sqrt(L*C))
+* f0 = 1/(2*3.14159*sqrt(100e-6*100e-12)) ~= 1.59 MHz
 
 .control
 run
