@@ -171,6 +171,79 @@
   literate={å}{{\aa}}1 {ä}{{\"a}}1 {ö}{{\"o}}1 {Å}{{\AA}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {é}{{\'e}}1
 }
 
+% Definiera LaTeX som språk för listings-paketet
+\lstdefinelanguage{LaTeX}{
+  % Kommentarer
+  comment=[l]{\%},
+  morecomment=[s]{\%*}{*\%},
+  % Nyckelord (vanliga LaTeX-kommandon)
+  morekeywords={documentclass,usepackage,begin,end,section,subsection,
+    subsubsection,chapter,part,paragraph,subparagraph,label,ref,
+    cite,bibliography,bibliographystyle,item,includegraphics,caption,
+    textbf,textit,texttt,emph,title,author,date,maketitle,tableofcontents,
+    newcommand,renewcommand,newenvironment,renewenvironment,def,let,
+    if,fi,else,ifx,ifnum,ifdim,newcounter,setcounter,addtocounter,
+    value,arabic,roman,Roman,alph,Alph,fnsymbol,par,noindent,hspace,
+    vspace,smallskip,medskip,bigskip,newpage,clearpage,linebreak,
+    pagebreak,centering,raggedright,raggedleft,footnote,marginpar,
+    textcolor,color,definecolor,fbox,framebox,makebox,parbox,minipage,
+    rule,hrule,vrule,hfill,vfill,dotfill,appendix,input,include,
+    setlength,addtolength,settowidth,settoheight,settodepth,
+    newlength,the,makeatletter,makeatother,AtBeginDocument,AtEndDocument,
+    RequirePackage,ProvidesPackage,PassOptionsToPackage,DeclareOption,
+    ProcessOptions,NeedsTeXFormat,DeclareRobustCommand,ProvideCommand,
+    CheckCommand,CommandName,newtheorem,theoremstyle,newdefinition,
+    mathrm,mathbf,mathit,mathsf,mathtt,mathcal,mathbb,mathfrak,
+    frac,sqrt,sum,int,prod,lim,sin,cos,tan,ln,log,exp,
+    left,right,bigl,bigr,Bigl,Bigr,biggl,biggr,Biggl,Biggr,
+    array,matrix,pmatrix,bmatrix,vmatrix,cases,align,equation,
+    eqnarray,displaymath,displaystyle,textstyle,scriptstyle,
+    scriptscriptstyle,limits,nolimits,overline,underline,overbrace,
+    underbrace,stackrel,overset,underset,phantom,hphantom,vphantom,
+    mediumfig,smallfig,largefig,qty,unit,SI},
+  % Känslig för stora/små bokstäver
+  sensitive=true,
+  % Kommentarsstil
+  commentstyle=\color{gray}\itshape,
+  % Nyckelordsstil
+  keywordstyle=\color{blue}\bfseries,
+  % Strängstil (för matematiska uttryck mellan $ $)
+  stringstyle=\color{red},
+  % Identifierare som börjar med backslash
+  alsoletter={\\,*},
+  % Strängar definierade med $ för matematiskt läge
+  morestring=[b]$,
+  morestring=[b]",
+  % Fånga miljöer som begin{...} och end{...}
+  morekeywords=[2]{document,figure,table,equation,align,itemize,enumerate,
+    description,verbatim,minipage,abstract,titlepage,thebibliography,
+    center,flushleft,flushright,quote,quotation,verse,tabular,array,
+    matrix,cases,split,multline,gather,flalign,displaymath,eqnarray,
+    tikzpicture,tabularx,longtable,lstlisting,framed,shaded},
+  keywordstyle=[2]\color{purple}\bfseries,
+  % Paketnamn och klasser
+  morekeywords=[3]{article,book,report,letter,beamer,memoir,
+    graphicx,amsmath,amssymb,amsthm,hyperref,babel,inputenc,fontenc,
+    geometry,fancyhdr,titlesec,tocloft,caption,subcaption,float,
+    listings,xcolor,tikz,pgfplots,siunitx,biblatex,natbib,csquotes,
+    multicol,multirow,booktabs,longtable,array,makeidx,glossaries},
+  keywordstyle=[3]\color{teal},
+  % Specialtecken
+  literate=*
+    {\{}{{\textcolor{blue}{\{}}}{1}
+    {\}}{{\textcolor{blue}{\}}}}{1}
+    {[}{{\textcolor{blue}{[}}}{1}
+    {]}{{\textcolor{blue}{]}}}{1}
+    {\$}{{\textcolor{red}{\$}}}{1}
+    {\&}{{\textcolor{purple}{\&}}}{1}
+    {\#}{{\textcolor{purple}{\#}}}{1}
+    {\_}{{\textcolor{purple}{\_}}}{1}
+    {\^}{{\textcolor{purple}{\^{}}}}{1}
+    {\~}{{\textcolor{purple}{\~{}}}}{1}
+    {\\}{{\textcolor{blue}{\textbackslash}}}{1}
+    {å}{{\aa}}1 {ä}{{\"a}}1 {ö}{{\"o}}1 {Å}{{\AA}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {é}{{\'e}}1
+}
+
 % (Beskrivning saknas.)
 \raggedbottom
 
