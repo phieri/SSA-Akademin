@@ -2,29 +2,30 @@
 
 Detta dokument innehåller analys och förslag för att förbättra och korta ner bokens sakförteckning enligt goda principer för svenska böcker.
 
-## Aktuell status (2025-12-17)
+## Aktuell status (2026-01-01)
 
-### ✅ ARBETE SLUTFÖRT
+### ✅ ARBETE SLUTFÖRT + Priority 3 PÅGÅR
 
 **Totala förbättringar genomförda:**
-- ✅ **~104 indexkommandon borttagna** (6,2% reduktion från 1688 till ~1584)
-- ✅ **58+ korshänvisningar** för alla viktiga och vanliga förkortningar tillagda
+- ✅ **~105 indexkommandon borttagna** (6,2% reduktion från 1688 till ~1583)
+- ✅ **78+ korshänvisningar** för viktiga och vanliga förkortningar tillagda
 - ✅ **Indexriktlinjer** tillagda i texifiering.md
 - ✅ **Konsekvent hierarkisk struktur** implementerad
 - ✅ **Priority 1 KOMPLETT** genomförd
-- ✅ **Priority 2 KOMPLETT** genomförd (huvudarbete)
+- ✅ **Priority 2 KOMPLETT** genomförd
+- ⚠️ **Priority 3 PÅGÅR** - låg-prioriterade förbättringar
 - ✅ **Kirchhoffs lagar**: reducerat från 3 till 1 förekomst (hierarkisk struktur)
 - ✅ **Felaktig HF-korshänvisning**: åtgärdad (redundans borttagen)
 
-**Commits:** d696bf3, 73b6465, 85a9d68, 86026fb, db81dd5, 2ef5763, 1f11940, 259b516, 3744dff, 98cf12c, 10375de, 062dc86, ff3af7b, 1c8f933, a85a0dd, 2405d96
+**Commits:** d696bf3, 73b6465, 85a9d68, 86026fb, db81dd5, 2ef5763, 1f11940, 259b516, 3744dff, 98cf12c, 10375de, 062dc86, ff3af7b, 1c8f933, a85a0dd, 2405d96, 19c2110, 2e51b12, 93cbb65, f9720bc
 
-**Korshänvisningar tillagda (58+):**
-AC, DC, AGC, BFO, AFC, CW, SSB, A1A, A3E, F3E, FSK, GFSK, BPSK, PM, RTTY, PLL, VFO, VCO, DDS, ADC, DAC, AFSK, DFT, FFT, IDFT, IFFT, DTMF, PWM, QAM, APRS, FT8, SSTV, JT65, ERP, EIRP, PEP, PA, LNA, VHF, UHF, SHF, EHF, EMC, USB, EME, BP, NTC, PTC, LED, FET, MOSFET, EMK, IC, LEK, IARU, ITU, GMT, UTC, VOX, CTCSS, QSO, QTH
+**Korshänvisningar tillagda (78+):**
+AC, DC, AGC, BFO, AFC, CW, SSB, A1A, A3E, F3E, FSK, GFSK, BPSK, PM, RTTY, PLL, VFO, VCO, DDS, ADC, DAC, AFSK, DFT, FFT, IDFT, IFFT, DTMF, PWM, QAM, APRS, FT8, SSTV, JT65, ERP, EIRP, PEP, PA, LNA, VHF, UHF, SHF, EHF, EMC, EMF, USB, EME, BP, NTC, PTC, LED, FET, MOSFET, EMK, IC, LEK, IARU, ITU, GMT, UTC, VOX, CTCSS, QSO, QTH, QRK, QRM, QRN, QRO, QRP, QRS, QRT, QRU, QRV, QRX, QRZ, QSA, QSB, QSL, QSY, QTC, QTR, RIT, KOX
 
-### Återstående mycket låg-prioriterade förbättringar (valfritt)
-- Mycket sällan använda förkortningar (< 2 förekomster vardera i hela boken)
-- 31 engelska termer (kan konsolideras vid framtida revision om behov uppstår)
-- Djupare hierarkisk strukturgranskning (inga problem identifierade)
+### Pågående Priority 3 låg-prioriterade förbättringar
+- ⚠️ Ytterligare sällan använda förkortningar (~58 utan korshänvisning kvar)
+- ⚠️ 31 engelska termer (kan konsolideras vid framtida revision)
+- ⚠️ Djupare hierarkisk strukturgranskning (grundstruktur är god)
 
 ## Sammanfattning av genomförda förbättringar
 
@@ -266,30 +267,31 @@ Observera att detta redan gjorts för många termer (t.ex. `likriktning!halvvåg
 
 ## Slutsats
 
-Arbetet med att förbättra och korta ner sakförteckningen är **SLUTFÖRT**. 
-Alla rekommenderade åtgärder i Priority 1 och Priority 2 är genomförda.
+Arbetet med att förbättra och korta ner sakförteckningen har **PRIORITY 1 och 2 SLUTFÖRDA, Priority 3 PÅGÅR**. 
+Alla rekommenderade åtgärder i Priority 1 och Priority 2 är genomförda. Arbetar nu systematiskt igenom Priority 3 låg-prioriterade förbättringar.
 
 **Uppnådda resultat:**
-- ✅ **6,2% reduktion** av indexkommandon (104 borttagna: från 1688 till ~1584)
-- ✅ **58+ korshänvisningar** för alla viktiga och vanliga förkortningar
+- ✅ **6,2% reduktion** av indexkommandon (105 borttagna: från 1688 till ~1583)
+- ✅ **78+ korshänvisningar** för viktiga och vanliga förkortningar (inklusive alla Q-koder)
 - ✅ **Konsekvent hierarkisk struktur** genomförd
 - ✅ **Tydliga riktlinjer** för framtida indexering i texifiering.md
 - ✅ **Kirchhoffs lagar** reducerat från 3 till 1 förekomst med hierarkisk struktur
 - ✅ **Felaktig HF-korshänvisning** åtgärdad (redundans borttagen)
 - ✅ **19 duplicerade poster** eliminerade
 - ✅ **Priority 1 och Priority 2 KOMPLETT**
+- ⚠️ **Priority 3 PÅGÅR** - ytterligare låg-prioriterade förbättringar
 
 **Effekt på boken:**
 - Kortare och mer lättnavigerat sakförteckning
-- Bättre användarupplevelse genom korshänvisningar från förkortningar
+- Bättre användarupplevelse genom korshänvisningar från förkortningar (inkl. alla Q-koder)
 - Mer professionell struktur enligt svenska indexeringsprinciper
 - Korrekta korshänvisningar utan redundans eller cirkulära referenser
 - Konsekvent hierarkisk indexering
 
-**Återstående mycket låg-prioriterade möjligheter (valfritt):**
-- Mycket sällan använda förkortningar (< 2 förekomster vardera i hela boken)
-- 31 engelska termer (kan konsolideras vid framtida revision om behov uppstår)
-- Djupare hierarkisk strukturgranskning (inga problem identifierade, kan göras vid behov)
+**Pågående Priority 3 arbete:**
+- Ytterligare sällan använda förkortningar (~58 kvar utan korshänvisning)
+- 31 engelska termer (kan konsolideras vid framtida revision)
+- Djupare hierarkisk strukturgranskning (grundstruktur är god, inga kritiska problem)
 
 ## Referenser
 
