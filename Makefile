@@ -12,7 +12,7 @@ help:
 
 all:	koncept.pdf koncept.epub
 
-.PHONY: all clean help docker-image docker-build TODOs
+.PHONY: all clean help docker-image docker-build TODOs koncept.tar.gz
 
 KONCEPT_CH01_FILES = koncept/ellaera.tex \
 	koncept/ellaera--elektriska-grundbegrepp.tex koncept/ellaera--elektriska-kraftkallor.tex \
@@ -142,7 +142,7 @@ koncept.epub: $(REPO_FILES) koncept.tex $(KONCEPT_FILES) $(IMAGE_XBBS)
 	tex4ebook --format epub3 --tidy koncept.tex
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES)
-	tar cvzf koncept.tar.gz Makefile $(KONCEPT_FILES) images/*
+	tar czf koncept.tar.gz Makefile $(KONCEPT_FILES) $(shell find images -type f 2>/dev/null || true)
 
 TODOs:  koncept.tex $(KONCEPT_FILES) koncept.log
 	rm -f TODOs.txt
@@ -154,7 +154,7 @@ TODOs:  koncept.tex $(KONCEPT_FILES) koncept.log
 
 # Skapar en rapport med länkade bilder.
 images_linked.txt: koncept.tex $(KONCEPT_FILES)
-	grep -F images ./**/*.tex | sed -e 's/.*images/images/' -e 's/}//' | sort -u > images_linked.txt
+	find . -name "*.tex" -type f | xargs grep -h -F images | sed -e 's/.*images/images/' -e 's/}//' | sort -u > images_linked.txt
 
 # Skapar filen images_available.txt som innehåller en sorterad lista över alla
 # PDF-filer i katalogen images och dess undermappar. Använder wildcard för att
@@ -185,7 +185,7 @@ docker-image:
 	docker build -t ${DOCKER_IMAGE_NAME} .
 
 docker-build:
-	docker run -ti --rm -v $(shell pwd):/work -w /work ${DOCKER_IMAGE_NAME} make all
+	docker run -ti --rm -v "$(shell pwd)":/work -w /work ${DOCKER_IMAGE_NAME} make all
 
 clean: SHELL=/bin/bash -O extglob -c
 clean:
