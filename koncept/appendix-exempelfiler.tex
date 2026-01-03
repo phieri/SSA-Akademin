@@ -75,9 +75,6 @@ R2 output 0 10k
 * Skriv ut resultaten
 .print dc v(input) v(output) i(Vin)
 
-* Förväntat resultat:
-* v(output) = Vin * R2/(R1+R2) = 12V * 10k/(10k+10k) = 6V
-
 .control
 run
 print v(input) v(output) i(Vin)
@@ -116,57 +113,10 @@ C1 output 0 10n
 * Skriv ut resultaten
 .print ac v(output) vdb(output) vp(output)
 
-* Beräkna brytfrekvensen: fc = 1/(2*pi*R*C)
-* fc = 1/(2*3.14159*10000*10e-9) ~ 1591 Hz
-
 .control
 run
 plot db(v(output))
 plot phase(v(output))
-.endc
-
-.end
-\end{lstlisting}
-
-\textbf{LC-resonanskrets:}
-\texttt{lc\_resonant\_circuit.cir}
-
-\mediumfig{images/lc_resonant_circuit.pdf}{Simuleringsresultat för
-LC-resonanskrets -- frekvensrespons visar resonanstopp}{fig:lc-resonant-circuit}
-
-En parallell LC-resonanskrets som demonstrerar resonansfenomenet vid en
-specifik frekvens, beskrivet i kapitel~\ref{ch:kretsar}.
-Diagrammet visar magnitud och fas som funktion av frekvens, med
-resonansfrekvensen markerad vid cirka \qty{1,59}{\mega\hertz}.
-
-\begin{lstlisting}[caption={Källkod för LC-resonanskrets},label=lst:lc-resonant]
-.title LC Resonant Circuit
-
-* Strömkälla: 1 mA AC
-Iin input 0 AC 1m
-
-* Induktor: 100 uH
-L1 input 0 100u
-
-* Kondensator: 100 pF
-C1 input 0 100p
-
-* Resistor för förluster: 1 kOhm
-R1 input 0 1k
-
-* AC-analys från 100 kHz till 10 MHz med 100 punkter per dekad
-.ac dec 100 100k 10meg
-
-* Skriv ut resultaten
-.print ac v(input) vdb(input) vp(input)
-
-* Beräkna resonansfrekvensen: f0 = 1/(2*pi*sqrt(L*C))
-* f0 = 1/(2*3.14159*sqrt(100e-6*100e-12)) ~ 1,59 MHz
-
-.control
-run
-plot db(v(input))
-plot phase(v(input))
 .endc
 
 .end
