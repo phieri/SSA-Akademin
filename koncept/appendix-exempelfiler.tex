@@ -6,7 +6,6 @@
 
 I den här boken finns exempel- och övningsfiler som kan användas för
 att experimentera med radiosystem och elektroniska kretsar.
-Filerna finns tillgängliga för nedladdning från projektets GitHub-repository.
 
 \section{Hur man hämtar exempelfilerna}
 
@@ -57,7 +56,7 @@ En enkel spänningsdelare med två resistorer som demonstrerar Ohms lag och
 spänningsfördelning, beskrivet i kapitel~\ref{ch:ellaera}.
 Diagrammet visar DC-analysen med inspänning (\qty{12}{\volt}) och utspänning (\qty{6}{\volt}).
 
-\begin{lstlisting}[caption={Källkod för spänningsdelare},label=lst:voltage-divider]
+\begin{lstlisting}[language=SPICE,caption={Källkod för spänningsdelare},label=lst:voltage-divider]
 .title Voltage Divider Circuit
 
 * Spänningskälla: 12V DC
@@ -95,7 +94,7 @@ Diagrammet visar magnitud och fas som funktion av frekvens, med brytfrekvensen
 markerad vid cirka \qty{1,59}{\kilo\hertz}.
 Se kapitel~\ref{ch:komponenter} och~\ref{ch:kretsar} för mer information.
 
-\begin{lstlisting}[caption={Källkod för RC-lågpassfilter},label=lst:rc-lowpass]
+\begin{lstlisting}[language=SPICE,caption={Källkod för RC-lågpassfilter},label=lst:rc-lowpass]
 .title RC Low-Pass Filter
 
 * Spänningskälla: 1V AC vid frekvensen 1kHz
