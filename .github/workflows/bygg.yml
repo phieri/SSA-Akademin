@@ -12,6 +12,10 @@ on:
     paths-ignore:
       - '**.md'
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   analysera-koden:
     name: 'Analysera koden'
