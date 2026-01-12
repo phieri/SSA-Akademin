@@ -1,0 +1,36 @@
+* RC Low-Pass Filter Example
+* SSA-Akademin KonCEPT
+* Exempel på ett enkelt RC-lågpassfilter
+*
+* Detta är ett enkelt första ordningens lågpassfilter
+* med en brytfrekvens på cirka 1,59 kHz
+*
+* Licens: CC BY-SA 4.0
+
+.title RC Low-Pass Filter
+
+* Spänningskälla: 1V AC vid frekvensen 1kHz
+Vin input 0 AC 1
+
+* Resistor: 10 kOhm
+R1 input output 10k
+
+* Kondensator: 10 nF
+C1 output 0 10n
+
+* AC-analys från 10 Hz till 100 kHz med 100 punkter per dekad
+.ac dec 100 10 100k
+
+* Skriv ut resultaten
+.print ac v(output) vdb(output) vp(output)
+
+* Beräkna brytfrekvensen: fc = 1/(2*pi*R*C)
+* fc = 1/(2*3.14159*10000*10e-9) ≈ 1591 Hz
+
+.control
+run
+plot db(v(output))
+plot phase(v(output))
+.endc
+
+.end

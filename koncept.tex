@@ -154,6 +154,52 @@
 % erbjuder på egen hand.
 \usepackage{graphicx}
 
+% Paketet listings gör det möjligt att formatera källkod.
+% Används för att visa SPICE-exempel i appendix.
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  tabsize=2,
+  inputencoding=utf8,
+  extendedchars=true,
+  literate={å}{{\aa}}1 {ä}{{\"a}}1 {ö}{{\"o}}1 {Å}{{\AA}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {é}{{\'e}}1
+}
+
+% Definiera SPICE som språk för listings-paketet
+\lstdefinelanguage{SPICE}{
+  % Kommentarer börjar med * eller ;
+  comment=[l]{*},
+  morecomment=[l]{;},
+  % SPICE-kommandon och direktiv (case-insensitive)
+  morekeywords={.AC,.DC,.TRAN,.OP,.FOUR,.NOISE,.SENS,.TF,.DISTO,.PLOT,
+    .PRINT,.PROBE,.WIDTH,.OPTIONS,.TEMP,.IC,.NODESET,.SAVE,.LOAD,
+    .MODEL,.SUBCKT,.ENDS,.END,.INCLUDE,.LIB,.PARAM,.FUNC,.MEAS,
+    .GLOBAL,.TITLE},
+  % Känslig för stora/små bokstäver (SPICE är traditionellt case-insensitive)
+  sensitive=false,
+  % Komponentprefix (första bokstaven i komponentnamn)
+  morekeywords=[2]{R,C,L,V,I,D,Q,M,J,K,E,F,G,H,T,U,X,Y,Z,S,W},
+  % Analyskommandon
+  morekeywords=[3]{AC,DC,TRAN,OP,FOUR,NOISE,SENS,TF,DISTO},
+  % Kommentarer i mörkgrå kursiv, resten svart
+  commentstyle=\color{darkgray}\itshape,
+  keywordstyle=\color{black},
+  keywordstyle=[2]\color{black},
+  keywordstyle=[3]\color{black},
+  stringstyle=\color{black},
+  % Tillåt siffror och vissa specialtecken i identifierare
+  alsoletter={.,_,-},
+  % Literate för svenska tecken
+  literate=
+    {å}{{\aa}}1 {ä}{{\"a}}1 {ö}{{\"o}}1 {Å}{{\AA}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {é}{{\'e}}1
+}
+
 % (Beskrivning saknas.)
 \raggedbottom
 

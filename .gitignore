@@ -39,7 +39,9 @@ Thumbs.db:encryptable
 *.synctex
 *.synctex.gz
 *.synctex.gz(busy)
+*.synctex(busy)
 *.pdfsync
+build_output.txt
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms
@@ -215,3 +217,4 @@ images_unlinked.txt
 TODOs.txt
 long_lines.txt
 comment_lines.txt
+*.atfi

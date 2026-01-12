@@ -1,0 +1,35 @@
+* Voltage Divider Example
+* SSA-Akademin KonCEPT
+* Exempel på en spänningsdelare
+*
+* En enkel spänningsdelare med två resistorer
+* som demonstrerar Ohms lag och spänningsfördelning
+*
+* Licens: CC BY-SA 4.0
+
+.title Voltage Divider Circuit
+
+* Spänningskälla: 12V DC
+Vin input 0 DC 12
+
+* Resistor 1: 10 kOhm
+R1 input output 10k
+
+* Resistor 2: 10 kOhm
+R2 output 0 10k
+
+* DC operating point analysis
+.op
+
+* Skriv ut resultaten
+.print dc v(input) v(output) i(Vin)
+
+* Förväntat resultat:
+* v(output) = Vin * R2/(R1+R2) = 12V * 10k/(10k+10k) = 6V
+
+.control
+run
+print v(input) v(output) i(Vin)
+.endc
+
+.end
