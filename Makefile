@@ -12,7 +12,7 @@ help:
 
 all:	koncept.pdf koncept.epub
 
-.PHONY: all koncept.pdf koncept.epub clean help
+.PHONY: all clean help docker-image docker-build TODOs koncept.tar.gz
 
 KONCEPT_CH01_FILES = koncept/ellaera.tex \
 	koncept/ellaera--elektriska-grundbegrepp.tex koncept/ellaera--elektriska-kraftkallor.tex \
@@ -124,7 +124,7 @@ branch.tmp:
 SHA.tmp:
 	touch SHA.tmp
 
-koncept.log:
+koncept.log: koncept.pdf
 koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
 	latexmk -pdf koncept.tex
 
@@ -142,7 +142,7 @@ koncept.epub: $(REPO_FILES) koncept.tex $(KONCEPT_FILES) $(IMAGE_XBBS)
 	tex4ebook --format epub3 --tidy koncept.tex
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES)
-	tar cvzf koncept.tar.gz Makefile $(KONCEPT_FILES) images/*
+	tar czf koncept.tar.gz Makefile $(KONCEPT_FILES) $(shell find images -type f 2>/dev/null || true)
 
 TODOs:  koncept.tex $(KONCEPT_FILES) koncept.log
 	rm -f TODOs.txt
@@ -153,29 +153,30 @@ TODOs:  koncept.tex $(KONCEPT_FILES) koncept.log
 	- grep -F LaTeX koncept.log | grep -F Warning >> TODOs.txt
 
 # Skapar en rapport med länkade bilder.
+images_linked.txt: SHELL=/bin/bash -O globstar -c
 images_linked.txt: koncept.tex $(KONCEPT_FILES)
-	grep -F images ./**/*.tex | sed -e s/.*images/images/ | sed -e s/\}// | sort -u > images_linked.txt
+	grep -F images ./**/*.tex | sed -e 's/.*images/images/' -e 's/}//' | sort -u > images_linked.txt
 
 # Skapar filen images_available.txt som innehåller en sorterad lista över alla
 # PDF-filer i katalogen images och dess undermappar. Använder wildcard för att
 # hitta PDF-filer och sort -u för att ta bort eventuella dubbletter.
 images_available.txt: $(wildcard images/**/*.pdf)
-	ls images/**/*.pdf | sed -e s/\.pdf// | sort -u > images_available.txt
+	find images -name "*.pdf" | sed -e 's/\.pdf$//' | sort -u > images_available.txt
 
 images_unlinked.txt: images_available.txt images_linked.txt
-	diff images_available.txt images_linked.txt | grep \< | sed -e s/\<\ // > images_unlinked.txt
+	diff images_available.txt images_linked.txt | sed -n 's/^< //p' > images_unlinked.txt
 
 # Skapar en rapport med kodrader som är längre än 80 tecken.
 long_lines.txt: $(KONCEPT_FILES)
-	grep '.\{81\}' koncept/*.tex > long_lines.txt
+	-grep '.\{81\}' koncept/*.tex > long_lines.txt || true
 
 # Skapar en rapport med kodrader som bara är kommentar.
 comment_lines.txt: $(KONCEPT_FILES)
-	grep '^ *%' koncept/*.tex > comment_lines.txt
+	-grep '^ *%' koncept/*.tex > comment_lines.txt || true
 
-# Genererade bilder
-macros/bild_tx_heat.eps: macros/bild_tx_heat.m
-	octave macros/bild_tx_heat.m
+# Genererade bilder (hanteras av macros/Makefile)
+macros/bild_tx_heat.pdf: macros/bild_tx_heat.m
+	cd macros && $(MAKE) bild_tx_heat.pdf
 
 # Optionally build using docker, currently only tested with MacOS and Docker 1.12.3, but
 # should work anywhere you can run Docker.
@@ -185,7 +186,7 @@ docker-image:
 	docker build -t ${DOCKER_IMAGE_NAME} .
 
 docker-build:
-	docker run -ti --rm -v $(shell pwd):/work -w /work ${DOCKER_IMAGE_NAME} make all
+	docker run -ti --rm -v "$(shell pwd)":/work -w /work ${DOCKER_IMAGE_NAME} make all
 
 clean: SHELL=/bin/bash -O extglob -c
 clean:

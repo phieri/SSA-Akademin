@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: "30 03 20 * *"
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   testa-webbadresser:
     if: github.repository == 'SverigesSandareamatorer/SSA-Akademin'
