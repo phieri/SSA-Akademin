@@ -153,8 +153,9 @@ TODOs:  koncept.tex $(KONCEPT_FILES) koncept.log
 	- grep -F LaTeX koncept.log | grep -F Warning >> TODOs.txt
 
 # Skapar en rapport med länkade bilder.
+images_linked.txt: SHELL=/bin/bash -O globstar -c
 images_linked.txt: koncept.tex $(KONCEPT_FILES)
-	find . -name "*.tex" -type f | xargs grep -h -F images | sed -e 's/.*images/images/' -e 's/}//' | sort -u > images_linked.txt
+	grep -F images ./**/*.tex | sed -e 's/.*images/images/' -e 's/}//' | sort -u > images_linked.txt
 
 # Skapar filen images_available.txt som innehåller en sorterad lista över alla
 # PDF-filer i katalogen images och dess undermappar. Använder wildcard för att
