@@ -7,7 +7,7 @@ Detta är en samling exempel- och övningsfiler som kan användas tillsammans me
 GNU Radio är en gratis programvara med öppen källkod för simulering av radiosystem.
 Läs mer på [gnuradio.org](https://gnuradio.org).
 
-Det finns många bra exempelfiler tillgängliga på GNU Radios officiella webbplats och i deras dokumentation, inklusive exempel på amplitud- och frekvensmodulation
+Det finns många bra exempelfiler tillgängliga på GNU Radios officiella webbplats och i deras dokumentation, inklusive exempel på amplitud- och frekvensmodulation.
 
 ## SPICE-exempel
 
