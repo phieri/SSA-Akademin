@@ -44,7 +44,7 @@ jobs:
           echo "| Kodrader längre än 80 tecken | $(wc -l < long_lines.txt) |" >> $GITHUB_STEP_SUMMARY
           make comment_lines.txt
           echo "| Kommentarrader | $(wc -l < comment_lines.txt) |" >> $GITHUB_STEP_SUMMARY
-          echo "| chktex-varningar | $(grep -c 'Warning' chktex.log || echo 0) |" >> $GITHUB_STEP_SUMMARY
+          echo "| chktex-varningar | $(grep -Fc 'Warning' chktex.log || echo 0) |" >> $GITHUB_STEP_SUMMARY
       - name: 'Spara rapporter'
         uses: actions/upload-artifact@v5
         with:
@@ -77,6 +77,7 @@ jobs:
       - name: 'Sätt systemspråk till svenska'
         run: |
           sudo locale-gen sv_SE.UTF-8
+          sudo update-locale LANG=sv_SE.UTF-8 LC_ALL=sv_SE.UTF-8
           echo "LANG=sv_SE.UTF-8" >> $GITHUB_ENV
           echo "LC_ALL=sv_SE.UTF-8" >> $GITHUB_ENV
       - name: 'Kopiera info om repository till filer'

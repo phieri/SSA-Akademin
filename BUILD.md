@@ -16,7 +16,7 @@ steg och beskriver de verktyg som används för att köra koden.
 
 | :warning: **Observera** |
 |:------------------------|
-| Dessa instruktioner är inte fullständiga men kan ändå hjälpa framför allt de som kör Linux eller UNIX-liknande operativsystem. Just nu är den här guiden mest inriktad på [Linux/Debian-derivat](https://www.debian.org/misc/children-distros) men paketnamnen bör heta likadant i andra distributioners pakethanterare. |
+| Dessa instruktioner är inte fullständiga men kan ändå hjälpa framför allt de som kör Linux eller UNIX-liknande operativsystem. Just nu är den här guiden mest inriktad på [Linux/Debian-derivat](https://www.debian.org/derivatives/) men paketnamnen bör heta likadant i andra distributioners pakethanterare. |
 
 # Kom igång
 

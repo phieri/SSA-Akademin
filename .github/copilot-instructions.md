@@ -22,6 +22,7 @@ SSA-Akademin/
 ├── .github/                # GitHub workflows and contribution guides
 ├── images/                 # Image assets (PDF format)
 ├── koncept/                # LaTeX chapter files
+├── exempelfiler/           # Example files to be used by book readers
 ├── macros/                 # Custom LaTeX macros
 ├── koncept.tex             # Main LaTeX document
 ├── koncept.bib             # Bibliography
