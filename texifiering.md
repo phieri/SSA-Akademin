@@ -177,7 +177,7 @@ någorlunda vettig LaTeX. Med tiden har detta utvecklats även till formatregler
     ```
 
     Lägg till korshänvisningar för förkortningar:
-    `\index{AGC|see {automatisk förstärkningsreglering}}`.
+    `\index{AGC|see{automatisk förstärkningsreglering}}`.
 
     Använd svenska termer som huvudposter. Engelska termer kan indexeras med
     korshänvisning till den svenska termen.
@@ -186,6 +186,24 @@ någorlunda vettig LaTeX. Med tiden har detta utvecklats även till formatregler
     stället för ”Hertz” och ”Volt” om man inte refererar till namnen på de personer
     som gett namn till enheterna.
 
+
+    **Riktlinjer för sakförteckning (index):**
+
+    * **Undvik duplicering**: Om en term har underposter (`term!underterm`), 
+      lägg inte till fristående `\index{term}`. Välj antingen fristående 
+      eller hierarkisk struktur, inte både och.
+    
+    * **Begränsa överindexering**: Indexera endast vid huvuddefinitionen och 
+      max 2-3 viktiga referenser. Undvik att indexera samma term mer än 4 gånger.
+    
+    * **Använd hierarki konsekvent**: Gruppera relaterade begrepp hierarkiskt, 
+      t.ex. `\index{mottagare!superheterodyn}` istället för flera fristående poster.
+    
+    * **Förkortningar**: Lägg till korshänvisningar för förkortningar: 
+      `\index{AGC|see{automatisk förstärkningreglering}}`
+    
+    * **Svenska först**: Använd svenska termer som huvudposter. Engelska termer 
+      kan indexeras med korshänvisning till den svenska termen.
 25. Referenser mellan olika delar görs genom att sätta en `\label{}` och sedan
     referera till den.
     Använd inte bokstäverna ÅÄÖ i label-namnet! Använd de vedertagna prefixen!
