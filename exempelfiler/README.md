@@ -2,26 +2,12 @@
 
 Detta är en samling exempel- och övningsfiler som kan användas tillsammans med boken KonCEPT för amatörradiocertifikat.
 
-## GNU Radio-exempel
+## GNU Radio
 
-GNU Radio är en gratis programvara för att simulera och experimentera med radiosystem.
+GNU Radio är en gratis programvara med öppen källkod för simulering av radiosystem.
 Läs mer på [gnuradio.org](https://gnuradio.org).
 
-### Filerna
-
-- `am_modulation.grc` - Exempel på amplitudmodulation (AM)
-- `fm_modulation.grc` - Exempel på frekvensmodulation (FM)
-
-### Hur man använder
-
-1. Installera GNU Radio på din dator (finns för Linux, Windows och macOS)
-2. Öppna en `.grc`-fil i GNU Radio Companion
-3. Klicka på "Run" för att starta simuleringen
-4. Experimentera genom att ändra parametrar som:
-   - Modulationsfrekvens
-   - Bärvågsfrekvens
-   - Modulationsdjup (för AM)
-   - Frekvensdeviation (för FM)
+Det finns många bra exempelfiler tillgängliga på GNU Radios officiella webbplats och i deras dokumentation, inklusive exempel på amplitud- och frekvensmodulation
 
 ## SPICE-exempel
 
@@ -32,9 +18,8 @@ SPICE är en standard för kretssimuleringar som används av många program, t.e
 
 ### Filerna
 
-- `voltage_divider.cir` - Enkel spänningsdelare som demonstrerar Ohms lag
-- `rc_lowpass_filter.cir` - RC-lågpassfilter
-- `lc_resonant_circuit.cir` - Parallell LC-resonanskrets
+- `spanningsdelare.cir` - Enkel spänningsdelare som demonstrerar Ohms lag
+- `rc_lagpassfilter.cir` - RC-lågpassfilter
 
 ### Hur man använder
 
