@@ -52,11 +52,14 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Avsnittsrubrik ändrad från "Transceiver" till "Transceivrar".
 - Grammatikfel: tagit bort dubblering av ord "att att", "till till", "kan kan", "ett ett" och "olika olika" (7 förekomster).
 - ISBN-nummer uppdaterat till 978-91-86368-32-6 för tredje upplagan.
+- Sakförteckningen förbättrad genom att ta bort duplicerade poster, lägga till korshänvisningar för förkortningar, och förbättra hierarkisk struktur (~105 indexkommandon borttagna, 78+ korshänvisningar tillagda).
+- Indexriktlinjer tillagda i texifiering.md för att undvika framtida duplicering och överindexering.
 
 ### Borttaget
 - Text om integrationsgrad borttagen.
 - Avsnittssammanfattning om PLL-styrd kortvågstransceiver borttagen.
-- Flertal ord raderade från sakregistret.
+- Duplicerade indextermer borttagna (t.ex. fristående \index{antenn} när \index{antenn!antennvinst} redan finns).
+- Överindexerade termer reducerade för bättre navigering i sakförteckningen.
 
 ## [2.6.1] – 2023-11-14
 ### Tillagt
