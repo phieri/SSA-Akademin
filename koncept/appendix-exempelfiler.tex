@@ -1,0 +1,70 @@
+\chapter{Exempelfiler}
+\label{app:exempelfiler}
+\index{GNU Radio}
+\index{SPICE}
+
+Till den här boken finns exempel- och övningsfiler som kan användas för att
+experimentera med radiosystem och elektroniska kretsar.
+
+\section{Hur man hämtar exempelfilerna}
+
+Den senaste versionen av alla exempelfiler finns i projektets GitHub-repository:
+
+\url{https://github.com/SverigesSandareamatorer/SSA-Akademin/tree/master/exempelfiler}
+
+Du kan ladda ner enskilda filer direkt från GitHub eller klona hela
+repositoryt för att få tillgång till alla exempel.
+
+\begin{center}
+\qrcode[height=3cm]{https://github.com/SverigesSandareamatorer/SSA-Akademin/tree/master/exempelfiler}
+\end{center}
+
+\section{GNU Radio-exempel}
+\index{GNU Radio}
+
+GNU Radio är en gratis programvara med öppen källkod för simulering av
+radiosystem.
+Läs mer på \url{https://www.gnuradio.org}.
+Det finns många bra exempelfiler tillgängliga på GNU Radios officiella
+webbplats och i deras dokumentation, inklusive exempel på amplitud- och
+frekvensmodulation.
+
+\section{SPICE-exempel}
+\index{SPICE}
+
+SPICE (Simulation Program with Integrated Circuit Emphasis) är en
+branschstandard för simulering av elektroniska kretsar.
+Det finns flera gratis SPICE-kompatibla program:
+
+\begin{itemize}
+\item \textbf{LTspice} -- Gratis från Analog Devices (Windows/macOS)
+\item \textbf{ngspice} -- Öppen källkod (Linux/Windows/macOS)
+\item \textbf{iCircuit} -- Mobil app för iOS och Android
+\end{itemize}
+
+\subsection{Tillgängliga SPICE-exempel}
+
+\textbf{LC-resonanskrets:}
+\texttt{resonanskrets.cir}
+
+En parallell LC-resonanskrets som kan användas för att demonstrera
+resonans vid en specifik frekvens.
+
+\lstinputlisting[
+language=SPICE,
+caption={Källkod för LC-resonanskrets},
+label=lst:lc-resonanskrets
+]{exempelfiler/resonanskrets.cir}
+
+\section{Experimentera själv}
+
+Dessa exempel är en utgångspunkt för att lära sig mer om radioteknik och
+elektronik.
+Prova att
+
+\begin{itemize}
+\item ändra komponentvärden och observera hur resultatet påverkas
+\item kombinera olika kretsar för att skapa mer komplexa system
+\item mäta och jämföra simuleringsresultat med verkliga mätningar
+\item skapa egna exempel baserade på det du lärt dig i boken.
+\end{itemize}
