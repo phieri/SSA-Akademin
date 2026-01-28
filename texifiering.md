@@ -219,8 +219,8 @@ någorlunda vettig LaTeX. Med tiden har detta utvecklats även till formatregler
 28. Konstanter ska anges med full definition och approximativt värde.
     Övrig användning kan gott använda approximation av adekvat precision.
     T.ex. där ljusets hastighet används ska den i SI-systemet angivna
-    definitionen användas, men även approximationen av 3&sdot;10<sup>8</sup>,
-    300&nbsp;000&nbsp;km/s.
+    definitionen användas, men även approximationen av 3·10⁸,
+    300 000 km/s.
 
 29. Förkortningar ska anges som brukligt inom parantes efter sin uttydelse
     där de definieras, vilket i möjligaste mån är första gången de används,
@@ -242,7 +242,7 @@ någorlunda vettig LaTeX. Med tiden har detta utvecklats även till formatregler
 32. Tal upp till tolv skrivs med bokstäver. Tal från 13 och uppåt skrivs med
     siffror.
 
-33. Indentering föreskrivt med hård tabb.
+33. Indentering föreskrivs med hård tabb.
 
 34. Undvik sammansättningar med bindestreck, skriv hellre ihop. Skriv
     ”satellitmottagare” i stället för ”satellit-mottagare”. Bindestreck ska dock

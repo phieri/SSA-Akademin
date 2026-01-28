@@ -31,7 +31,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Loggbok flyttat in i Trafikreglemente.
 - Modernisering av radioamatörens hederskod.
 - Många illustrationer har omarbetats till vektorformat.
-- Moderniserat text om QAM.
+- Moderniserat texten om QAM.
 - Konsekvent användning av SVF istället för SWR i svenskspråkig text.
 - Ersatt "SVF-meter" med "SVF-mätare" genomgående.
 - Kapitlet om elektromagnetiska fält har omarbetats.

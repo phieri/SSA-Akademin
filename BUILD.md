@@ -7,8 +7,8 @@ vilka filer som kan byggas. Det här repot innehåller mestadels
 PDF-filer.
 
 I det här dokumentet finns instruktioner om hur du kan hämta hem
-projektet och köra den på din egen dator. Den går igenom steg för
-steg och beskriver de verktyg som används för att köra koden.
+projektet och bygga det på din egen dator. Den går igenom steg för
+steg och beskriver de verktyg som används för att bygga koden.
 
 | :bulb: **Tips** |
 |:----------------|
