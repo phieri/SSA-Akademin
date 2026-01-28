@@ -31,7 +31,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Loggbok flyttat in i Trafikreglemente.
 - Modernisering av radioamatörens hederskod.
 - Många illustrationer har omarbetats till vektorformat.
-- Moderniserat texten om QAM.
+- Modernisering av texten om QAM.
 - Konsekvent användning av SVF istället för SWR i svenskspråkig text.
 - Ersatt "SVF-meter" med "SVF-mätare" genomgående.
 - Kapitlet om elektromagnetiska fält har omarbetats.
@@ -47,7 +47,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Rätt namn på broschyr om elolyckor i litteraturlistan.
 - Primär och sekundär status borttaget från bilaga svensk frekvensplan.
 - Rättat enstaka tecken på flera ställen.
-- Moderniserat texten om WSJT(-X).
+- Modernisering av texten om WSJT(-X).
 - Kapiteltitel för Sändare ändrad till "Sändare och transceivrar" både i innehållsförteckningen och på kapitelsidan.
 - Avsnittsrubrik ändrad från "Transceiver" till "Transceivrar".
 - Grammatikfel: tagit bort dubblering av ord "att att", "till till", "kan kan", "ett ett" och "olika olika" (7 förekomster).
