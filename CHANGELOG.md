@@ -36,6 +36,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Ersatt "SVF-meter" med "SVF-mätare" genomgående.
 - Kapitlet om elektromagnetiska fält har omarbetats.
 - ISBN-nummer uppdaterat för tredje upplagan.
+- Uppdaterat referenser från PTSFS 2022:19 till PTSFS 2025:1 (träder i kraft 17 mars 2025).
 
 ### Fixat
 - Ordet _mod_ har lagts till i sakregistret.
