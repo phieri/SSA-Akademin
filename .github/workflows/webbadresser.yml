@@ -8,9 +8,9 @@ on:
 
 jobs:
   testa-webbadresser:
-    if: github.repository == 'SverigesSandareamatorer/SSA-Akademin'
+    if: github.event_name != 'schedule' || github.repository == 'SverigesSandareamatorer/SSA-Akademin'
     name: 'Testa webbadresser'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
@@ -18,4 +18,4 @@ jobs:
         with:
           fail: true
           checkbox: false
-          args: "--method head --host-concurrency 2 --accept 200,429 --retry-wait-time 35 --no-progress './**/*.md' './**/*.tex' './koncept.bib'"
+          args: "--method head --max-concurrency 2 --accept 200,429 --no-progress './**/*.md' './**/*.tex' './koncept.bib'"
