@@ -51,6 +51,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Kapiteltitel för Sändare ändrad till "Sändare och transceivrar" både i innehållsförteckningen och på kapitelsidan.
 - Avsnittsrubrik ändrad från "Transceiver" till "Transceivrar".
 - Grammatikfel: tagit bort dubblering av ord "att att", "till till", "kan kan", "ett ett" och "olika olika" (7 förekomster).
+- Rättat stavnings- och grammatikfel i ett stort antal kapitel- och bilagsfiler.
 
 ### Borttaget
 - Text om integrationsgrad borttagen.
