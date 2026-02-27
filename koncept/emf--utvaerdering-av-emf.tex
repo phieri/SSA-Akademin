@@ -1,0 +1,224 @@
+\section{Utvärdering av EMF}
+\index{EMF!utvärdering}
+
+Hur är det då med den egna stationen, överensstämmer fältstyrkorna som den kan
+generera med referensvärdena?
+
+För att kunna utvärdera detta måste man känna till vilka parametrar som är
+avgörande vid en beräkning av fältstyrkan.
+Mycket beror på vilken antenn man använder och hur den är placerad.
+Man måste även förstå egenskaperna signalen från sändaren har.
+
+\subsection{Antennen}
+Antennen tar emot signalen från sändaren via en matningskabel och omvandlar
+denna signal till en elektromagnetisk våg.
+Hur denna omvandling går till är komplicerat men kan enklast förklaras med
+begreppet förstärkning eller antennvinst.
+Man måste alltså känna till vilken förstärkning antennen har.
+Formeln som används för uträkning av fältstyrkan förutsätter att man benämner
+antennens förstärkning relativt en isotrop antenn (dBi) och inte en dipolantenn
+(dBd), samt att man räknar med linjära värden (gånger) och inte logaritmiska
+(dB).
+
+\begin{table*}[ht]
+  \begin{center}
+    \begin{tabular}{|l|ccccccccccc|}
+    \hline
+    dB     &  0  &  1  &  2 & 2,15 &  3  &  4  &  5  &  6  &  7  &  8  &  9  \\ \hline
+    G & 1,0 & 1,3 & 1,6 & 1,64 & 2,0 & 2,5 & 3,2 & 4,0 & 5,0 & 6,3 & 7,9 \\ \hline\hline
+    dB     &  10  &  11  &  12  &  13  &  14  &  15  &  16  &  17  &  18  &  19  &  20 \\ \hline
+    G & 10,0 & 12,6 & 15,8 & 20,0 & 25,1 & 31,6 & 39,8 & 50,1 & 63,1 & 79,4 & 100,0 \\ \hline
+    \end{tabular}
+    \caption{G = Antennens förstärkning i linjära faktorer}
+    \label{tab:forst}
+  \end{center}
+\end{table*}
+
+För en antenn med förstärkningen 7\,dBi ska alltså värdet 5,0 användas.
+
+\subsection{Sändarsignalen}
+Då referensvärdet enligt de allmänna råden är definierade som medelvärden under
+en sexminutersperiod är det medeleffekten som ska användas vid beräkningarna.
+
+Effektens medelvärde under en sexminutersperiod beror på två olika saker.
+
+\subsubsection{Modulationsfaktor}
+\index{EMF!modulationsfaktor}
+\index{modulationsfaktor}
+
+Beroende på trafiksätt så blir medeleffekten olika.
+Används FM så ger det modulationssättet att man använder maximal uteffekt
+kontinuerligt jämfört med SSB där medeleffekten beror på hur man talar.
+
+Nedanstående tabell är de värden som regelverket i USA~\cite{OETbul65b} använder
+för att räkna ut medeleffekten på grund av moduleringen.
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{lc}
+	\textbf{Trafiksätt} & \textbf{Modulationsfaktor} \\ 
+	\hline
+	\emph{SSB} & 0,2 \\
+	\emph{CW} & 0,4 \\
+	\emph{SSB med processing} & 0,5 \\
+	\emph{FM} & 1,0 \\
+	\emph{MGM (t.ex. RTTY, PSK)} & 1,0 \\
+	\emph{Bärvåg} & 1,0 \\
+    \end{tabular}
+    \caption{Modulationsfaktor per trafiksätt}
+    \label{tab:modfakt}
+  \end{center}
+\end{table}
+
+\subsubsection{Intermittensfaktor}
+\index{EMF!intermittensfaktor}
+\index{intermittensfaktor}
+
+Vid vanlig amatörradioanvändning sänder man inte kontinuerligt utan både lyssnar
+och sänder växelvis.
+Sänder man och tar emot lika mycket under en sexminutersperiod så blir faktorn
+0,5 men om man lyssnar mycket mer och sänder sällan blir faktorn mindre.
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+	\hline
+	Sändning  & Mottagning & Intermittensfaktor \\
+	(minuter) & (minuter)  & \\ \hline
+	1 & 5 & 0,17 \\ \hline
+	2 & 4 & 0,33 \\ \hline
+	3 & 3 & 0,50 \\ \hline
+	4 & 2 & 0,67 \\ \hline
+	5 & 1 & 0,83 \\ \hline
+	6 & 0 & 1,00 \\ \hline
+    \end{tabular}
+    \caption{Intermittensfaktor}
+    \label{tab:intfakt}
+  \end{center}
+\end{table}
+
+\subsubsection{Medeleffekt}
+\index{EMF!medeleffekt}
+
+För att räkna ut vilken medeleffekt som används ska man ta hänsyn
+till både modulationsfaktor och intermittensfaktor enligt följande
+
+\(\textit{Medeleffekt} = \textit{Maxeffekten} \cdot \textit{Modulationsfaktor} \cdot \textit{Intermittensfaktor}\)
+
+\noindent\textbf{P = Medeleffekten under en sexminutersperiod}
+
+\subsection{Kabeldämpning}
+\index{EMF!kabeldämpning}
+
+När uteffekten mäts vid sändaren och fältet genereras av effekten som når
+antennen måste även den dämpning som matarledaren har vara känd.
+Annars överskattas den genererade fältstyrkan.
+ 
+Även här måste linjära enheter användas (gånger).
+
+\begin{table*}[ht]
+  \begin{center}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	dB & 0,0  & 0,5  & 1,0  & 1,5  & 2,0  & 2,5  & 3,0  & 3,5  & 4,0  & 4,5  & 5,0 \\ \hline
+	k  & 1,00 & 0,89 & 0,79 & 0,71 & 0,63 & 0,56 & 0,50 & 0,45 & 0,40 & 0,35 & 0,32 \\ \hline
+    \end{tabular}
+    \caption{k = Matarkabels dämpning i linjära termer}
+    \label{tab:feedannut}
+  \end{center}
+\end{table*}
+
+För en kabel med dämpningen \qty{2,5}{\decibel} ska alltså värdet 0,56 användas.
+
+\subsection{Avstånd}
+\index{EMF!distans}
+
+På vilket avstånd är det intressant att veta vilken fältstyrka som genereras?
+De allmänna råden definierar detta på följande sätt
+
+”1.3  Dessa allmänna råd omfattar områden där allmänheten kan vistas under sådana tider att begränsningarna är av betydelse.”
+
+Ett bra utgångsläge är då att utvärdera området där antennen är placerad och
+bedöma var allmänheten kan exponeras.
+\\[1ex] % layout
+\noindent\textbf{d = Avståndet från antennen till platsen där fältstyrkan ska bestämmas}
+
+\subsection{Beräkning}
+\index{EMF!beräkning}
+
+Beräkning av det elektromagnetiska fältet kan med enkelhet bara genomföras i
+fjärrfältet från en antenn.
+I fjärrfältet vet vi sedan tidigare att man antigen kan utvärdera det elektriska
+eller magnetiska fältet.
+Av denna anledning beskrivs enbart beräkning av det elektriska fältets del av
+det elektromagnetiska fältet. 
+
+\noindent\textbf{E = Det elektromagnetiska fältets storlek i fjärrfältet}
+
+Det elektromagnetiska fältets storlek (i fjärrfältet) räknas ut från
+effekten (medelvärde), antennförstärkningen, matarledningens dämpning
+och avståndet enligt följande förenklade formel:
+%%
+\[E=\dfrac{\sqrt{30 \cdot P \cdot G \cdot k}}{d}\]
+%%
+Genom enkel matematik kan man då använda samma formel för att räkna
+ut på vilket avstånd man genererar en viss fältstyrka.
+%%
+\[d=\dfrac{\sqrt{30 \cdot P \cdot G \cdot k}}{E}\]
+%%
+Denna beräkning är enbart relevant för huvudloben.
+Fältet under antennen beräknas inte, och därför kan resultatet inte användas
+för att bedöma höjd på eller säkerhetsavstånd till antenntorn.
+Använd datorprogram för att få bra bedömning på hur en antenn beter sig,
+särskilt med avseende på antenner med riktverkan.
+
+\begin{exempelbox}
+En riktantenn för \qty{144}{\mega\hertz} med förstärkning enligt databladet på
+14,92\,dBi (31 gånger).
+Max uteffekt är \qty{1000}{\watt} och trafiksättet är MGM med 30~sekunders
+intervaller.
+Den valda matarledningen har en dämpning på \qty{2,5}{\decibel} (0,56~gånger).
+Avståndet från antennen till beräkningspunkten är \qty{15}{\metre}.
+
+Vilken medelfältstyrka genererar man på ett visst avstånd från antennen?
+\tcblower
+\noindent
+\[P_{medel} = P_{pep} \cdot k_{mod} \cdot k_{if}
+= 1000 \cdot 1 \cdot 0,5 = 500\]
+\[k = 0,56\]
+\[d = 15\]
+\begin{align*}
+  E &= \dfrac{\sqrt{30 \cdot P \cdot G \cdot k}}{d} =\\
+&= \dfrac{\sqrt{30 \cdot 500 \cdot 31 \cdot 0,56}}{15}
+= \qty{34,02}{\volt\per\metre}
+\end{align*}
+
+Då referensvärdet på denna frekvens är \qty{28}{\volt\per\metre}, överskrider
+amatörradiosändningen referensvärdet på detta avstånd.
+\end{exempelbox}
+
+\begin{exempelbox}
+En riktantenn för \qty{144}{\mega\hertz} med förstärkning enligt databladet på
+14,92\,dBi (31 gånger).
+Max uteffekt är \qty{1000}{\watt} och trafiksättet är MGM med 30~sekunders
+intervaller.
+Den valda matarledningen har en dämpning på \qty{2,5}{\decibel} (0,56~gånger).
+Referensvärdet för \qty{144}{\mega\hertz} är \qty{28}{\volt\per\metre}.
+
+På vilket avstånd från antennen når man referensvärdet?
+\tcblower
+\noindent
+\[P_{medel} = P_{pep} \cdot k_{mod} \cdot k_{if}
+= 1000 \cdot 1 \cdot 0,5 = 500\]
+\[k = 0,56\]
+\[E = 28\]
+\begin{align*}
+  d &= \dfrac{\sqrt{30 \cdot P \cdot G \cdot k}}{E} =\\
+&= \dfrac{\sqrt{30 \cdot 500 \cdot 31 \cdot 0,56}}{28}
+  = \qty{18,22}{\metre}
+  \end{align*}
+
+För att följa de allmänna råden bör allmänheten inte kunna vistas i huvudloben
+framför antennen på ett avstånd mindre än \qty{19}{\metre} då sändning utförs
+enligt exemplet.
+\end{exempelbox}

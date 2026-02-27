@@ -37,7 +37,7 @@ sändningsslaget.
 \index{basband}
 \index{sidband}
 \index{Lower Side Band}
-\index{USB}
+\index{USB|see {övre sidband}}
 
 Den nödvändiga bandbredden (eng. \emph{necessary bandwidth}) beskrivs med tre
 siffror och en bokstav.
@@ -105,21 +105,22 @@ Det övre sidbandet kallas USB (eng. \emph{upper sideband (USB)})
 och det undre sidbandet LSB (eng. \emph{lower sideband (LSB)}).
 
 I system för amplitudmodulation är bredden på sidbanden i stort lika med den
-högsta frekvenskomposanten i basbandet.
+högsta frekvenskomponenten i basbandet.
 Sidbanden är spegelbilder av varandra och innehåller exakt samma information.
 För att spara bandbredd räcker det alltså med att överföra det ena sidbandet,
 varvid det andra sidbandet kan undertryckas, liksom även bärvågen.
 
 I andra modulationssystem än för amplitudmodulation kan däremot bredden på
-sidbanden mycket överstiga den högsta frekvenskomposanten i basbandssignalen.
+sidbanden mycket överstiga den högsta frekvenskomponenten i basbandssignalen.
 
-\emph{Använd bandbredd} (eng. \emph{occupied bandwidth}) är avståndet mellan
-(\qty{-23}{\decibel}) av den totala medeleffekten.
-För amatörer är det inte alltid lätt att översta och nedersta delen av ett
-spektrum, där medeleffekten är lägre än 0,5~\% bestämma den använda bandbredden.
+\emph{Använd bandbredd} (eng. \emph{occupied bandwidth}) är frekvensavståndet
+mellan den övre och den undre gränsfrekvensen i ett spektrum, där
+medeleffekten understiger 0,5~\% (\qty{-23}{\decibel}) av den totala
+medeleffekten.
+För amatörer är det inte alltid lätt att bestämma den använda bandbredden.
 Den kan mätas med en spektrumanalysator, men ett sådant instrument är
-svårtillgänglig för de flesta amatörer.
-Den använd bandbredden kan även beräknas, men det kräver matematikkunskaper i
+svårtillgängligt för de flesta amatörer.
+Den använda bandbredden kan även beräknas, men det kräver matematikkunskaper i
 informationsteori och behandlas inte här.
 
 \emph{Nödvändig bandbredd} är den del av den använda bandbredden, som räcker
@@ -136,7 +137,7 @@ frekvensavvikelsen från den korrekta frekvensen.
 
 \section{Sändningsklass}
 
-Sändningklass anges med tre tecken där
+Sändningsklass anges med tre tecken där
 
 \begin{itemize}
 \item första tecknet beskriver huvudbärvågens modulation
@@ -164,7 +165,7 @@ D &	antingen samtidigt eller i viss förutbestämd följd. \\
   &	Utsändning av huvudbärvågen som en sekvens av pulser \emph{not}. \\
 P  &	Omodulerade pulser \\
 K &	Amplitudmodulerade pulser \\
-L &Bredd- eller tidmodulerade pulser \\
+L &	Bredd- eller tidmodulerade pulser \\
 M &	Faslägesmodulerade pulser \\
 Q &	Vinkelmodulerad bärvåg under pulsens varaktighet \\
 V &	Kombination av ovanstående eller alstrat på annat sätt \\

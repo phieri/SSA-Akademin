@@ -1,0 +1,222 @@
+\newpage
+\section{Sinusformade signaler}
+\harecsection{\harec{a}{1.6}{1.6}, \harec{a}{1.6.1}{1.6.1}}
+
+\mediumfig{images/cropped_pdfs/bild_2_1-16.pdf}{Alstring av en sinusformad signal}{fig:BildII1-16}
+
+Bild~\ssaref{fig:BildII1-16} visar alstring av en sinusformad signal.
+I detta avsnitt behandlas några grundbegrepp inom växelströmsläran.
+Förloppen framställs med vektor- och linjediagram.
+För närmare beskrivning används sådana begrepp som momentanvärde,
+toppvärde, topp- till toppvärde, effektivvärde, fasläge, fasförskjutning och
+båghastighet.
+
+\subsection{Momentanvärde}
+\harecsection{\harec{a}{1.6.2a}{1.6.2a}}
+\index{momentanvärde}
+\index{symbol!\(u\) momentan spänning}
+\index{symbol!\(i\) momentan ström}
+\index{symbol!\(t\) tidpunkt}
+
+Momentanvärdet är storheten på en spänning \(u\), en ström \(i\) etc. vid en
+viss tidpunkt \(t\).
+(Storheter som ändrar sig som en funktion av tiden kännetecknas ofta med gemena
+bokstäver.)
+
+Bild~\ssaref{fig:BildII1-16} visar en sinusformad växelspänning med frekvensen
+\qty{50}{\hertz}.
+Spänningen \(u\) är \qty[retain-explicit-plus]{+230}{\volt}\ vid tidpunkten
+2,5~millisekunder efter en positiv nollgenomgång.
+Efter totalt \qty{5}{\milli\second} uppnås toppvärdet \(u_{max}\) dvs.
+\qty[retain-explicit-plus]{+325}{\volt}.
+Efter totalt \qty{10}{\milli\second} sker en negativ nollgenomgång.
+Efter totalt \qty{12,5}{\milli\second} är spänningen \(-u\), dvs.
+\qty{-230}{\volt} osv.
+
+\subsection{Toppvärde eller amplitud}
+\label{subsec:toppvaerde}
+\harecsection{\harec{a}{1.6.2b}{1.6.2b}}
+\index{toppvärde}
+\index{amplitud}
+
+Toppvärdet \(u_{max}\) är det högsta värdet över eller under noll.
+På bild~\ssaref{fig:BildII1-16} är de högsta värdena \(+325\ \text{V}\) och
+\qty{-325}{\volt}.
+
+\subsection{Topp-till-toppvärde}
+\label{peak-to-peak-värde}
+\index{topp-till-toppvärde}
+
+Topp-till-toppvärde är summan av toppvärdena över och under noll.
+På bild~\ssaref{fig:BildII1-16} är detta värde \qty{650}{\volt}.
+
+\subsection{Effektivvärde}
+\harecsection{\harec{a}{1.6.2c}{1.6.2c}, \harec{a}{1.6.2d}{1.6.2d}}
+\index{effektivvärde}
+\label{subsec:effektivvaerde}
+
+Effektivvärdet av en växelspänning \(u\) är det värde, som medför samma
+effektutveckling som en likspänning \(U\).
+
+För ett sinusformat förlopp gäller följande samband mellan toppvärdet och
+effektivvärdet (det s.k. kvadratiska medelvärdet), vilket motsvarar amplituden
+vid vinklarna 45, 135, 225 och \ang{270}.
+%%
+\[
+\begin{array}{lllll}
+U=\dfrac{\hat{u}}{\sqrt{2}} & & I=\dfrac{\hat{i}}{\sqrt{2}} & & (\sqrt{2} = 1,414)
+\end{array}
+\]
+%%
+\subsection{Fasläge}
+\index{fasläge}
+\index{symbol!\(\phi\) fasläge}
+
+Fasläget \(\varphi\) är när inom en period ett givet momentanvärde
+uppträder.
+Tidpunkten för varje momentanvärde motsvarar en andel av \ang{360} elektriska
+grader.
+Till exempel uppnås värdet noll volt vid \ang{0}, \ang{180} och \ang{360} (= 0\degree).
+
+\subsection{Bågmått}
+\index{bågmått}
+\index{radianer}
+\index{båghastighet (\(\omega\))}
+\index{vinkelhastighet (\(\omega\))}
+\index{symbol!\(\omega\) vinkelhastighet}
+
+I beräkningar av växelströmskretsar används ofta inte vinkelmått för fasläget
+(gradtal) utan i stället begreppet bågmått.
+
+I en så kallad enhetskrets med radien \(r = 1\) motsvaras vinkeln \ang{360} av
+en båge med längden \(2 \cdot \pi \cdot r= 2 \cdot \pi \cdot 1 = 2 \pi =\)
+omkretsen.
+Vid \(f\) perioder per sekund blir båglängden \(= 2\pi f\).
+Denna storhet kallas båghastighet eller oftare vinkelhastighet och betecknas
+med \(\omega\) (uttalas omega):
+%%
+\[\omega= 2\pi f\qquad [\text{rad/s}]\]
+%%
+\subsection{Period}
+\harecsection{\harec{a}{1.6.3a}{1.6.3a}}
+\index{period}
+\label{period}
+
+En period har passerat, när en storhet (spänning, ström osv.) återtagit samma
+tillstånd eller värde efter att ha gjort en fullständig växling, till exempel en
+hel pendelrörelse eller ett helt varv vid rotation.
+
+\subsection{Periodtid T}
+\harecsection{\harec{a}{1.6.3b}{1.6.3b}}
+\index{periodtid (T)}
+\index{symbol!\(T\) periodtid}
+
+Periodtid \(T\) är den tid som åtgår för att strömmen eller spänningen ska
+genomlöpa en period. Periodtiden är det inverterade värdet av frekvensen.
+
+Måttenheten för periodtid är sekund [s].
+
+$$\text{Periodtid} \qquad (T) = \dfrac{1}{f}$$
+
+\begin{exempelbox}
+\begin{small}
+\noindent
+\begin{tabular}{@{}lll}
+\(T_1=\dfrac{1}{10}\) s & = \qty{0,100}{\second} & = \qty{100}{\milli\second} (\qty{10}{\hertz})\\
+\\
+\(T_2=\dfrac{1}{50}\) s & = \qty{0,020}{\second} & = \qty{20}{\milli\second} (\qty{50}{\hertz})\\
+\\
+\(T_3=\dfrac{1}{1000}\) s & = \qty{0,001}{\second} & = \qty{1}{\milli\second} (\qty{1}{\kilo\hertz})\\
+\\
+\(T_4=\dfrac{1}{1000000}\) s & = \qty{0,000001}{\second} & = \qty{1}{\micro\second} (\qty{1}{\mega\hertz})\\
+\end{tabular}
+\end{small}
+\end{exempelbox}
+
+\subsection{Frekvens}
+\harecsection{\harec{a}{1.6.4}{1.6.4}}
+\index{frekvens}
+\label{frekvens}
+
+Frekvens är antalet perioder per tidsenhet.
+Följande begrepp demonstreras med hjälp av pendeln:
+
+Period = en fullständig fram- och tillbakasvängning i ett system, till exempel
+pendelns väg mellan punkterna 2-3-2-1-2-3- osv.
+Bild~\ssaref{fig:BildII1-33} visar pendelrörelse som illustration av frekvens.
+
+\mediumfig[0.65]{images/cropped_pdfs/bild_2_1-33.pdf}{Pendel som illustration av fr\-e\-kv\-en\-s}{fig:BildII1-33}
+
+Periodtid \(T\) = tidsåtgången för en fullständig svängning.
+Amplitud \(A\) = den största avvikelsen från viloläget.
+Frekvens \(f\) = antal svängningar/tidsenhet.
+Sambandet mellan frekvensen \(f\) och periodtiden \(T\) är:
+%%
+\[f=\dfrac{1}{T}\]
+till exempel:
+\[T=0,2\ \text{[s]}\qquad f=\dfrac{1}{0,2} \quad\implies\quad f=5\ \text{[Hz]}\]
+%%
+
+\subsection{Enheten hertz}
+\harecsection{\harec{a}{1.6.5}{1.6.5}}
+\index{hertz}
+\index{enheter!hertz (Hz)}
+\index{symbol!\(f\) frekvens}
+\index{HF}
+
+Måttenheten för frekvens är hertz [\unit{\hertz}].
+I formler betecknas frekvensen med \(f\).
+
+\begin{center}
+\begin{tabular}{ll}
+\qty{1}{\hertz}      & = 1 period per sekund (p/s) \\
+\qty{10}{\hertz}     & = 10 perioder per sekund \\
+\qty{50}{\hertz}     & = 50 perioder per sekund \\
+\qty{1000}{\hertz}  & = \qty{e3}{\hertz} = \qty{1}{\kilo\hertz} (kilohertz) \\
+\qty{1000}{\kilo\hertz} & = \qty{e6}{\hertz} = \qty{1}{\mega\hertz} (megahertz) \\
+\qty{1000}{\mega\hertz} & = \qty{e9}{\hertz} = \qty{1}{\giga\hertz} (gigahertz) \\
+\end{tabular}
+\end{center}
+
+Nätfrekvensen för elkraft är i Europa \qty{50}{\hertz}.
+Andra nätfrekvenser förekommer, till exempel \qty{60}{\hertz} i USA och Japan.
+Frekvensområdet vid överföring av kvalitativt tal och musik, lågfrekvens LF, är
+mellan ca \qty{16}{\hertz} och \qty{16}{\kilo\hertz}.
+Frekvensområdet för talöverföring, till exempel över telefonlinjer eller
+kommunikationsradio, är ca 300 till \qty{3000}{\hertz}.
+Frekvensområdet för radioöverföring, högfrekvens HF, är i huvudsak mellan
+\qty{50}{\kilo\hertz}, så kallad långvåg, och 100-tals \unit{\giga\hertz}, så
+kallad mikrovåg.
+
+\mediumtopfig{images/cropped_pdfs/bild_2_1-18.pdf}{Ren sinusvåg och övertonshaltig våg}{fig:BildII1-18}
+\smallfig{images/cropped_pdfs/bild_2_1-17.pdf}{Vektorer och fasförskjutning}{fig:BildII1-17}
+\subsection{Fasförskjutning}
+\harecsection{\harec{a}{1.6.6}{1.6.6}}
+\index{fasförskjutning}
+
+% \pagefig[0.6]{images/cropped_pdfs/bild_2_1-19.pdf}{Uppdelning av en signal i grundton och övertoner}{fig:BildII1-19}
+
+Bild~\ssaref{fig:BildII1-17} visar vektorer och fasförskjutning.
+Med fasförskjutning menas tidsskillnaden mellan förlopp, till exempel spänningar
+och/eller strömmar.
+Fasförskjutningen mellan vektorerna kallas även fasvinkel och uttrycks som ett
+gradtal mellan 0 och \ang{360}.
+
+\subsection{Vektorer}
+\index{vektorer}
+
+En spänning, ström, kraft osv. kan beskrivas som en vektor med en storhet och
+riktning.
+På bilden~\ssaref{fig:BildII1-17} har vektorerna \(X_L\), \(R\) och \(X_C\) en
+inbördes fasförskjutning av \ang{90}.
+De motsvarar spänningsfallen i en krets med en induktor, en resistor och en
+kondensator kopplade i serie, där den gemensamma strömmen är en sinus.
+
+Antag att vektorerna roterar i ett oförändrat inbördes läge och med en
+vinkelhastighet av \(\omega= 2\pi f\).
+Systemet roterar då 360\(\degree\) = 2\(\pi\) radianer = 1 varv/per\-iod.
+
+Vid varje tidpunkt har vektorsystemet uppnått en viss vridningsvinkel.
+Momentanvärdet på vektorernas spänningar avsätts till höger i bilden.
+Avståndet mellan en vektorspets och noll-linjen är vektorns momentana värde,
+som kan vara positivt eller negativt.
