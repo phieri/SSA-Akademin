@@ -6,6 +6,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 
 ## [Osläppt] – 2025
 ### Tillagt
+- Nytt makro `\formel` för konsekvent visning av formler med enheter, med formeln centrerad och enheter i en lodrät lista till höger.
 - Ny figur för schemasymbolen lysdiod.
 - Nya introduktioner till kapitlen Ellära, Komponenter, Kretsar, Sändare och Trafikreglemente.
 - Ny figur för ICNIRPcalc.

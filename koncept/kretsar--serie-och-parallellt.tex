@@ -382,11 +382,11 @@ för den naturliga logaritmen.
 I förloppet ingår storleken av resistans och kapacitans enligt följande samband,
 som kallas tidskonstant:
 
-\begin{gather*}
-  \tau = R \cdot C \\
-  \tau\ [\text{tidskonstant i sek}] \\
-  C\ [\text{F}] \quad R\ [\unit{\ohm}]
-\end{gather*}
+\formel{\tau = R \cdot C}{
+	\tau\ [\unit{\second}] \\
+	C\ [\unit{\farad}] \\
+	R\ [\unit{\ohm}]
+}
 
 Efter tiden \(t = 1\tau\) från inkopplingsögonblicket har spänningen över
 kondensatorn ökat från noll till \qty{63}{\percent} av maxvärdet.
@@ -470,14 +470,12 @@ där
 I förloppet ingår storleken av resistans och induktans enligt följande samband,
 som kallas tidskonstant
 %
-\[\tau = \frac{L}{R}\]
+\formel{\tau = \dfrac{L}{R}}{
+	\tau\ [\unit{\second}] \\
+	L\ [\unit{\henry}] \\
+	R\ [\unit{\ohm}]
+}
 %
-\[
-L\ [\text{H}] \quad
-R\ [\unit{\ohm}] \quad
-s\ [\text{sek}] \quad
-\tau\ [\text{tidskonstant}]
-\]
 
 Efter en tid av \(t = 1\tau\) från inkopplingsögonblicket har strömmen genom
 induktorn ökat från noll till \qty{63}{\percent} av \(I_{\it max}\) och
@@ -945,9 +943,13 @@ Således \(X_L = X_C\), där
   X_L = 2\pi fL \quad \text{och} \\
   X_C = \frac{1}{2\pi fC} \quad \text{sätts in.} \\
   2\pi fL = \frac{1}{2\pi fC} \quad 4\pi ^2f^2LC = 1 \\
-  f^2 = \frac{1}{4\pi ^2LC} \quad f = \frac{1}{2\pi \sqrt{LC}} \\
-  f\text{ [Hz] }L\text{ [H] }C\text{ [F] } \\
+  f^2 = \frac{1}{4\pi ^2LC}
 \end{gather*}
+\formel{f = \dfrac{1}{2\pi \sqrt{LC}}}{
+	f\ [\unit{\hertz}] \\
+	L\ [\unit{\henry}] \\
+	C\ [\unit{\farad}]
+}
 
 Formeln gäller både för parallell- och seriekretsar.
 
