@@ -201,6 +201,24 @@
 % Definiera ett kommando för att formatera text som en signal (monospace-typsnitt).
 \newcommand{\signal}[1]{\texttt{#1}}
 
+% Makro för att visa en formel med en lodrät lista av variabler och deras
+% enheter till höger.
+% Användning: \formel{formel}{enhet1 \\ enhet2 \\ ...}
+\newcommand{\formel}[2]{%
+	\noindent%
+	\begin{tabularx}{\linewidth}{@{} *1{>{\hsize=.7\linewidth}X} X@{}}
+	\begin{equation*}
+	#1
+	\end{equation*}
+	&
+	\begin{equation*}
+	\begin{aligned}
+	#2
+	\end{aligned}
+	\end{equation*}\\
+	\end{tabularx}%
+}
+
 % k7per: The harecsection macro is used to enclose a list of harec commands, it
 % also takes care of making sure the paragraph afterwards in no indenented,
 % making sections with harec tags look the sme as sections without.
