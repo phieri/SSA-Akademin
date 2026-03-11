@@ -1,0 +1,25 @@
+# SPICE simulation output files
+*.log
+*.raw
+*.net
+*.cir~
+*.op.raw
+
+# LTspice specific files
+*.plt
+*.fft
+*.step
+*.meas
+
+# ngspice specific files
+*.print
+*.ic
+
+# Temporary and backup files
+*~
+*.bak
+*.tmp
+
+# Operating system files
+.DS_Store
+Thumbs.db

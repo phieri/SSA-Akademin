@@ -7,12 +7,13 @@ help:
 	@echo '   make all                    kör alla make mål                      '
 	@echo '   make koncept.pdf            bygg PDF av KonCEPT                    '
 	@echo '   make koncept.epub           bygg EPUB av KonCEPT (experimentell)   '
+	@echo '   make spice-pdf              bygg PDF från SPICE-exempel            '
 	@echo '   make clean                  rensa alla byggfiler                   '
 	@echo '   make help                   visa den här informationen             '
 
 all:	koncept.pdf koncept.epub
 
-.PHONY: all koncept.pdf koncept.epub clean help
+.PHONY: all koncept.pdf koncept.epub spice-pdf clean help
 
 KONCEPT_CH01_FILES = koncept/ellaera.tex \
 	koncept/ellaera--elektriska-grundbegrepp.tex koncept/ellaera--elektriska-kraftkallor.tex \
@@ -100,7 +101,7 @@ KONCEPT_APDX_FILES = koncept/appendix-bandplaner.tex koncept/appendix-beskrivnin
 	koncept/appendix-mattenheter.tex \
 	koncept/appendix-rapportkoder.tex koncept/appendix-repeatrar.tex \
 	koncept/appendix-s-enheter.tex koncept/appendix-morsesignalering.tex \
-	koncept/appendix-aaskskydd.tex
+	koncept/appendix-aaskskydd.tex koncept/appendix-exempelfiler.tex
 KONCEPT_OTHER_FILES = koncept/foerord.tex koncept/inledning.tex \
 	koncept/frontpage.tex koncept/tryckort.tex koncept/backpage.tex \
 	koncept/litteratur.tex koncept.bib \
@@ -138,8 +139,24 @@ IMAGE_PNGS := $(shell find images -name "*.png")
 IMAGE_PDFS := $(shell find images -name "*.pdf")
 IMAGE_XBBS := $(IMAGE_PNGS:.png=.xbb) $(IMAGE_PDFS:.pdf=.xbb)
 
+SPICE_FILES := $(wildcard exempelfiler/*.cir)
+SPICE_PDFS := $(SPICE_FILES:.cir=.pdf)
+
 koncept.epub: $(REPO_FILES) koncept.tex $(KONCEPT_FILES) $(IMAGE_XBBS)
 	tex4ebook --format epub3 --tidy koncept.tex
+
+spice-pdf: $(SPICE_PDFS)
+
+exempelfiler/%.pdf: exempelfiler/%.cir
+	ngspice -b -o $(@:.pdf=.log) -r $(@:.pdf=.raw) $<
+	@if [ -f "$(@:.pdf=.ps)" ]; then \
+		ps2pdf "$(@:.pdf=.ps)" "$@"; \
+	elif [ -f "$(@:.pdf=.eps)" ]; then \
+		epstopdf "$(@:.pdf=.eps)" --outfile="$@"; \
+	else \
+		echo "Ingen PostScript/EPS genererades. Lägg till 'hardcopy' i $<."; \
+		exit 1; \
+	fi
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES)
 	tar cvzf koncept.tar.gz Makefile $(KONCEPT_FILES) images/*
