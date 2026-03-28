@@ -51,7 +51,7 @@ Lista med de senaste byggena finns i
 # Bidra till projektet
 
 Det finns många olika sätt att bidra till projektet även fast man
-inte vet hur man använder *[Git](https://www.git-scm.com)* eller skriver *LaTeX*.
+inte vet hur man använder *[Git](https://git-scm.com)* eller skriver *LaTeX*.
 
 **Fråga: Jag kan koda och vill bidra; vad gör jag?**<br>
 Svar: Läs igenom [CONTRIBUTING.md](.github/CONTRIBUTING.md) och följ

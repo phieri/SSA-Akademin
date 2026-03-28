@@ -35,6 +35,8 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Konsekvent användning av SVF istället för SWR i svenskspråkig text.
 - Ersatt "SVF-meter" med "SVF-mätare" genomgående.
 - Kapitlet om elektromagnetiska fält har omarbetats.
+- ISBN-nummer uppdaterat för tredje upplagan.
+- Uppdaterat referenser från PTSFS 2022:19 till PTSFS 2025:1 (träder i kraft 17 mars 2025).
 
 ### Fixat
 - Ordet _mod_ har lagts till i sakregistret.
@@ -49,14 +51,14 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Moderniserat texten om WSJT(-X).
 - Kapiteltitel för Sändare ändrad till "Sändare och transceivrar" både i innehållsförteckningen och på kapitelsidan.
 - Avsnittsrubrik ändrad från "Transceiver" till "Transceivrar".
-- Stavningsfel: ändrat "nån" till "någon" för korrekt stavning (1 förekomst).
 - Grammatikfel: tagit bort dubblering av ord "att att", "till till", "kan kan", "ett ett" och "olika olika" (7 förekomster).
-- ISBN-nummer uppdaterat till 978-91-86368-32-6 för tredje upplagan.
+- Rättat stavnings- och grammatikfel i ett stort antal kapitel- och bilagsfiler.
 
 ### Borttaget
 - Text om integrationsgrad borttagen.
 - Avsnittssammanfattning om PLL-styrd kortvågstransceiver borttagen.
 - 604 oanvända bildfiler borttagna (~22 MB), inklusive alla originalskannningar i images/org_scans/.
+- Flertal ord raderade från sakregistret.
 
 ## [2.6.1] – 2023-11-14
 ### Tillagt
