@@ -53,6 +53,9 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Avsnittsrubrik ändrad från "Transceiver" till "Transceivrar".
 - Grammatikfel: tagit bort dubblering av ord "att att", "till till", "kan kan", "ett ett" och "olika olika" (7 förekomster).
 - Rättat stavnings- och grammatikfel i ett stort antal kapitel- och bilagsfiler.
+- Lagt till saknad etikett i S-enhetstabellen.
+- Konsekvent användning av siunitx-makron för decibel i löptext.
+- Radbrytningar vid meningsgränser för rader över 80 tecken.
 
 ### Borttaget
 - Text om integrationsgrad borttagen.
