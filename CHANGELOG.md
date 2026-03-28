@@ -37,6 +37,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Kapitlet om elektromagnetiska fält har omarbetats.
 - ISBN-nummer uppdaterat för tredje upplagan.
 - Uppdaterat referenser från PTSFS 2022:19 till PTSFS 2025:1 (träder i kraft 17 mars 2025).
+- SSA:s samtliga böcker nämns i förordet.
 
 ### Fixat
 - Ordet _mod_ har lagts till i sakregistret.
@@ -53,11 +54,15 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Avsnittsrubrik ändrad från "Transceiver" till "Transceivrar".
 - Grammatikfel: tagit bort dubblering av ord "att att", "till till", "kan kan", "ett ett" och "olika olika" (7 förekomster).
 - Rättat stavnings- och grammatikfel i ett stort antal kapitel- och bilagsfiler.
+- Rättat felaktiga repeaterutfrekvenser på 6-metersbandet.
+- Rättat att det är SSA (inte PTS) som tillhandahåller övningsprov.
+- Rättat engelska benämningar på filtertyper (high-pass, low-pass, band-pass).
 
 ### Borttaget
 - Text om integrationsgrad borttagen.
 - Avsnittssammanfattning om PLL-styrd kortvågstransceiver borttagen.
 - Flertal ord raderade från sakregistret.
+- Felaktig punkt om att montera avstörningsfilter i CE-märkt apparat.
 
 ## [2.6.1] – 2023-11-14
 ### Tillagt
