@@ -19,16 +19,12 @@ Du hjälper med:
 - Hantering av index, korsreferenser och citat
 - Uppdatering av `CHANGELOG.md` för läsarsynliga förändringar
 
-## LaTeX-formateringsregler (sammanfattning av texifiering.md)
+## Ytterligare LaTeX-formateringsregler
 
-- Använd `\emph{}` för kursiv stil/nyckelbegrepp, inte direkt `\textit{}`
-- Inkludera engelsk översättning: `\emph{strömtransformator} (eng. \emph{current transformer})`
-- Använd `\qty{1}{\joule}` för enheter med siunitx-paketet
-- Använd `\num{250000}` för stora tal och tal som behöver tusentalsavskiljare
-- Formler: `\ang{90}` för grader, `\(\mu\)` för grekiska bokstäver i löpande text
-- Bryt rader vid meningsgränser för läsbara diffar
-- Max 80 tecken per kodrad
-- Indragning med hård tabb
+Utöver reglerna i `copilot-instructions.md`:
+- Grader: `\ang{90}`
+- Grekiska bokstäver i löpande text: `\(\mu\)` (inte Unicode-tecken)
+- I matematisk miljö: `\mu` (med mellanslag efter; exv. `\(\mu\)`)
 
 ## Avsnittsstruktur
 
@@ -73,8 +69,3 @@ Alla TODOs ska åtgärdas innan release. Kontrollera med `make TODOs`.
 - Förkortningar definieras första gången: "Vector Network Analyzer (VNA)"
 - Undvik sammansättningar med bindestreck: "satellitmottagare" inte "satellit-mottagare"
 - Använd SI-enheter och definitioner
-
-## Kommunikationsspråk
-
-Skriv alltid på svenska. Vid pull requests och kodgranskningar, kontrollera
-stavning, grammatik samt att läsarsynliga förändringar finns i `CHANGELOG.md`.

@@ -60,13 +60,10 @@ ska vara floats.
 
 ## Typografi och layout
 
-- Använd `\emph{}` för kursiv stil, inte `\textit{}`
 - Använd `\textbf{}` för fetstil; ord som är understrukna i originalkällan
   återges med fetstil i LaTeX
 - Formler typsätts med siunitx: `\qty{1}{\joule}`, `\unit{kg.m/s^2}`
 - `\dfrac` för bråk med nedsänkta tecken för tydlighet
-- Indragning med hård tabb
-- Max 80 tecken per kodrad för LaTeX-källkod
 
 ## Namnkonventioner
 
@@ -83,8 +80,3 @@ SSA-Akademin/
 ├── koncept/         # LaTeX-kapitel och avsnitt
 └── koncept.tex      # Huvud-LaTeX-dokument
 ```
-
-## Kommunikationsspråk
-
-Skriv alltid på svenska. Vid pull requests och kodgranskningar, kontrollera
-att layoutförändringar synliga för läsaren är dokumenterade i `CHANGELOG.md`.
