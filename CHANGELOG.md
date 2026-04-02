@@ -13,6 +13,9 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Nytt appendix om åskskydd.
 
 ### Ändrat
+- Vektoriserade figurer för EMF-referensvärden (elektrisk och magnetisk fältstyrka) med TikZ/pgfplots, med amatörradioband inritade.
+
+### Ändrat
 - Nya avsnittsnivåer i kapitel Ellära.
 - Nya delavsnittsnivåer i _Effekt och energi_.
 - Nya delavsnittsnivåer i _Internationell nödtrafik_.
