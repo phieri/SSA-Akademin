@@ -3,15 +3,19 @@
 %\frontmatter
 
 % Typsatt förstasida med Hellschreiber-simulerad bakgrundsbild (SSA:s logotyp)
+% Bakgrundsbilden imiterar en modern SDR-vattenfallsdisplay (mörk bakgrund,
+% färgkodade signalpixlar: svart → blå → cyan → gul → vit).
+% Texten renderas i vitt för läsbarhet mot den mörka bakgrunden.
 
 \AddToShipoutPictureBG*{%
 	\includegraphics[width=\paperwidth,height=\paperheight]{images/hellschreiber-ssa}%
 }
 
 \onecolumn
+\color{white}
 \vspace*{3cm}
 \begin{center}
-\includegraphics[width=3cm]{images/ssa-logotyp.pdf} \\
+\includegraphics[width=3cm]{images/ssa-logotyp-white.png} \\
 \vspace*{2cm}
   \sf
 {\fontsize{2.4cm}{2.88cm}\bfseries{KonCEPT}} \\[2ex]
@@ -20,6 +24,7 @@
 \huge{Sveriges Sändareamatörer} \\[1cm]
 \Large{Tredje upplagan} \\
 \end{center}
+\color{black}
 \twocolumn
 
 \clearpage
