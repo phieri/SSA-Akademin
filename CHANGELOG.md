@@ -4,7 +4,7 @@ Alla nämnvärda ändringar i projektet dokumenteras här.
 Det här projektet [för en ändringslogg](https://keepachangelog.com/sv/1.1.0/)
 och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0.html).
 
-## [Osläppt] – 2025
+## [Osläppt] – 2026
 ### Tillagt
 - Ny figur för schemasymbolen lysdiod.
 - Nya introduktioner till kapitlen Ellära, Komponenter, Kretsar, Sändare och Trafikreglemente.
@@ -54,6 +54,8 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Avsnittsrubrik ändrad från "Transceiver" till "Transceivrar".
 - Grammatikfel: tagit bort dubblering av ord "att att", "till till", "kan kan", "ett ett" och "olika olika" (7 förekomster).
 - Rättat stavnings- och grammatikfel i ett stort antal kapitel- och bilagsfiler.
+- Rättat felaktiga repeaterutfrekvenser på 6-metersbandet.
+- Rättat att det är SSA (inte PTS) som tillhandahåller övningsprov.
 
 ### Borttaget
 - Text om integrationsgrad borttagen.
