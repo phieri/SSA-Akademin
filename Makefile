@@ -154,7 +154,8 @@ exempelfiler/%.pdf: exempelfiler/%.cir
 	elif [ -f "$(@:.pdf=.eps)" ]; then \
 		epstopdf "$(@:.pdf=.eps)" --outfile="$@"; \
 	else \
-		echo "Ingen PostScript/EPS genererades. Lägg till 'hardcopy' i $<."; \
+		echo "Ingen PostScript/EPS genererades för $<."; \
+		echo "Lägg till ett 'hardcopy'-kommando i netlisten om du vill skapa PDF."; \
 		exit 1; \
 	fi
 
