@@ -76,7 +76,7 @@ har installerat beroendet som det behöver.
 | `docker-image`       |Bygg en Docker *image*             |Docker                |
 | `docker-build`       |Kör Docker *image* i en *container*|Docker                |
 
-Makefile använder `latexmk` för PDF-byggnationer och `tex4ebook` för EPUB. `make clean` tar bort de genererade PDF- och LaTeX-filerna samt temporära artefakter, medan `make help` visar de tillgängliga målen.
+Makefile använder `pdflatex` (med `makeindex` och ett villkorligt `bibtex`-steg) för PDF-byggprocesser och `tex4ebook` för EPUB. `make clean` tar bort temporära byggfiler och de flesta genererade PDF-filer, medan `koncept.pdf` behålls som den senaste byggda versionen. `make help` visar de tillgängliga målen.
 
 # Installera beroenden
 
@@ -93,7 +93,7 @@ installeras.
 <kbd>sudo apt update</kbd>
 
 <kbd>sudo apt install texlive texlive-extra-utils texlive-lang-european
-	texlive-science texlive-fonts-recommended texlive-fonts-extra latexmk</kbd>
+	texlive-science texlive-fonts-recommended texlive-fonts-extra</kbd>
 
 # Använda GitHub Codespaces
 

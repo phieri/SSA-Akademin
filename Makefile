@@ -1,10 +1,12 @@
 DOCKER_IMAGE_NAME=ssa-koncept
-LATEXMK ?= latexmk
+PDFLATEX ?= pdflatex
 TEX4EBOOK ?= tex4ebook
 EBB ?= ebb
 OCTAVE ?= octave
+MAKEINDEX ?= makeindex
+BIBTEX ?= bibtex
 RM ?= rm -f
-LATEXMK_FLAGS ?= -pdf -interaction=nonstopmode -halt-on-error
+PDFLATEX_FLAGS ?= -interaction=nonstopmode
 TEX4EBOOK_FLAGS ?= --format epub3 --tidy
 
 help:
@@ -133,7 +135,13 @@ SHA.tmp:
 
 koncept.log:
 koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
-	$(LATEXMK) $(LATEXMK_FLAGS) koncept.tex
+	# Generate the PDF in multiple passes so TOC, index and bibliography data are
+	# incorporated consistently.
+	$(PDFLATEX) $(PDFLATEX_FLAGS) koncept.tex
+	-$(MAKEINDEX) koncept.idx
+	@if grep -q '\\bibdata' koncept.aux; then $(BIBTEX) koncept; fi
+	$(PDFLATEX) $(PDFLATEX_FLAGS) koncept.tex
+	$(PDFLATEX) $(PDFLATEX_FLAGS) koncept.tex
 
 %.xbb: %.png
 	$(EBB) -x $<
@@ -195,7 +203,8 @@ docker-build:
 	docker run -ti --rm -v $(shell pwd):/work -w /work ${DOCKER_IMAGE_NAME} make all
 
 clean:
-	find . -maxdepth 1 -type f \( -name '*.aux' -o -name '*.bbl' -o -name '*.idx' -o -name '*.ind' -o -name '*.lof' -o -name '*.log' -o -name '*.lot' -o -name '*.pdf' -o -name '*.toc' -o -name '*.out' -o -name '*.ilg' -o -name '*.upa' -o -name '*.xml' -o -name '*~' \) -delete
+	find . -maxdepth 1 -type f \( -name '*.aux' -o -name '*.bbl' -o -name '*.idx' -o -name '*.ind' -o -name '*.lof' -o -name '*.log' -o -name '*.lot' -o -name '*.toc' -o -name '*.out' -o -name '*.ilg' -o -name '*.upa' -o -name '*.xml' -o -name '*~' \) -delete
+	find . -maxdepth 1 -type f -name '*.pdf' ! -name 'koncept.pdf' -delete
 	find . -maxdepth 1 -type f -name '*.png' ! -name 'koncept.png' ! -name 'ssa-akademin.png' ! -name 'versionsnummer.png' -delete
 	find koncept -type f \( -name '*.aux' -o -name '*~' \) -delete
 	find images -type f -name '*.xbb' -delete

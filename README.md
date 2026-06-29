@@ -40,8 +40,9 @@ koncept.2.0.0+b12345.8c04343.pdf
 ## Bygg lokalt
 
 Du kan ladda ner projektet och bygga den senaste versionen av PDF:en
-själv. Byggsystemet använder Make med `latexmk` för PDF och `tex4ebook`
-för EPUB, och instruktioner finns i filen [BUILD.md](BUILD.md).
+själv. Byggsystemet använder Make med `pdflatex` (tillsammans med
+`makeindex` och eventuell `bibtex`) för PDF och `tex4ebook` för EPUB,
+och instruktioner finns i filen [BUILD.md](BUILD.md).
 
 ## Serverbyggd PDF
 
