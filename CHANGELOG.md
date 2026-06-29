@@ -13,6 +13,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Nytt appendix om åskskydd.
 
 ### Ändrat
+- Refaktorerat byggsystemet i Makefile för tydligare verktygsinställningar, mer robust skräpstädning och bättre dokumentation av byggflödet.
 - Nya avsnittsnivåer i kapitel Ellära.
 - Nya delavsnittsnivåer i _Effekt och energi_.
 - Nya delavsnittsnivåer i _Internationell nödtrafik_.

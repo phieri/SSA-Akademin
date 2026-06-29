@@ -1,4 +1,11 @@
 DOCKER_IMAGE_NAME=ssa-koncept
+LATEXMK ?= latexmk
+TEX4EBOOK ?= tex4ebook
+EBB ?= ebb
+OCTAVE ?= octave
+RM ?= rm -f
+LATEXMK_FLAGS ?= -pdf -interaction=nonstopmode -halt-on-error
+TEX4EBOOK_FLAGS ?= --format epub3 --tidy
 
 help:
 	@echo 'Makefile för SSA-Akademin                                             '
@@ -126,20 +133,20 @@ SHA.tmp:
 
 koncept.log:
 koncept.pdf: $(REPO_FILES) koncept.tex $(KONCEPT_FILES)
-	latexmk -pdf koncept.tex
+	$(LATEXMK) $(LATEXMK_FLAGS) koncept.tex
 
 %.xbb: %.png
-	ebb -x $<
+	$(EBB) -x $<
 
 %.xbb: %.pdf
-	ebb -x $<
+	$(EBB) -x $<
 
 IMAGE_PNGS := $(shell find images -name "*.png")
 IMAGE_PDFS := $(shell find images -name "*.pdf")
 IMAGE_XBBS := $(IMAGE_PNGS:.png=.xbb) $(IMAGE_PDFS:.pdf=.xbb)
 
 koncept.epub: $(REPO_FILES) koncept.tex $(KONCEPT_FILES) $(IMAGE_XBBS)
-	tex4ebook --format epub3 --tidy koncept.tex
+	$(TEX4EBOOK) $(TEX4EBOOK_FLAGS) koncept.tex
 
 koncept.tar.gz: Makefile $(KONCEPT_FILES)
 	tar cvzf koncept.tar.gz Makefile $(KONCEPT_FILES) images/*
@@ -187,7 +194,9 @@ docker-image:
 docker-build:
 	docker run -ti --rm -v $(shell pwd):/work -w /work ${DOCKER_IMAGE_NAME} make all
 
-clean: SHELL=/bin/bash -O extglob -c
 clean:
-	-rm -f *.aux *.bbl *.idx *.ind *.lof *.log *.lot *.pdf *.toc *~ *.out !(koncept|ssa-akademin|versionsnummer).png *.ilg *.upa koncept/*.aux koncept/*~ TODOs.txt *.xml
-	-find images -name "*.xbb" -delete
+	find . -maxdepth 1 -type f \( -name '*.aux' -o -name '*.bbl' -o -name '*.idx' -o -name '*.ind' -o -name '*.lof' -o -name '*.log' -o -name '*.lot' -o -name '*.pdf' -o -name '*.toc' -o -name '*.out' -o -name '*.ilg' -o -name '*.upa' -o -name '*.xml' -o -name '*~' \) -delete
+	find . -maxdepth 1 -type f -name '*.png' ! -name 'koncept.png' ! -name 'ssa-akademin.png' ! -name 'versionsnummer.png' -delete
+	find koncept -type f \( -name '*.aux' -o -name '*~' \) -delete
+	find images -type f -name '*.xbb' -delete
+	$(RM) branch.tmp SHA.tmp TODOs.txt

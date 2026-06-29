@@ -76,6 +76,8 @@ har installerat beroendet som det behöver.
 | `docker-image`       |Bygg en Docker *image*             |Docker                |
 | `docker-build`       |Kör Docker *image* i en *container*|Docker                |
 
+Makefile använder `latexmk` för PDF-byggnationer och `tex4ebook` för EPUB. `make clean` tar bort de genererade PDF- och LaTeX-filerna samt temporära artefakter, medan `make help` visar de tillgängliga målen.
+
 # Installera beroenden
 
 ## Tex/LaTeX
