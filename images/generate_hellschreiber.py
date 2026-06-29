@@ -13,7 +13,7 @@ Run from the repository root:
 Requires: Pillow, numpy, pdftoppm (poppler-utils)
 """
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageDraw
 import subprocess, os, tempfile
 
 _HERE     = os.path.dirname(os.path.abspath(__file__))
@@ -139,6 +139,31 @@ BRIGHTNESS = 0.82   # reduce to 82 % so the image doesn't overpower the cover te
 rgb = np.clip(rgb * BRIGHTNESS, 0, 1)
 
 out = Image.fromarray((rgb * 255).astype(np.uint8), mode="RGB")
+
+# Draw a simple axis frame around the plotted signal region so the background
+# reads like an SDR waterfall rather than a bare logo silhouette.
+axis_color = (240, 240, 240)
+axis_outline = 3
+frame_pad = 36
+x0 = max(frame_pad, dc0 - frame_pad)
+x1 = min(PAGE_W - frame_pad, dc1 + frame_pad)
+y0 = frame_pad
+y1 = PAGE_H - frame_pad
+
+draw = ImageDraw.Draw(out)
+draw.rectangle((x0, y0, x1, y1), outline=axis_color, width=axis_outline)
+
+# Small ticks and axis labels help the background read as a plot.
+for tick in range(4):
+    t = tick / 3.0
+    x = int(x0 + (x1 - x0) * t)
+    draw.line((x, y1, x, y1 + 12), fill=axis_color, width=2)
+    y = int(y0 + (y1 - y0) * t)
+    draw.line((x0, y, x0 - 12, y), fill=axis_color, width=2)
+
+draw.text((x0 + (x1 - x0) / 2, y1 + 28), "tid", fill=axis_color)
+draw.text((x0 - 34, y0 + (y1 - y0) / 2), "frekvens", fill=axis_color)
+
 out.save(OUT_PNG, dpi=(150, 150))
 print(f"Saved {OUT_PNG}  {out.size}")
 
