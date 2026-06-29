@@ -26,6 +26,7 @@ AXIS_WIDTH = 3
 FRAME_PAD = 36
 LABEL_OFFSET_BOTTOM = 28
 LABEL_OFFSET_LEFT = 34
+FONT_SIZE = 24
 AXIS_LABEL_TIME = "tid"
 AXIS_LABEL_FREQ = "frekvens"
 FONT_CANDIDATES = (
@@ -165,7 +166,7 @@ for font_path in FONT_CANDIDATES:
     if not os.path.exists(font_path):
         continue
     try:
-        font = ImageFont.truetype(font_path, 24)
+        font = ImageFont.truetype(font_path, FONT_SIZE)
         break
     except OSError:
         continue
@@ -183,8 +184,8 @@ for tick in range(4):
     y = int(y0 + (y1 - y0) * t)
     draw.line((x0, y, x0 - 12, y), fill=AXIS_COLOR, width=2)
 
-draw.text((x0 + (x1 - x0) / 2, y1 + LABEL_OFFSET_BOTTOM), AXIS_LABEL_TIME, fill=AXIS_COLOR, font=font)
-draw.text((x0 - LABEL_OFFSET_LEFT, y0 + (y1 - y0) / 2), AXIS_LABEL_FREQ, fill=AXIS_COLOR, font=font)
+draw.text((x0 + (x1 - x0) / 2, y1 + LABEL_OFFSET_BOTTOM), AXIS_LABEL_TIME, fill=AXIS_COLOR, font=font, anchor="mm")
+draw.text((x0 - LABEL_OFFSET_LEFT, y0 + (y1 - y0) / 2), AXIS_LABEL_FREQ, fill=AXIS_COLOR, font=font, anchor="mm")
 
 out.save(OUT_PNG, dpi=(150, 150))
 print(f"Saved {OUT_PNG}  {out.size}")
