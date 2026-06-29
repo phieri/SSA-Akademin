@@ -13,7 +13,7 @@ Run from the repository root:
 Requires: Pillow, numpy, pdftoppm (poppler-utils)
 """
 import numpy as np
-from PIL import Image, ImageFilter, ImageDraw
+from PIL import Image, ImageFilter, ImageDraw, ImageFont
 import subprocess, os, tempfile
 
 _HERE     = os.path.dirname(os.path.abspath(__file__))
@@ -21,6 +21,19 @@ LOGO_PDF  = os.path.join(_HERE, "ssa-logotyp.pdf")
 OUT_PNG   = os.path.join(_HERE, "hellschreiber-ssa.png")
 
 PAGE_W, PAGE_H = 1240, 1754   # A4 at 150 DPI (210×297 mm → 1240×1754 px)
+AXIS_COLOR = (240, 240, 240)
+AXIS_WIDTH = 3
+FRAME_PAD = 36
+LABEL_OFFSET_BOTTOM = 28
+LABEL_OFFSET_LEFT = 34
+AXIS_LABEL_TIME = "tid"
+AXIS_LABEL_FREQ = "frekvens"
+FONT_CANDIDATES = (
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "C:/Windows/Fonts/arial.ttf",
+)
 np.random.seed(1928)           # Year Hellschreiber was invented
 
 # 1 ── Load logo ────────────────────────────────────────────────────────────
@@ -142,27 +155,36 @@ out = Image.fromarray((rgb * 255).astype(np.uint8), mode="RGB")
 
 # Draw a simple axis frame around the plotted signal region so the background
 # reads like an SDR waterfall rather than a bare logo silhouette.
-axis_color = (240, 240, 240)
-axis_outline = 3
-frame_pad = 36
-x0 = max(frame_pad, dc0 - frame_pad)
-x1 = min(PAGE_W - frame_pad, dc1 + frame_pad)
-y0 = frame_pad
-y1 = PAGE_H - frame_pad
+x0 = max(FRAME_PAD, dc0 - FRAME_PAD)
+x1 = min(PAGE_W - FRAME_PAD, dc1 + FRAME_PAD)
+y0 = FRAME_PAD
+y1 = PAGE_H - FRAME_PAD
+
+font = None
+for font_path in FONT_CANDIDATES:
+    if not os.path.exists(font_path):
+        continue
+    try:
+        font = ImageFont.truetype(font_path, 24)
+        break
+    except OSError:
+        continue
+if font is None:
+    font = ImageFont.load_default()
 
 draw = ImageDraw.Draw(out)
-draw.rectangle((x0, y0, x1, y1), outline=axis_color, width=axis_outline)
+draw.rectangle((x0, y0, x1, y1), outline=AXIS_COLOR, width=AXIS_WIDTH)
 
 # Small ticks and axis labels help the background read as a plot.
 for tick in range(4):
     t = tick / 3.0
     x = int(x0 + (x1 - x0) * t)
-    draw.line((x, y1, x, y1 + 12), fill=axis_color, width=2)
+    draw.line((x, y1, x, y1 + 12), fill=AXIS_COLOR, width=2)
     y = int(y0 + (y1 - y0) * t)
-    draw.line((x0, y, x0 - 12, y), fill=axis_color, width=2)
+    draw.line((x0, y, x0 - 12, y), fill=AXIS_COLOR, width=2)
 
-draw.text((x0 + (x1 - x0) / 2, y1 + 28), "tid", fill=axis_color)
-draw.text((x0 - 34, y0 + (y1 - y0) / 2), "frekvens", fill=axis_color)
+draw.text((x0 + (x1 - x0) / 2, y1 + LABEL_OFFSET_BOTTOM), AXIS_LABEL_TIME, fill=AXIS_COLOR, font=font)
+draw.text((x0 - LABEL_OFFSET_LEFT, y0 + (y1 - y0) / 2), AXIS_LABEL_FREQ, fill=AXIS_COLOR, font=font)
 
 out.save(OUT_PNG, dpi=(150, 150))
 print(f"Saved {OUT_PNG}  {out.size}")
