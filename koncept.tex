@@ -6,6 +6,10 @@
 % LaTeX-dokument behöver ha en klass. report är snarlik book.
 \documentclass[10pt,openright]{report}
 
+% Sätt PDF-versionen till 1.7 så att inkluderade PDF-bilder i samma version kan
+% användas utan varningar från pdfTeX.
+\pdfminorversion=7
+
 % Sätt sidstorlek och marginaler.
 \usepackage[
 	a4paper,
