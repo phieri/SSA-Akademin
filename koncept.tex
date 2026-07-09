@@ -273,48 +273,20 @@
 \setcounter{secnumdepth}{3}
 
 % Figure helper macros
-\newcommand{\ssafighelper}[5]{%
-	\begin{figure}[#1]
-		\centering
-		\includegraphics[width=#2\textwidth]{#3}
-		\caption{#4}
-		\label{#5}
-		\vspace{-10pt}
-	\end{figure}%
+\newcommand{\ssafloathelper}[8]{%
+	\begin{#1}[#2]
+		#3
+		\includegraphics[width=#4\textwidth]{#5}
+		\caption{#6}
+		\label{#7}
+		#8
+	\end{#1}%
 }
 
-\newcommand{\ssafighelperpad}[5]{%
-	\begin{figure}[#1]
-		\begin{center}
-			\bigskip
-			\includegraphics[width=#2\textwidth]{#3}
-			\caption{#4}
-			\label{#5}
-			\vspace{-10pt}
-		\end{center}
-	\end{figure}%
-}
-
-\newcommand{\ssawidefighelper}[5]{%
-	\begin{figure*}[#1]
-		\begin{center}
-			\includegraphics[width=#2\textwidth]{#3}
-			\caption{#4}
-			\label{#5}
-		\end{center}
-	\end{figure*}%
-}
-
-\newcommand{\ssawidefighelperpad}[5]{%
-	\begin{figure*}[#1]
-		\begin{center}
-			\bigskip
-			\includegraphics[width=#2\textwidth]{#3}
-			\caption{#4}
-			\label{#5}
-		\end{center}
-	\end{figure*}%
-}
+\newcommand{\ssafighelper}[5]{\ssafloathelper{figure}{#1}{\centering}{#2}{#3}{#4}{#5}{\vspace{-10pt}}}
+\newcommand{\ssafighelperpad}[5]{\ssafloathelper{figure}{#1}{\begin{center}\bigskip}{#2}{#3}{#4}{#5}{\vspace{-10pt}\end{center}}}
+\newcommand{\ssawidefighelper}[5]{\ssafloathelper{figure*}{#1}{\centering}{#2}{#3}{#4}{#5}{}}
+\newcommand{\ssawidefighelperpad}[5]{\ssafloathelper{figure*}{#1}{\begin{center}\bigskip}{#2}{#3}{#4}{#5}{\end{center}}}
 
 % Figure macros using helpers
 \newcommand{\smallfig}[4][0.4]{\ssafighelper{t}{#1}{#2}{#3}{#4}}
