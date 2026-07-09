@@ -207,7 +207,6 @@
 \makeatletter
 \def\harecsection#1{\begingroup\raggedleft\scriptsize HAREC #1\par\endgroup\@afterindentfalse\@afterheading}
 \makeatother
-% \def\harec#1#2#3{\textbf{#1.\ref{HAREC.#1.#2}}\label{myHAREC.#1.#3}}
 \def\harec#1#2#3{{\scriptsize#1.#2\label{myHAREC.#1.#3}}}
 
 \makeatletter
@@ -266,7 +265,6 @@
 \renewcommand{\bfdefault}{b}
 \SetMathAlphabet{\mathbf}{normal}{OT1}{cmr}{b}{n}
 
-\usepackage[raggedright]{titlesec}
 \titlespacing{\chapter}{0pt}{1cm}{1cm}
 %%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\fcolorbox{black}{black}{\color{white}\,\thechapter\,}~~}{0pt}{\Huge\bfseries}
@@ -275,51 +273,47 @@
 \setcounter{secnumdepth}{3}
 
 % Figure helper macros
-% Helper for single-column figures with centering
-\newcommand{\ssafighelper}[5]{
+\newcommand{\ssafighelper}[5]{%
 	\begin{figure}[#1]
 		\centering
 		\includegraphics[width=#2\textwidth]{#3}
 		\caption{#4}
 		\label{#5}
 		\vspace{-10pt}
-	\end{figure}
+	\end{figure}%
 }
 
-% Helper for single-column figures with padding
-\newcommand{\ssafighelperpad}[5]{
+\newcommand{\ssafighelperpad}[5]{%
 	\begin{figure}[#1]
 		\begin{center}
-		\bigskip
-		\includegraphics[width=#2\textwidth]{#3}
-		\caption{#4}
-		\label{#5}
-		\vspace{-10pt}
+			\bigskip
+			\includegraphics[width=#2\textwidth]{#3}
+			\caption{#4}
+			\label{#5}
+			\vspace{-10pt}
 		\end{center}
-	\end{figure}
+	\end{figure}%
 }
 
-% Helper for two-column figures with center environment
-\newcommand{\ssawidefighelper}[5]{
+\newcommand{\ssawidefighelper}[5]{%
 	\begin{figure*}[#1]
 		\begin{center}
 			\includegraphics[width=#2\textwidth]{#3}
 			\caption{#4}
 			\label{#5}
 		\end{center}
-	\end{figure*}
+	\end{figure*}%
 }
 
-% Helper for two-column figures with padding
-\newcommand{\ssawidefighelperpad}[5]{
+\newcommand{\ssawidefighelperpad}[5]{%
 	\begin{figure*}[#1]
 		\begin{center}
-		\bigskip
-		\includegraphics[width=#2\textwidth]{#3}
-		\caption{#4}
-		\label{#5}
+			\bigskip
+			\includegraphics[width=#2\textwidth]{#3}
+			\caption{#4}
+			\label{#5}
 		\end{center}
-	\end{figure*}
+	\end{figure*}%
 }
 
 % Figure macros using helpers
