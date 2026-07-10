@@ -73,9 +73,6 @@
 % Markera text med gul bakgrund.
 \newcommand{\hilight}[1]{\colorbox{yellow}{#1}}
 
-% Paket för att hantera avsnittsrubriker.
-\usepackage[toctitles,raggedright]{titlesec}
-
 % Aktivera möjligheten att länka i PDF:en.
 \usepackage{hyperref}
 \hypersetup{
@@ -265,14 +262,35 @@
 \renewcommand{\bfdefault}{b}
 \SetMathAlphabet{\mathbf}{normal}{OT1}{cmr}{b}{n}
 
-\titlespacing{\chapter}{0pt}{1cm}{1cm}
-%%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\fcolorbox{black}{black}{\color{white}\,\thechapter\,}~~}{0pt}{\Huge\bfseries}
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{1cm}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \Huge\bfseries
+      \fcolorbox{black}{black}{\color{white}\,\thechapter\,}~~
+    \fi
+    \interlinepenalty\@M
+    \Huge\bfseries #1\par\nobreak
+    \vskip 1cm
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{1cm}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \Huge\bfseries #1\par\nobreak
+    \vskip 1cm
+  }}
+\makeatother
 
 % Ge delavsnitt \subsubsection numreringssiffra.
 \setcounter{secnumdepth}{3}
 
-% Figure helper macros
+% Figure helper macros. Parameters: environment, placement, pre-block,
+% width, image, caption, label, and post-block.
+% The pre-block is used for layout adjustments (for example, additional
+% vertical space before a padded figure), while the post-block is used for
+% the final spacing after the caption.
 \newcommand{\ssafloathelper}[8]{%
 	\begin{#1}[#2]
 		#3
@@ -283,10 +301,18 @@
 	\end{#1}%
 }
 
-\newcommand{\ssafighelper}[5]{\ssafloathelper{figure}{#1}{\centering}{#2}{#3}{#4}{#5}{\vspace{-10pt}}}
-\newcommand{\ssafighelperpad}[5]{\ssafloathelper{figure}{#1}{\begin{center}\bigskip}{#2}{#3}{#4}{#5}{\vspace{-10pt}\end{center}}}
-\newcommand{\ssawidefighelper}[5]{\ssafloathelper{figure*}{#1}{\centering}{#2}{#3}{#4}{#5}{}}
-\newcommand{\ssawidefighelperpad}[5]{\ssafloathelper{figure*}{#1}{\begin{center}\bigskip}{#2}{#3}{#4}{#5}{\end{center}}}
+\newcommand{\ssafighelper}[5]{%
+	\ssafloathelper{figure}{#1}{\centering}{#2}{#3}{#4}{#5}{%
+		\vspace{-10pt}}%
+}
+\newcommand{\ssafighelperpad}[5]{%
+	\ssafloathelper{figure}{#1}{\centering\bigskip}{#2}{#3}{#4}{#5}{%
+		\vspace{-10pt}}%
+}
+\newcommand{\ssawidefighelper}[5]{%
+	\ssafloathelper{figure*}{#1}{\centering}{#2}{#3}{#4}{#5}{}}%
+\newcommand{\ssawidefighelperpad}[5]{%
+	\ssafloathelper{figure*}{#1}{\centering\bigskip}{#2}{#3}{#4}{#5}{}}%
 
 % Figure macros using helpers
 \newcommand{\smallfig}[4][0.4]{\ssafighelper{t}{#1}{#2}{#3}{#4}}
