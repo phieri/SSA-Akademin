@@ -11,12 +11,16 @@
 
 För beräkning av effekten av en sinusformad signal använder man effektivvärdet
 av spänning och ström.
+Den aktiva effekten beror även på fasförskjutningen \(\varphi\) mellan spänning
+och ström.
 %%
 \[\begin{array}{ccc}
     U_{\textit{eff}} = \dfrac{U_{max}}{\sqrt{2}} &
     \quad I_{\textit{eff}} = \dfrac{I_{max}}{\sqrt{2}} &
-    \quad P = U_{\textit{eff}} \cdot I_{\textit{eff}} \\
+    \quad P = U_{\textit{eff}} \cdot I_{\textit{eff}} \cos\varphi \\
     \end{array}\]
+Vid en rent resistiv belastning är spänning och ström i fas, så att
+\(\cos\varphi = 1\) och \(P = U_{\textit{eff}} I_{\textit{eff}}\).
 
 
 \subsection{Effektändring uttryckt i dB}
@@ -166,7 +170,7 @@ Enligt Joules lag är \(P = \frac{U^2}{R}\) (\(P = U \cdot I\))
 
 Två effekter kan ställas i förhållande till varandra på följande sätt:
 %%
-\[\dfrac{P_{\text{hög}}}{P_{\text{låg}}}=\dfrac{U_{\text{hög}}^2 \cdot R}{U_{\text{låg}}^2 \cdot R}\]
+\[\dfrac{P_{\text{hög}}}{P_{\text{låg}}}=\dfrac{U_{\text{hög}}^2/R}{U_{\text{låg}}^2/R}\]
 %%
 \(R\) avkortas och efter omskrivning fås en formel som liknar den för strömmar
 %%
@@ -235,12 +239,11 @@ med en impedans av \qty{50}{\ohm}.
 För god anpassning väljs då koaxialkablarna mellan apparaterna med en
 karaktäristisk impedans av \qty{50}{\ohm}.
 
-Det har utvecklats en praxis, att referensvärdet vid jämförelse av signalnivåer
-i radiosystem ska vara en milliwatt (\qty{1}{\milli\watt}) utvecklad i en
-belastning med impedansen \qty{50}{\ohm}.
-Signalnivåer över belastningen \qty{50}{\ohm} kan uttryckas i dB(m) eller ofta
-dBm, där (m) står för milliwatt, varvid referenseffekten \qty{1}{\milli\watt} är
-0\,dB(m) vid \qty{50}{\ohm}.
+För effektnivåer uttryckta i dBm är referenseffekten alltid
+\qty{1}{\milli\watt}, oberoende av belastningens impedans.
+I följande exempel används en belastning på \qty{50}{\ohm} för att även
+beräkna motsvarande spänning och ström.
+Referenseffekten \qty{1}{\milli\watt} motsvarar 0\,dBm.
 
 Det spänningsfall som bildas över belastningen \qty{50}{\ohm} vid effektnivån
 0\,dB(m) är
@@ -260,7 +263,7 @@ således 0\,dB(m).
 Varje annan effekt, spänningsfall och ström som uppstår vid en belastning av
 \qty{50}{\ohm} kan jämföras med respektive referensvärden \qty{1}{\milli\watt},
 \qty{0,22}{\volt} och \qty{4,5}{\milli\ampere}.
-\emph{dB(m) är ett absolut och logaritmiskt mått.}
+\emph{dBm anger en effektnivå i förhållande till en fast referenseffekt.}
 
 \vspace*{1ex}
 \noindent
@@ -316,7 +319,8 @@ Spänning
 Effektnivåer över en belastning kan också uttryckas i dB(W), där (W)
 står för watt.
 Referenseffekten är då \qty{1}{\watt}, dvs. 0\,dB(W).
-Liksom med dB(m) anges impedansen i den belastning, som effekten utvecklas över.
+Belastningens impedans behövs om effekten ska räknas om till spänning eller
+ström.
 
 \subsection{Ändring uttryckt i dB vid förstärkande eller dämpande anordningar kopplade i serie}
 \harecsection{\harec{a}{1.9.3}{1.9.3}}
