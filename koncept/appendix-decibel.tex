@@ -67,13 +67,12 @@ med en impedans av \qty{50}{\ohm}.
 För god anpassning väljs då koaxialkablarna mellan apparaterna med en
 karaktäristisk impedans av \qty{50}{\ohm}.
 
-\emph{Det har utbildats en praxis, att referensvärdet vid jämförelse
-  av signalnivåer i radiosystem ska vara en milliwatt (\qty{1}{\milli\watt})
-  utvecklad i en belastning med impedansen \qty{50}{\ohm}.}
+\emph{Referenseffekten för dBm är \qty{1}{\milli\watt}, oberoende av
+  belastningens impedans.}
 
-Signalnivåer över belastningen \qty{50}{\ohm} kan uttryckas i dB(m), där (m)
-står för milliwatt, varvid referenseffekten \qty{1}{\milli\watt} är 0\,dB(m) vid
-\qty{50}{\ohm}.
+I följande exempel används en belastning på \qty{50}{\ohm} för att även
+beräkna motsvarande spänning och ström.
+Referenseffekten \qty{1}{\milli\watt} motsvarar 0\,dBm.
 
 Det spänningsfall som bildas över belastningen \qty{50}{\ohm} vid effektnivån
 0\,dB(m) är
@@ -93,7 +92,7 @@ således 0\,dB(m).
 Varje annan effekt, spänningsfall och ström som uppstår vid en belastning av
 \qty{50}{\ohm} kan jämföras med respektive referensvärden \qty{1}{\milli\watt},
 \qty{0,22}{\volt} och \qty{4,5}{\milli\ampere}.
-\emph{dB(m) är ett absolut och logaritmiskt mått.}
+\emph{dBm anger en effektnivå i förhållande till en fast referenseffekt.}
 
 \noindent
 Effekt:
@@ -146,6 +145,7 @@ Spänning:
 Effektnivåer över en belastning kan också uttryckas i dB(W), där (W) står
 för watt.
 Referenseffekten är då \qty{1}{\watt}, det vill säga 0\,dB(W).
-Liksom med dB(m) anges impedansen i den belastning, som effekten utvecklas över.
+Belastningens impedans behövs om effekten ska räknas om till spänning eller
+ström.
 Exempelvis motsvarar 26\,dB(W) \qty{398}{\watt} (se tabellen för sambandet
 mellan effektförhållande och \unit{\decibel}).
