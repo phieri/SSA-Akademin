@@ -39,6 +39,11 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 - Uppdaterat referenser från PTSFS 2022:19 till PTSFS 2025:1 (träder i kraft 17 mars 2025).
 
 ### Fixat
+- Korrigerat effektformeln för sinusformade signaler och spänningskvoten
+  vid beräkning av decibel.
+- Förtydligat att dBm inte förutsätter en belastning på 50 ohm.
+- Korrigerat avrundningar i decibel- och S-enhetsbilagorna samt förklarat
+  att S0 inte är en absolut hörbarhetsgräns.
 - Ordet _mod_ har lagts till i sakregistret.
 - Litteraturlistan följer praxis bättre vad gäller format.
 - Två utspridda delar om DSP sammanslagna.
