@@ -21,8 +21,8 @@ LOGO_PDF  = os.path.join(_HERE, "ssa-logotyp.pdf")
 OUT_PNG   = os.path.join(_HERE, "hellschreiber-ssa.png")
 
 PAGE_W, PAGE_H = 1240, 1754   # A4 at 150 DPI (210×297 mm → 1240×1754 px)
-LOGO_HEIGHT_FRACTION = 0.78
-LOGO_WIDTH_FRACTION = 0.70
+LOGO_HEIGHT_FRACTION = 0.70
+LOGO_WIDTH_FRACTION = 0.65
 np.random.seed(1928)           # Year Hellschreiber was invented
 
 # 1 ── Load logo ────────────────────────────────────────────────────────────
@@ -79,19 +79,90 @@ hell_pil = Image.fromarray((hell*255).astype(np.uint8))
 hell_pil = hell_pil.filter(ImageFilter.GaussianBlur(radius=DOT * 0.22))  # gentle dot spread
 hell = np.array(hell_pil, dtype=np.float32) / 255.0
 
-# 4 ── Place on A4 canvas with a restrained SDR noise floor ──────────────────
-# Keep the background dark and quiet so cover text remains easy to read.
-NOISE_FLOOR  = 0.035  # baseline level for the noise floor (0 = black)
-NOISE_SIGMA  = 0.025  # spread of the Gaussian noise on top
-canvas = np.random.normal(NOISE_FLOOR, NOISE_SIGMA, (PAGE_H, PAGE_W)).astype(np.float32)
+# 4 ── Build an SDR waterfall with visible noise and time history ─────────────
+# A waterfall advances one horizontal scan at a time: random noise changes on
+# every row, while slow level changes and fading channels leave horizontal
+# history bands. Keep the floor dark enough for the white cover typography.
+NOISE_FLOOR = 0.31
+NOISE_SIGMA = 0.060
+canvas = np.random.normal(
+    NOISE_FLOOR, NOISE_SIGMA, (PAGE_H, PAGE_W)).astype(np.float32)
+
+# Slow, irregular changes from scan to scan create gently banded time sweeps.
+row_noise = np.random.normal(0, 1, PAGE_H)
+row_kernel_x = np.arange(-24, 25, dtype=np.float32)
+row_kernel = np.exp(-0.5 * (row_kernel_x / 9.0) ** 2)
+row_kernel /= row_kernel.sum()
+row_history = np.convolve(row_noise, row_kernel, mode="same").astype(np.float32)
+canvas += row_history[:, np.newaxis] * 0.16
+
+# Uneven fading and short stronger sweeps add recognizable received-signal
+# history without drawing a frame, grid, or any display labels.
+for y0 in np.random.randint(0, PAGE_H, 30):
+    width = np.random.uniform(2.0, 13.0)
+    strength = np.random.uniform(0.035, 0.11)
+    rows = np.arange(PAGE_H, dtype=np.float32)
+    canvas += (strength * np.exp(-0.5 * ((rows - y0) / width) ** 2))[:, None]
+
+canvas = np.clip(canvas, 0, 1)
+
+# A few narrow, fading carriers and drifting traces make the frequency
+# structure legible against the noisy horizontal history.
+yy = np.arange(PAGE_H, dtype=np.float32)
+xx = np.arange(PAGE_W, dtype=np.float32)
+for x0, drift, width, strength, phase in [
+    (0.13,  0.012, 2.0, 0.29, 0.3),
+    (0.27, -0.018, 3.0, 0.36, 1.1),
+    (0.76,  0.022, 2.5, 0.32, 2.0),
+    (0.88, -0.010, 2.0, 0.26, 2.7),
+]:
+    center = x0 * PAGE_W + drift * (yy - PAGE_H / 2)
+    carrier = np.exp(-0.5 * ((xx[None, :] - center[:, None]) / width) ** 2)
+    fading = 0.48 + 0.52 * np.maximum(
+        0, np.sin(yy / 88.0 + phase))
+    canvas += carrier * (strength * fading[:, None])
+
+# Sparse shortwave-like traces: softly sloped, broken signals rather than
+# regular bars. Their placement favors the margins and lower half of the cover.
+for y_start, length, x_start, slope, width, strength in [
+    (0.37, 0.22, 0.09,  0.10, 2.1, 0.24),
+    (0.48, 0.20, 0.84, -0.08, 2.0, 0.22),
+    (0.69, 0.19, 0.17, -0.06, 2.2, 0.30),
+    (0.77, 0.16, 0.72,  0.08, 2.0, 0.27),
+]:
+    start = int(y_start * PAGE_H)
+    end = min(PAGE_H, start + int(length * PAGE_H))
+    ys = np.arange(start, end, dtype=np.float32)
+    center = x_start * PAGE_W + slope * (ys - start)
+    trace = np.exp(-0.5 * ((xx[None, :] - center[:, None]) / width) ** 2)
+    # Dropouts and amplitude flutter are part of the received signal.
+    flutter = np.clip(
+        0.62 + 0.38 * np.sin(ys / 19.0 + x_start * 11), 0.0, 1.0)
+    canvas[start:end] += trace * (strength * flutter[:, None])
+
 canvas = np.clip(canvas, 0, 1)
 
 x_off = (PAGE_W - W) // 2
-y_off = (PAGE_H - H) // 2
+y_off = (PAGE_H - H) // 2 + int(PAGE_H * 0.035)
 
-PEAK_SIGNAL  = 0.90   # retain a little headroom for the strongest signal
+# The logo is itself a Hell scan. Let the underlying waterfall remain visible
+# in its gaps and vary its level slightly from scan to scan.
+logo_history = 0.83 + 0.10 * np.sin(
+    np.arange(H, dtype=np.float32)[:, None] / 24.0)
+logo_signal = hell * logo_history * 0.84
 canvas[y_off:y_off + H, x_off:x_off + W] = np.maximum(
-    canvas[y_off:y_off + H, x_off:x_off + W], hell * PEAK_SIGNAL)
+    canvas[y_off:y_off + H, x_off:x_off + W], logo_signal)
+
+# Keep the central title area quiet and dark for the white lettering; the
+# noise remains visible, while strong carriers and sweeps are softened there.
+title_y = np.arange(PAGE_H, dtype=np.float32)
+title_x = np.arange(PAGE_W, dtype=np.float32)
+y_fade = np.clip((title_y - PAGE_H * 0.05) / (PAGE_H * 0.08), 0, 1)
+y_fade *= np.clip((PAGE_H * 0.66 - title_y) / (PAGE_H * 0.10), 0, 1)
+x_fade = np.clip((title_x - PAGE_W * 0.08) / (PAGE_W * 0.12), 0, 1)
+x_fade *= np.clip((PAGE_W * 0.92 - title_x) / (PAGE_W * 0.12), 0, 1)
+title_guard = (y_fade[:, None] * x_fade[None, :]) * 0.66
+canvas = canvas * (1.0 - title_guard) + NOISE_FLOOR * title_guard
 
 # 5 ── SDR waterfall colormap ────────────────────────────────────────────────
 # Classic waterfall palette used by SDR# / GQRX / WebSDR, defined by
@@ -133,7 +204,7 @@ def waterfall_colormap(v):
 
 rgb = waterfall_colormap(canvas)
 
-BRIGHTNESS = 0.60   # keep the signal dark enough for the white cover title
+BRIGHTNESS = 0.58   # keep the signal dark enough for the white cover title
 rgb = np.clip(rgb * BRIGHTNESS, 0, 1)
 
 out = Image.fromarray((rgb * 255).astype(np.uint8), mode="RGB")
