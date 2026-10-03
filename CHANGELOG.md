@@ -6,7 +6,7 @@ och följer [semantisk versionshantering](https://semver.org/lang/sv/spec/v2.0.0
 
 ## [Osläppt] – 2025
 ### Tillagt
-- Ny framsida med simulerad Hellschreiber-bakgrundsbild föreställande SSA:s logotyp.
+- Ny framsida med Hellschreiber-bakgrund föreställande SSA:s logotyp; bakgrunden har fått en luftigare komposition utan axlar eller dubblerad logotyp, med tydligare signal och dämpad ton.
 - Ny figur för schemasymbolen lysdiod.
 - Nya introduktioner till kapitlen Ellära, Komponenter, Kretsar, Sändare och Trafikreglemente.
 - Ny figur för ICNIRPcalc.
