@@ -13,7 +13,7 @@ Run from the repository root:
 Requires: Pillow, numpy, pdftoppm (poppler-utils)
 """
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image
 import subprocess, os, tempfile
 
 _HERE     = os.path.dirname(os.path.abspath(__file__))
@@ -74,10 +74,27 @@ for x in range(W):
     col        = np.roll(logo_scaled[:, x], drifts[x])
     hell[:, x] = hell_col(col, DOT)
 
-# Slight vertical Gaussian blur (dot spread on the SDR screen pixels)
-hell_pil = Image.fromarray((hell*255).astype(np.uint8))
-hell_pil = hell_pil.filter(ImageFilter.GaussianBlur(radius=DOT * 0.22))  # gentle dot spread
-hell = np.array(hell_pil, dtype=np.float32) / 255.0
+# Soften the quantised dots (receiver bandwidth / SDR screen pixels). The blur
+# is applied *after* Hell quantisation so the 8 px dot cells stay recognisable
+# but their hard stair-stepped edges become smooth, anti-aliased transitions.
+def gaussian_blur_1d(img, sigma, axis):
+    """Separable Gaussian blur along one axis, edge-replicated."""
+    radius = int(np.ceil(sigma * 3))
+    k = np.exp(-0.5 * (np.arange(-radius, radius + 1) / sigma) ** 2)
+    k /= k.sum()
+    pad = [(0, 0), (0, 0)]
+    pad[axis] = (radius, radius)
+    padded = np.pad(img, pad, mode="edge")
+    out = np.zeros_like(img)
+    for i, w in enumerate(k):
+        out += w * (padded[i:i + img.shape[0], :] if axis == 0
+                    else padded[:, i:i + img.shape[1]])
+    return out
+
+HELL_BLUR_Y = DOT * 0.38   # ~3.0 px: rounds the dot-cell steps
+HELL_BLUR_X = DOT * 0.34   # ~2.7 px: softens left/right logo edges
+hell = gaussian_blur_1d(hell, HELL_BLUR_Y, axis=0)
+hell = gaussian_blur_1d(hell, HELL_BLUR_X, axis=1)
 
 # 4 ── Build an SDR waterfall with visible noise and time history ─────────────
 # A waterfall advances one horizontal scan at a time: random noise changes on
@@ -145,13 +162,55 @@ canvas = np.clip(canvas, 0, 1)
 x_off = (PAGE_W - W) // 2
 y_off = (PAGE_H - H) // 2 + int(PAGE_H * 0.035)
 
-# The logo is itself a Hell scan. Let the underlying waterfall remain visible
-# in its gaps and vary its level slightly from scan to scan.
-logo_history = 0.83 + 0.10 * np.sin(
-    np.arange(H, dtype=np.float32)[:, None] / 24.0)
-logo_signal = hell * logo_history * 0.84
-canvas[y_off:y_off + H, x_off:x_off + W] = np.maximum(
-    canvas[y_off:y_off + H, x_off:x_off + W], logo_signal)
+# The logo is itself a received Hell scan, so it must suffer the same radio
+# conditions as the waterfall behind it instead of sitting on top as a clean
+# stencil. Everything below is derived from the same noise/sweep history.
+bg = canvas[y_off:y_off + H, x_off:x_off + W]      # waterfall under the logo
+bg_dev = bg - NOISE_FLOOR                           # shared noise + sweeps
+rows_bg = bg_dev.mean(axis=1)                       # per-scan level history
+
+# (a) Scan-to-scan timing variation: slowly wandering horizontal shift per
+#     scan line (smoothed noise), applied to the logo coverage.
+shift_noise = np.random.normal(0, 1, H)
+shift_kernel_x = np.arange(-12, 13, dtype=np.float32)
+shift_kernel = np.exp(-0.5 * (shift_kernel_x / 4.0) ** 2)
+shift_kernel /= shift_kernel.sum()
+shift = np.convolve(shift_noise, shift_kernel, mode="same")
+shift = np.rint(shift / shift.std() * 0.9).astype(int)   # about +-1-2 px
+cover = np.empty_like(hell)
+for y in range(H):
+    cover[y] = np.roll(hell[y], shift[y])
+
+# (b) Receiver ringing: a short one-sided smear along the scan direction.
+tail = np.exp(-np.arange(0, 5, dtype=np.float32) / 1.8)
+tail /= tail.sum()
+smeared = np.zeros_like(cover)
+for i, w in enumerate(tail):
+    smeared[:, i:] += w * cover[:, :W - i]
+cover = 0.75 * cover + 0.25 * smeared
+
+# (c) Signal strength follows the same level history as the waterfall rows
+#     (fading and sweeps), plus occasional short partial dropouts.
+gain = 0.86 + 0.10 * np.sin(np.arange(H, dtype=np.float32)[:, None] / 24.0)
+gain = gain + rows_bg[:, None] * 0.8
+dropout_rows = np.random.rand(H) < 0.02
+dropout_rows = np.convolve(dropout_rows.astype(np.float32),
+                           np.ones(3, dtype=np.float32), mode="same") > 0
+dropout_depth = np.where(dropout_rows, np.random.uniform(0.60, 0.85, H), 1.0)
+gain = gain * dropout_depth[:, None]
+
+# (d) Per-pixel receiver noise: the waterfall's own noise is carried into the
+#     logo, with extra multiplicative grain so the logo is not a flat colour.
+grain = np.random.normal(0, 1, (H, W)).astype(np.float32)
+grain = gaussian_blur_1d(grain, 0.8, axis=1) * 1.6
+inside = (0.72 * gain * (1.0 + 0.16 * grain)
+          + bg_dev * 0.6 + 0.03 * grain)
+
+# Alpha-composite with the blurred, jittered coverage so edges pick up the
+# surrounding noise as well.
+cover = np.clip(cover, 0.0, 1.0)
+canvas[y_off:y_off + H, x_off:x_off + W] = np.clip(
+    bg * (1.0 - cover) + inside * cover, 0.0, 1.0)
 
 # Keep the central title area quiet and dark for the white lettering; the
 # noise remains visible, while strong carriers and sweeps are softened there.
